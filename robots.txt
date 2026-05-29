@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hirakarakuzu.github.io/lezzet-atlasi/sitemap.xml
