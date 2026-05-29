@@ -31,4 +31,4 @@ Yemek yapmak için vakti kısıtlı olan, elindeki malzemeler sınırlı olan ve
 
 ---
 
-> Kullanıcı gözüyle tasarlandı — çünkü iyi bir tarif sitesi aynı zamanda iyi bir ürün olmalı.
+> Yazılımcı gözüyle tasarlandı — çünkü iyi bir tarif sitesi aynı zamanda iyi bir ürün olmalı.
