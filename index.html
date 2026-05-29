@@ -4472,9 +4472,25 @@ document.addEventListener('DOMContentLoaded', init);
    AUTH & ADMIN SYSTEM
    ============================================================ */
 
-/* ── Sabit Demo Hesaplar (hashlenmiş şifre simülasyonu) ── */
-const DEFAULT_USERS = [
+   const DEFAULT_USERS = [
   {
+    id: 'u1', name: 'Hira Nur Karakuzu', email: 'karakuzuhira92@gmail.com',
+    passwordHash: '64f0244395c933ae1ea8939e2a57961397e531dddb2815640fd748c7016ed9b9', role: 'admin',
+    createdAt: '2025-01-01', avatar: '#FF6B5B'
+  },
+  {
+    id: 'u2', name: 'Editör Kullanıcı', email: 'editor@lezzet.com',
+    passwordHash: '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918', role: 'editor',
+    createdAt: '2024-02-01', avatar: '#4DA8DA'
+  },
+  {
+    id: 'u3', name: 'Normal Kullanıcı', email: 'user@lezzet.com',
+    passwordHash: '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918', role: 'user',
+    createdAt: '2024-03-01', avatar: '#6BCB77'
+  }
+];
+/* ── Sabit Demo Hesaplar (hashlenmiş şifre simülasyonu) ── */
+{
     id: 'u1', name: 'Hira Nur Karakuzu', email: 'karakuzuhira92@gmail.com',
     passwordHash: btoa('admin'), role: 'admin',
     createdAt: '2025-01-01', avatar: '#FF6B5B'
@@ -4525,6 +4541,13 @@ const auth = {
     localStorage.setItem('la-users', JSON.stringify(this.users));
   },
 
+  async hashPassword(password) {
+    const encoder = new TextEncoder();
+    const data = encoder.encode(password);
+    const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+    return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+  },
   createSession(user) {
     const sess = {
       userId: user.id,
@@ -4601,9 +4624,10 @@ function handleLogin() {
   btn.disabled = true;
   btn.textContent = 'Giriş yapılıyor...';
 
-  setTimeout(() => {
+  setTimeout(async() => {
     const user = auth.users.find(u => u.email === email);
-    if (!user || user.passwordHash !== btoa(password)) {
+   const hashedInput = await auth.hashPassword(password);
+if (!user || user.passwordHash !== hashedInput) {
       showAuthError(errEl, 'E-posta veya şifre hatalı.');
       btn.disabled = false;
       btn.innerHTML = '<i class="fa-solid fa-right-to-bracket"></i> Giriş Yap';
@@ -4642,11 +4666,11 @@ function handleRegister() {
   btn.disabled = true;
   btn.textContent = 'Hesap oluşturuluyor...';
 
-  setTimeout(() => {
+  setTimeout(async() => {
     const newUser = {
       id: 'u' + Date.now(),
       name, email,
-      passwordHash: btoa(pass),
+      passwordHash: await auth.hashPassword(pass),
       role: 'user',
       createdAt: new Date().toISOString().slice(0,10),
       avatar: '#' + Math.floor(Math.random()*0xffffff).toString(16).padStart(6,'0')
