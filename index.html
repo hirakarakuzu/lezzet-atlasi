@@ -2427,6 +2427,68 @@ tarifi bul. Karmaşık değil, hızlı, pratik. Ve aynı zamanda gözüyle tasar
       </div>
 
       <div>
+        <!-- İletişim Formu -->
+<section class="fade-in-section" id="iletisim" style="padding-block:var(--sp-20);background:var(--bg-surface)">
+  <div class="container">
+    <div style="max-width:600px;margin:0 auto">
+      <div class="section-label">
+        <i class="fa-solid fa-envelope" aria-hidden="true"></i> İletişim
+      </div>
+      <h2 class="section-title">Benimle İletişime Geç</h2>
+      <p class="section-desc" style="margin-bottom:var(--sp-8)">
+        Tarif önerisi, işbirliği veya herhangi bir konu için bana yazabilirsin.
+      </p>
+
+      <form action="https://formspree.io/f/xykvooae" method="POST" id="contactForm" style="display:flex;flex-direction:column;gap:var(--sp-4)">
+        
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-4)">
+          <div style="display:flex;flex-direction:column;gap:var(--sp-2)">
+            <label style="font-size:0.78rem;font-weight:700;color:var(--text-secondary)">Adın</label>
+            <input type="text" name="name" required placeholder="Adın Soyadın"
+              style="padding:11px 14px;border-radius:var(--r-md);border:1.5px solid var(--border-medium);background:var(--bg-muted);color:var(--text-primary);font-family:inherit;font-size:0.9rem;transition:border-color var(--t-fast);appearance:none;-webkit-appearance:none;"
+              onfocus="this.style.borderColor='var(--brand-coral)'" 
+              onblur="this.style.borderColor='var(--border-medium)'">
+          </div>
+          <div style="display:flex;flex-direction:column;gap:var(--sp-2)">
+            <label style="font-size:0.78rem;font-weight:700;color:var(--text-secondary)">E-posta</label>
+            <input type="email" name="email" required placeholder="ornek@email.com"
+              style="padding:11px 14px;border-radius:var(--r-md);border:1.5px solid var(--border-medium);background:var(--bg-muted);color:var(--text-primary);font-family:inherit;font-size:0.9rem;transition:border-color var(--t-fast);appearance:none;-webkit-appearance:none;"
+              onfocus="this.style.borderColor='var(--brand-coral)'"
+              onblur="this.style.borderColor='var(--border-medium)'">
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:var(--sp-2)">
+          <label style="font-size:0.78rem;font-weight:700;color:var(--text-secondary)">Konu</label>
+          <input type="text" name="subject" required placeholder="Mesajınızın konusu"
+            style="padding:11px 14px;border-radius:var(--r-md);border:1.5px solid var(--border-medium);background:var(--bg-muted);color:var(--text-primary);font-family:inherit;font-size:0.9rem;transition:border-color var(--t-fast);appearance:none;-webkit-appearance:none;"
+            onfocus="this.style.borderColor='var(--brand-coral)'"
+            onblur="this.style.borderColor='var(--border-medium)'">
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:var(--sp-2)">
+          <label style="font-size:0.78rem;font-weight:700;color:var(--text-secondary)">Mesaj</label>
+          <textarea name="message" required placeholder="Mesajınızı buraya yazın..." rows="5"
+            style="padding:11px 14px;border-radius:var(--r-md);border:1.5px solid var(--border-medium);background:var(--bg-muted);color:var(--text-primary);font-family:inherit;font-size:0.9rem;resize:vertical;transition:border-color var(--t-fast);appearance:none;-webkit-appearance:none;"
+            onfocus="this.style.borderColor='var(--brand-coral)'"
+            onblur="this.style.borderColor='var(--border-medium)'"></textarea>
+        </div>
+
+        <button type="submit"
+          style="padding:14px 32px;background:var(--grad-cta);color:white;border:none;border-radius:var(--r-full);font-size:0.95rem;font-weight:700;cursor:pointer;font-family:inherit;box-shadow:0 4px 14px rgba(255,107,91,0.30);transition:transform var(--t-fast);align-self:flex-start;"
+          onmouseover="this.style.transform='translateY(-1px)'"
+          onmouseout="this.style.transform='translateY(0)'">
+          <i class="fa-solid fa-paper-plane" style="margin-right:8px"></i>Gönder
+        </button>
+
+        <div id="formSuccess" style="display:none;padding:var(--sp-4);background:rgba(107,203,119,0.10);border:1.5px solid rgba(107,203,119,0.30);border-radius:var(--r-md);color:#15803D;font-size:0.875rem;font-weight:500">
+          <i class="fa-solid fa-circle-check" style="margin-right:8px"></i>Mesajın gönderildi! En kısa sürede dönüş yapacağım.
+        </div>
+
+      </form>
+    </div>
+  </div>
+</section>
         <div class="footer-col-title">Destek</div>
         <ul class="footer-links">
           <li><a href="#">Hakkımızda</a></li>
@@ -5241,7 +5303,29 @@ document.addEventListener('keydown', e => {
   if (e.key === 'Escape' && adminPanel) closeAdminPanel();
 });
 
-
+/* ── İletişim Formu ── */
+document.getElementById('contactForm')?.addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const btn = this.querySelector('button[type="submit"]');
+  btn.textContent = 'Gönderiliyor...';
+  btn.disabled = true;
+  try {
+    const res = await fetch(this.action, {
+      method: 'POST',
+      body: new FormData(this),
+      headers: { 'Accept': 'application/json' }
+    });
+    if(res.ok) {
+      this.reset();
+      document.getElementById('formSuccess').style.display = 'block';
+      btn.innerHTML = '<i class="fa-solid fa-paper-plane" style="margin-right:8px"></i>Gönder';
+      btn.disabled = false;
+    }
+  } catch(err) {
+    btn.innerHTML = '<i class="fa-solid fa-paper-plane" style="margin-right:8px"></i>Gönder';
+    btn.disabled = false;
+  }
+});
 
 </script>
 </body>
