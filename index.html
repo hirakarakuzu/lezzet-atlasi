@@ -1,0 +1,5186 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Lezzet Atlası - Premium Türk Yemek Tarifleri">
+<title>Lezzet Atlası — Premium Yemek Tarifleri</title>
+<meta property="og:title" content="Lezzet Atlası — Premium Türk Yemek Tarifleri">
+<meta property="og:description" content="Geleneksel Türk mutfağından modern tariflere, adım adım yemek tarifleri.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="index, follow">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍳</text></svg>">
+<link rel="canonical" href="SİTENİN-ADRESİ-BURAYA">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+/* ============================================================
+   CSS VARIABLES & THEME
+   ============================================================ */
+:root {
+  /* Brand palette */
+  --brand-coral:    #FF6B5B;
+  --brand-amber:    #FFB347;
+  --brand-sage:     #6BCB77;
+  --brand-sky:      #4DA8DA;
+  --brand-lavender: #9B7FD4;
+
+  /* Gradient presets */
+  --grad-hero:   linear-gradient(135deg, #FFF5F0 0%, #FFF0E6 40%, #F0F4FF 100%);
+  --grad-card-1: linear-gradient(145deg, #FF6B5B22, #FFB34722);
+  --grad-card-2: linear-gradient(145deg, #6BCB7722, #4DA8DA22);
+  --grad-card-3: linear-gradient(145deg, #9B7FD422, #FF6B5B22);
+  --grad-primary: linear-gradient(135deg, var(--brand-coral), var(--brand-amber));
+  --grad-cta:    linear-gradient(135deg, #FF6B5B, #FF8C5A);
+
+  /* Light mode surfaces */
+  --bg-base:      #FAFAFA;
+  --bg-surface:   #FFFFFF;
+  --bg-muted:     #F4F4F6;
+  --bg-glass:     rgba(255,255,255,0.72);
+
+  /* Light mode text */
+  --text-primary:   #18181B;
+  --text-secondary: #52525B;
+  --text-muted:     #A1A1AA;
+  --text-inverse:   #FFFFFF;
+
+  /* Borders */
+  --border-subtle: rgba(0,0,0,0.07);
+  --border-medium: rgba(0,0,0,0.12);
+
+  /* Shadows */
+  --shadow-xs:   0 1px 3px rgba(0,0,0,0.06);
+  --shadow-sm:   0 4px 12px rgba(0,0,0,0.08);
+  --shadow-md:   0 8px 28px rgba(0,0,0,0.10);
+  --shadow-lg:   0 20px 60px rgba(0,0,0,0.12);
+  --shadow-card: 0 2px 20px rgba(0,0,0,0.06), 0 1px 4px rgba(0,0,0,0.04);
+
+  /* Nav */
+  --nav-height: 68px;
+
+  /* Radius */
+  --r-sm:  8px;
+  --r-md:  14px;
+  --r-lg:  20px;
+  --r-xl:  28px;
+  --r-full: 9999px;
+
+  /* Spacing scale */
+  --sp-1: 4px; --sp-2: 8px; --sp-3: 12px; --sp-4: 16px;
+  --sp-5: 20px; --sp-6: 24px; --sp-8: 32px; --sp-10: 40px;
+  --sp-12: 48px; --sp-16: 64px; --sp-20: 80px;
+
+  /* Transitions */
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+  --t-fast: 0.15s;
+  --t-med:  0.25s;
+  --t-slow: 0.4s;
+}
+
+[data-theme="dark"] {
+  --bg-base:      #0E0E11;
+  --bg-surface:   #18181D;
+  --bg-muted:     #222228;
+  --bg-glass:     rgba(24,24,29,0.80);
+  --text-primary:   #F4F4F6;
+  --text-secondary: #A1A1AA;
+  --text-muted:     #52525B;
+  --text-inverse:   #0E0E11;
+  --border-subtle: rgba(255,255,255,0.06);
+  --border-medium: rgba(255,255,255,0.10);
+  --shadow-xs:   0 1px 3px rgba(0,0,0,0.30);
+  --shadow-sm:   0 4px 12px rgba(0,0,0,0.40);
+  --shadow-md:   0 8px 28px rgba(0,0,0,0.50);
+  --shadow-lg:   0 20px 60px rgba(0,0,0,0.60);
+  --shadow-card: 0 2px 20px rgba(0,0,0,0.30), 0 1px 4px rgba(0,0,0,0.20);
+  --grad-hero:   linear-gradient(135deg, #1A0E0A 0%, #14101A 50%, #0A1220 100%);
+  --grad-card-1: linear-gradient(145deg, rgba(255,107,91,0.12), rgba(255,179,71,0.08));
+  --grad-card-2: linear-gradient(145deg, rgba(107,203,119,0.10), rgba(77,168,218,0.08));
+  --grad-card-3: linear-gradient(145deg, rgba(155,127,212,0.12), rgba(255,107,91,0.08));
+}
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: background var(--t-slow) var(--ease-smooth), color var(--t-slow) var(--ease-smooth);
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+button { cursor: pointer; font-family: inherit; border: none; background: none; }
+a { color: inherit; text-decoration: none; }
+ul, ol { list-style: none; }
+
+:focus-visible {
+  outline: 2px solid var(--brand-coral);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ============================================================
+   SCROLLBAR
+   ============================================================ */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-medium); border-radius: var(--r-full); }
+
+/* ============================================================
+   UTILITY CLASSES
+   ============================================================ */
+.container {
+  width: min(1200px, 100% - 2 * var(--sp-6));
+  margin-inline: auto;
+}
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--brand-coral);
+  background: rgba(255,107,91,0.10);
+  padding: 5px 12px;
+  border-radius: var(--r-full);
+  border: 1px solid rgba(255,107,91,0.20);
+  margin-bottom: var(--sp-4);
+}
+
+.section-title {
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(1.7rem, 3.5vw, 2.5rem);
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--text-primary);
+  margin-bottom: var(--sp-3);
+}
+
+.section-desc {
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  color: var(--text-secondary);
+  max-width: 520px;
+  line-height: 1.7;
+}
+
+/* Gradient text */
+.grad-text {
+  background: var(--grad-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* ============================================================
+   NAVBAR
+   ============================================================ */
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--nav-height);
+  z-index: 1000;
+  transition: background var(--t-med), box-shadow var(--t-med);
+}
+
+.navbar.scrolled {
+  background: var(--bg-glass);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(180%);
+  box-shadow: 0 1px 0 var(--border-subtle), var(--shadow-sm);
+}
+
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: 1.35rem;
+}
+
+.logo-icon {
+  width: 36px; height: 36px;
+  background: var(--grad-primary);
+  border-radius: var(--r-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 12px rgba(255,107,91,0.35);
+}
+
+.logo-text { color: var(--text-primary); }
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-1);
+}
+
+.nav-link {
+  padding: var(--sp-2) var(--sp-3);
+  border-radius: var(--r-sm);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: color var(--t-fast), background var(--t-fast);
+}
+
+.nav-link:hover { color: var(--text-primary); background: var(--bg-muted); }
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.btn-theme {
+  width: 38px; height: 38px;
+  border-radius: var(--r-full);
+  background: var(--bg-muted);
+  border: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  transition: all var(--t-fast);
+}
+
+.btn-theme:hover {
+  color: var(--text-primary);
+  background: var(--bg-surface);
+  box-shadow: var(--shadow-xs);
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: 10px 20px;
+  background: var(--grad-cta);
+  color: white;
+  border-radius: var(--r-full);
+  font-size: 0.875rem;
+  font-weight: 600;
+  box-shadow: 0 4px 14px rgba(255,107,91,0.35);
+  transition: transform var(--t-fast), box-shadow var(--t-fast);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(255,107,91,0.45);
+}
+
+.btn-primary:active { transform: translateY(0); }
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 38px; height: 38px;
+  gap: 5px;
+  border-radius: var(--r-sm);
+  background: var(--bg-muted);
+  border: 1px solid var(--border-subtle);
+}
+
+.hamburger span {
+  display: block;
+  width: 18px; height: 2px;
+  background: var(--text-primary);
+  border-radius: 2px;
+  transition: transform var(--t-med), opacity var(--t-med);
+}
+
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Mobile menu */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: var(--nav-height);
+  left: 0; right: 0;
+  background: var(--bg-glass);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  backdrop-filter: blur(24px) saturate(180%);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: var(--sp-4) var(--sp-6);
+  flex-direction: column;
+  gap: var(--sp-2);
+  z-index: 999;
+  transform: translateY(-8px);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform var(--t-med) var(--ease-smooth), opacity var(--t-med);
+}
+
+.mobile-menu.open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-menu .nav-link { padding: var(--sp-3) var(--sp-4); font-size: 1rem; }
+
+/* ============================================================
+   HERO SECTION
+   ============================================================ */
+.hero {
+  min-height: auto;
+  background: var(--grad-hero);
+  display: flex;
+  align-items: center;
+  padding-top: var(--nav-height);
+  position: relative;
+  overflow: visible;
+}
+
+.hero-bg-shapes {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.25;
+}
+
+.shape-1 {
+  width: 500px; height: 500px;
+  background: var(--brand-coral);
+  top: -150px; right: -100px;
+  animation: float1 8s ease-in-out infinite;
+}
+
+.shape-2 {
+  width: 350px; height: 350px;
+  background: var(--brand-amber);
+  bottom: -80px; left: -60px;
+  animation: float2 10s ease-in-out infinite;
+}
+
+.shape-3 {
+  width: 250px; height: 250px;
+  background: var(--brand-lavender);
+  top: 40%; right: 25%;
+  animation: float3 12s ease-in-out infinite;
+}
+
+@keyframes float1 { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(-30px,20px) scale(1.05)} }
+@keyframes float2 { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(20px,-30px) scale(1.08)} }
+@keyframes float3 { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(-15px,15px) scale(1.03)} }
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-16);
+  align-items: center;
+  padding-block: var(--sp-20);
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  background: rgba(255,107,91,0.10);
+  border: 1px solid rgba(255,107,91,0.25);
+  color: var(--brand-coral);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: var(--r-full);
+  margin-bottom: var(--sp-5);
+  animation: fadeInUp 0.6s var(--ease-smooth) both;
+}
+
+.hero-badge .dot {
+  width: 7px; height: 7px;
+  background: var(--brand-coral);
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.8)} }
+
+.hero-title {
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(2.4rem, 5.5vw, 3.8rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: var(--sp-5);
+  animation: fadeInUp 0.6s var(--ease-smooth) 0.1s both;
+}
+
+.hero-desc {
+  font-size: clamp(1rem, 1.8vw, 1.1rem);
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-bottom: var(--sp-8);
+  max-width: 480px;
+  animation: fadeInUp 0.6s var(--ease-smooth) 0.2s both;
+}
+
+.hero-search {
+  position: relative;
+  max-width: 480px;
+  margin-bottom: var(--sp-8);
+  animation: fadeInUp 0.6s var(--ease-smooth) 0.3s both;
+}
+
+.hero-search input {
+  width: 100%;
+  padding: 16px 16px 16px 50px;
+  border-radius: var(--r-xl);
+  border: 2px solid var(--border-medium);
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 0.95rem;
+  box-shadow: var(--shadow-md);
+  transition: border-color var(--t-fast), box-shadow var(--t-fast);
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.hero-search input::placeholder { color: var(--text-muted); }
+.hero-search input:focus {
+  outline: none;
+  border-color: var(--brand-coral);
+  box-shadow: 0 0 0 4px rgba(255,107,91,0.12), var(--shadow-md);
+}
+
+.search-icon {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  font-size: 1rem;
+  pointer-events: none;
+}
+
+.search-btn {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 9px 18px;
+  background: var(--grad-cta);
+  color: white;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: transform var(--t-fast), box-shadow var(--t-fast);
+  box-shadow: 0 3px 10px rgba(255,107,91,0.30);
+}
+
+.search-btn:hover { transform: translateY(-50%) scale(1.03); }
+
+.hero-stats {
+  display: flex;
+  gap: var(--sp-8);
+  animation: fadeInUp 0.6s var(--ease-smooth) 0.4s both;
+}
+
+.stat-num {
+  font-family: 'Manrope', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* Ingredient search box */
+.ingredient-search-box {
+  max-width: 480px;
+  margin-top: var(--sp-5);
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border-medium);
+  border-radius: var(--r-xl);
+  padding: var(--sp-5);
+  box-shadow: var(--shadow-md);
+  animation: fadeInUp 0.6s var(--ease-smooth) 0.45s both;
+}
+
+.ingredient-search-label {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--brand-coral);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: var(--sp-3);
+}
+
+.ingredient-input-row {
+  display: flex;
+  gap: var(--sp-2);
+}
+
+.ingredient-field-wrap {
+  flex: 1;
+  position: relative;
+  min-width: 0;
+}
+
+.ingredient-field-icon {
+  position: absolute;
+  left: 13px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  pointer-events: none;
+}
+
+.ingredient-field-wrap input {
+  width: 100%;
+  padding: 10px 12px 10px 34px;
+  border-radius: var(--r-md);
+  border: 1.5px solid var(--border-medium);
+  background: var(--bg-muted);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 0.85rem;
+  transition: border-color var(--t-fast), background var(--t-fast);
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.ingredient-field-wrap input::placeholder { color: var(--text-muted); }
+.ingredient-field-wrap input:focus {
+  outline: none;
+  border-color: var(--brand-coral);
+  background: var(--bg-surface);
+}
+
+.btn-ingredient-search {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: 10px 16px;
+  background: var(--grad-cta);
+  color: white;
+  border-radius: var(--r-md);
+  font-size: 0.82rem;
+  font-weight: 700;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(255,107,91,0.30);
+  transition: transform var(--t-fast), box-shadow var(--t-fast);
+  flex-shrink: 0;
+}
+
+.btn-ingredient-search:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(255,107,91,0.40);
+}
+
+.ingredient-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  margin-top: var(--sp-3);
+}
+
+.ingredient-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px 4px 12px;
+  background: rgba(255,107,91,0.10);
+  border: 1px solid rgba(255,107,91,0.25);
+  color: var(--brand-coral);
+  border-radius: var(--r-full);
+  font-size: 0.78rem;
+  font-weight: 600;
+  animation: chipIn 0.2s var(--ease-bounce);
+}
+
+@keyframes chipIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.chip-remove {
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  background: rgba(255,107,91,0.20);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  color: var(--brand-coral);
+  transition: background var(--t-fast);
+  flex-shrink: 0;
+}
+
+.chip-remove:hover { background: var(--brand-coral); color: white; }
+
+/* Ingredient match result banner */
+.ingredient-result-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  padding: var(--sp-4) var(--sp-5);
+  background: rgba(107,203,119,0.10);
+  border: 1.5px solid rgba(107,203,119,0.30);
+  border-radius: var(--r-lg);
+  margin-bottom: var(--sp-5);
+  flex-wrap: wrap;
+}
+
+.ingredient-result-banner .info {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.ingredient-result-banner .info strong { color: var(--text-primary); }
+.ingredient-result-banner .info i { color: var(--brand-sage); }
+
+.btn-clear-ingredient {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: 6px 14px;
+  border-radius: var(--r-full);
+  background: var(--bg-muted);
+  border: 1px solid var(--border-medium);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  transition: all var(--t-fast);
+  white-space: nowrap;
+}
+
+.btn-clear-ingredient:hover {
+  color: var(--brand-coral);
+  border-color: var(--brand-coral);
+}
+
+/* Hero visual panel */
+.hero-visual {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-4);
+  animation: fadeInRight 0.8s var(--ease-smooth) 0.2s both;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(32px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.mini-card {
+  background: var(--bg-surface);
+  border-radius: var(--r-lg);
+  padding: var(--sp-5);
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  transition: transform var(--t-med) var(--ease-smooth), box-shadow var(--t-med);
+}
+
+.mini-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.mini-card:nth-child(even) { margin-top: var(--sp-6); }
+
+.mini-emoji { font-size: 2.2rem; line-height: 1; }
+
+.mini-card-name {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--text-primary);
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.mini-card-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.mini-card-meta .dot { color: var(--border-medium); }
+
+/* ============================================================
+   FEATURED CAROUSEL
+   ============================================================ */
+.featured-section {
+  padding-block: var(--sp-20);
+  background: var(--bg-surface);
+  overflow: hidden;
+}
+
+.featured-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: var(--sp-8);
+  flex-wrap: wrap;
+  gap: var(--sp-4);
+}
+
+.carousel-controls {
+  display: flex;
+  gap: var(--sp-2);
+}
+
+.carousel-btn {
+  width: 42px; height: 42px;
+  border-radius: var(--r-full);
+  background: var(--bg-muted);
+  border: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  transition: all var(--t-fast);
+}
+
+.carousel-btn:hover {
+  background: var(--brand-coral);
+  color: white;
+  border-color: var(--brand-coral);
+  box-shadow: 0 4px 12px rgba(255,107,91,0.30);
+}
+
+.carousel-track-wrapper {
+  overflow: hidden;
+  border-radius: var(--r-lg);
+  cursor: grab;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.carousel-track-wrapper:active { cursor: grabbing; }
+
+.carousel-track {
+  display: flex;
+  gap: var(--sp-5);
+  transition: transform 0.5s var(--ease-smooth);
+  will-change: transform;
+}
+
+.featured-card {
+  min-width: 320px;
+  background: var(--bg-base);
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-card);
+  flex-shrink: 0;
+  transition: transform var(--t-med) var(--ease-smooth), box-shadow var(--t-med);
+}
+
+.featured-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+.featured-card-img {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.featured-card-body {
+  padding: var(--sp-5);
+}
+
+.featured-card-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: var(--r-full);
+  margin-bottom: var(--sp-3);
+}
+
+.featured-card-title {
+  font-family: 'Manrope', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--sp-4);
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.featured-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: var(--sp-4);
+  border-top: 1px solid var(--border-subtle);
+}
+
+
+.meta-pill {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  background: var(--bg-muted);
+  padding: 4px 10px;
+  border-radius: var(--r-full);
+}
+
+/* ============================================================
+   CATEGORY FILTER
+   ============================================================ */
+.filter-section {
+  padding-block: var(--sp-20);
+}
+
+.filter-tabs {
+  display: flex;
+  gap: var(--sp-2);
+  flex-wrap: wrap;
+  margin-block: var(--sp-8);
+}
+
+.filter-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: 9px 18px;
+  border-radius: var(--r-full);
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border-medium);
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: all var(--t-fast) var(--ease-bounce);
+  white-space: nowrap;
+}
+
+.filter-tab:hover {
+  border-color: var(--brand-coral);
+  color: var(--brand-coral);
+  transform: translateY(-1px);
+}
+
+.filter-tab.active {
+  background: var(--brand-coral);
+  border-color: var(--brand-coral);
+  color: white;
+  box-shadow: 0 4px 14px rgba(255,107,91,0.35);
+}
+
+/* ============================================================
+   RECIPE GRID
+   ============================================================ */
+.recipes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--sp-6);
+}
+
+.recipe-card {
+  background: var(--bg-surface);
+  border-radius: var(--r-xl);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-card);
+  overflow: visible;
+  transition: transform var(--t-med) var(--ease-smooth), box-shadow var(--t-med), opacity var(--t-med);
+  cursor: pointer;
+  position: relative;
+}
+
+.recipe-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+.recipe-card.hidden {
+  display: none;
+}
+
+.recipe-card-media {
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4.5rem;
+  position: relative;
+  transition: transform var(--t-slow) var(--ease-smooth);
+}
+
+.recipe-card:hover .recipe-card-media { transform: scale(1.02); }
+
+.fav-btn {
+  position: absolute;
+  top: 12px; right: 12px;
+  width: 34px; height: 34px;
+  border-radius: var(--r-full);
+  background: var(--bg-glass);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border-medium);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  transition: all var(--t-fast) var(--ease-bounce);
+  z-index: 2;
+}
+
+.fav-btn:hover { transform: scale(1.15); }
+
+.fav-btn.active {
+  background: #FEE2E2;
+  border-color: #FECACA;
+  color: #EF4444;
+}
+
+[data-theme="dark"] .fav-btn.active {
+  background: rgba(239,68,68,0.20);
+  border-color: rgba(239,68,68,0.30);
+}
+
+.fav-btn.active i { animation: heartBeat 0.35s var(--ease-bounce); }
+
+@keyframes heartBeat {
+  0%  { transform: scale(1); }
+  40% { transform: scale(1.4); }
+  80% { transform: scale(0.9); }
+  100%{ transform: scale(1); }
+}
+
+.difficulty-badge {
+  position: absolute;
+  bottom: 10px; left: 12px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: var(--r-full);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+.diff-kolay   { background: rgba(107,203,119,0.85); color: #15603A; }
+.diff-orta    { background: rgba(255,179,71,0.85);  color: #92400E; }
+.diff-zor     { background: rgba(255,107,91,0.85);  color: #7F1D1D; }
+
+.recipe-card-body {
+  padding: var(--sp-5);
+}
+
+.recipe-cat-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.71rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: var(--sp-3);
+  padding: 3px 10px;
+  border-radius: var(--r-full);
+}
+
+.recipe-title {
+  font-family: 'Manrope', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--sp-3);
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-height: 1.4;
+}
+
+.recipe-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  padding-top: var(--sp-4);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.recipe-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.recipe-meta-item i { font-size: 0.72rem; }
+.recipe-meta .sep { color: var(--border-medium); }
+
+
+.empty-state .icon { font-size: 3rem; margin-bottom: var(--sp-4); }
+.empty-state h3 { font-family: 'Manrope', sans-serif; font-size: 1.2rem; margin-bottom: var(--sp-2); color: var(--text-secondary); }
+.empty-state p { font-size: 0.9rem; }
+
+/* ============================================================
+   RECIPE DETAIL MODAL
+   ============================================================ */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sp-5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--t-med);
+}
+
+.modal-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal {
+  background: var(--bg-surface);
+  border-radius: var(--r-xl);
+  width: min(700px, 100%);
+  max-height: 90svh;
+  overflow-y: auto;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-subtle);
+  transform: scale(0.94) translateY(12px);
+  transition: transform var(--t-med) var(--ease-smooth);
+}
+
+.modal-overlay.open .modal {
+  transform: scale(1) translateY(0);
+}
+
+.modal-hero {
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 6rem;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: var(--sp-4); right: var(--sp-4);
+  width: 38px; height: 38px;
+  border-radius: var(--r-full);
+  background: var(--bg-glass);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border-medium);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  transition: all var(--t-fast);
+  z-index: 3;
+}
+
+.modal-close:hover {
+  background: var(--brand-coral);
+  color: white;
+  border-color: var(--brand-coral);
+}
+
+.modal-body { padding: var(--sp-6); }
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-5);
+}
+
+.modal-title {
+  font-family: 'Manrope', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  flex: 1;
+  line-height: 1.25;
+}
+
+.modal-fav-btn {
+  padding: 10px 18px;
+  border-radius: var(--r-full);
+  border: 1.5px solid var(--border-medium);
+  background: var(--bg-muted);
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  transition: all var(--t-fast);
+  white-space: nowrap;
+}
+
+.modal-fav-btn:hover {
+  border-color: #EF4444;
+  color: #EF4444;
+}
+
+.modal-fav-btn.active {
+  background: #FEE2E2;
+  border-color: #FECACA;
+  color: #EF4444;
+}
+
+[data-theme="dark"] .modal-fav-btn.active {
+  background: rgba(239,68,68,0.15);
+  border-color: rgba(239,68,68,0.25);
+}
+
+.modal-stats {
+  display: flex;
+  gap: var(--sp-4);
+  flex-wrap: wrap;
+  margin-bottom: var(--sp-6);
+  padding: var(--sp-4);
+  background: var(--bg-muted);
+  border-radius: var(--r-lg);
+}
+
+.modal-stat {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-size: 0.85rem;
+}
+
+.modal-stat i { color: var(--brand-coral); font-size: 0.85rem; }
+.modal-stat span { color: var(--text-secondary); }
+.modal-stat strong { color: var(--text-primary); font-weight: 600; }
+
+.modal-section-title {
+  font-family: 'Manrope', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--sp-4);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.modal-section-title i { color: var(--brand-coral); }
+
+.ingredients-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-6);
+}
+
+.ingredient-item {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-3) var(--sp-4);
+  background: var(--bg-muted);
+  border-radius: var(--r-md);
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-subtle);
+}
+
+.ingredient-item::before {
+  content: '';
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--brand-coral);
+  flex-shrink: 0;
+}
+
+.steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-6);
+}
+
+.step-item {
+  display: flex;
+  gap: var(--sp-4);
+  align-items: flex-start;
+}
+
+.step-num {
+  width: 32px; height: 32px;
+  border-radius: var(--r-full);
+  background: var(--grad-primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  box-shadow: 0 3px 8px rgba(255,107,91,0.30);
+}
+
+.step-text {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  padding-top: 5px;
+}
+
+/* Tags in modal */
+.modal-tags {
+  display: flex;
+  gap: var(--sp-2);
+  flex-wrap: wrap;
+  margin-top: var(--sp-4);
+}
+
+.modal-tag {
+  padding: 5px 14px;
+  border-radius: var(--r-full);
+  background: var(--bg-muted);
+  border: 1px solid var(--border-subtle);
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* ============================================================
+   FAVORITES SECTION
+   ============================================================ */
+.favorites-section {
+  padding-block: var(--sp-20);
+  background: var(--bg-surface);
+}
+
+.favorites-empty {
+  text-align: center;
+  padding: var(--sp-12);
+  color: var(--text-muted);
+}
+
+.favorites-empty .icon { font-size: 3rem; margin-bottom: var(--sp-4); }
+.favorites-empty h3 { font-family: 'Manrope', sans-serif; font-size: 1.1rem; color: var(--text-secondary); margin-bottom: var(--sp-2); }
+.favorites-empty p { font-size: 0.875rem; }
+
+
+
+/* ============================================================
+   TOAST
+   ============================================================ */
+.toast-container {
+  position: fixed;
+  bottom: var(--sp-6);
+  right: var(--sp-6);
+  z-index: 3000;
+  display:flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  pointer-events: none;
+}
+
+.toast {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: 12px 18px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-md);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  animation: toastIn 0.35s var(--ease-bounce) both;
+  pointer-events: auto;
+  max-width: 320px;
+}
+
+.toast.fade-out { animation: toastOut 0.3s var(--ease-smooth) both; }
+.toast-icon { font-size: 1rem; }
+
+@keyframes toastIn  { from{opacity:0;transform:translateY(12px) scale(0.95)} to{opacity:1;transform:none} }
+@keyframes toastOut { from{opacity:1;transform:none} to{opacity:0;transform:translateY(-8px) scale(0.95)} }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer {
+  background: var(--bg-base);
+  border-top: 1px solid var(--border-subtle);
+  padding-top: var(--sp-16);
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.5fr repeat(3, 1fr);
+  gap: var(--sp-12);
+  padding-bottom: var(--sp-12);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.footer-brand .logo { margin-bottom: var(--sp-4); }
+.footer-brand p {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: var(--sp-5);
+  max-width: 260px;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: var(--sp-2);
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 10px 14px;
+  border-radius: var(--r-full);
+  border: 1.5px solid var(--border-medium);
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 0.85rem;
+  min-width: 0;
+  transition: border-color var(--t-fast);
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.newsletter-form input::placeholder { color: var(--text-muted); }
+.newsletter-form input:focus { outline: none; border-color: var(--brand-coral); }
+
+.newsletter-form button {
+  padding: 10px 18px;
+  background: var(--grad-cta);
+  color: white;
+  border-radius: var(--r-full);
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(255,107,91,0.30);
+  transition: transform var(--t-fast), box-shadow var(--t-fast);
+}
+
+.newsletter-form button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(255,107,91,0.40);
+}
+
+.footer-col-title {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  margin-bottom: var(--sp-5);
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.footer-links a {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  transition: color var(--t-fast);
+}
+
+.footer-links a:hover { color: var(--brand-coral); }
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: var(--sp-5);
+  flex-wrap: wrap;
+  gap: var(--sp-4);
+}
+
+.footer-copy {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.social-links {
+  display: flex;
+  gap: var(--sp-3);
+}
+
+.social-link {
+  width: 36px; height: 36px;
+  border-radius: var(--r-full);
+  background: var(--bg-muted);
+  border: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  transition: all var(--t-fast);
+}
+
+.social-link:hover {
+  background: var(--brand-coral);
+  color: white;
+  border-color: var(--brand-coral);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(255,107,91,0.30);
+}
+
+/* ============================================================
+   COLOR SCHEMES FOR CATEGORIES
+   ============================================================ */
+.cat-kahvalti  { background: rgba(255,179,71,0.12); color: #B45309; }
+.cat-ana-yemek { background: rgba(255,107,91,0.12); color: #C2410C; }
+.cat-tatli     { background: rgba(155,127,212,0.12); color: #6D28D9; }
+.cat-corba     { background: rgba(77,168,218,0.12);  color: #0369A1; }
+.cat-salata    { background: rgba(107,203,119,0.12); color: #15803D; }
+.cat-atistirma { background: rgba(244,114,182,0.12); color: #9D174D; }
+.cat-icecek    { background: rgba(129,140,248,0.12); color: #4338CA; }
+.cat-vejetaryen{ background: rgba(52,211,153,0.12);  color: #065F46; }
+
+[data-theme="dark"] .cat-kahvalti  { background: rgba(255,179,71,0.18);  color: #FCD34D; }
+[data-theme="dark"] .cat-ana-yemek { background: rgba(255,107,91,0.18);  color: #FCA5A5; }
+[data-theme="dark"] .cat-tatli     { background: rgba(155,127,212,0.18); color: #C4B5FD; }
+[data-theme="dark"] .cat-corba     { background: rgba(77,168,218,0.18);  color: #7DD3FC; }
+[data-theme="dark"] .cat-salata    { background: rgba(107,203,119,0.18); color: #6EE7B7; }
+[data-theme="dark"] .cat-atistirma { background: rgba(244,114,182,0.18); color: #F9A8D4; }
+[data-theme="dark"] .cat-icecek    { background: rgba(129,140,248,0.18); color: #A5B4FC; }
+[data-theme="dark"] .cat-vejetaryen{ background: rgba(52,211,153,0.18);  color: #34D399; }
+
+/* BG for card media */
+.bg-kahvalti  { background: linear-gradient(145deg, #FFF7ED, #FFEDD5); }
+.bg-ana-yemek { background: linear-gradient(145deg, #FFF5F0, #FFE8E3); }
+.bg-tatli     { background: linear-gradient(145deg, #F5F3FF, #EDE9FE); }
+.bg-corba     { background: linear-gradient(145deg, #F0F9FF, #E0F2FE); }
+.bg-salata    { background: linear-gradient(145deg, #F0FDF4, #DCFCE7); }
+.bg-atistirma { background: linear-gradient(145deg, #FFF0F7, #FCE7F3); }
+.bg-icecek    { background: linear-gradient(145deg, #EEF2FF, #E0E7FF); }
+.bg-vejetaryen{ background: linear-gradient(145deg, #ECFDF5, #D1FAE5); }
+
+[data-theme="dark"] .bg-kahvalti  { background: linear-gradient(145deg, #2C1A00, #3D2200); }
+[data-theme="dark"] .bg-ana-yemek { background: linear-gradient(145deg, #2C0A00, #3D1100); }
+[data-theme="dark"] .bg-tatli     { background: linear-gradient(145deg, #1A1028, #231638); }
+[data-theme="dark"] .bg-corba     { background: linear-gradient(145deg, #001A2C, #002438); }
+[data-theme="dark"] .bg-salata    { background: linear-gradient(145deg, #001A0A, #002410); }
+[data-theme="dark"] .bg-atistirma { background: linear-gradient(145deg, #2C001A, #380024); }
+[data-theme="dark"] .bg-icecek    { background: linear-gradient(145deg, #0E1028, #161838); }
+[data-theme="dark"] .bg-vejetaryen{ background: linear-gradient(145deg, #001A10, #002418); }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1024px) {
+  .footer-top { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+  .nav-links, .nav-actions .btn-primary { display: none; }
+  .hamburger { display: flex; }
+  .mobile-menu { display: flex; }
+
+  .hero-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding-block: var(--sp-12);
+    gap: var(--sp-10);
+  }
+
+  .hero-desc, .hero-search { margin-inline: auto; }
+  .hero-stats { justify-content: center; }
+  .hero-visual { grid-template-columns: 1fr 1fr; }
+  .hero-visual .mini-card:nth-child(even) { margin-top: var(--sp-4); }
+
+  .featured-card { min-width: 260px; }
+
+  .footer-top { grid-template-columns: 1fr; gap: var(--sp-8); }
+  .footer-bottom { flex-direction: column; text-align: center; }
+
+  .modal-hero { height: 160px; font-size: 4.5rem; }
+  .modal-header { flex-direction: column; }
+  .modal-fav-btn { align-self: flex-start; }
+
+  .ingredients-list { grid-template-columns: 1fr; }
+
+  .toast-container { left: var(--sp-4); right: var(--sp-4); }
+  .toast { max-width: 100%; }
+}
+
+@media (max-width: 480px) {
+  .hero-visual { grid-template-columns: 1fr 1fr; }
+  .mini-card:nth-child(3), .mini-card:nth-child(4) { display: none; }
+  .modal-stats { flex-direction: column; }
+}
+
+/* ============================================================
+   SECTION TRANSITIONS
+   ============================================================ */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s var(--ease-smooth), transform 0.6s var(--ease-smooth);
+}
+
+.fade-in-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* No-js fallback */
+.no-js .fade-in-section { opacity: 1; transform: none; }
+/* ============================================================
+   ADMIN PANEL
+   ============================================================ */
+.admin-panel {
+  position: fixed; inset: 0; z-index: 4000; display: flex;
+}
+.admin-panel.open { opacity: 1; pointer-events: auto; }
+
+.admin-sidebar {
+  width: 240px; flex-shrink: 0; background: #18181D;
+  display: flex; flex-direction: column; padding: var(--sp-5) 0;
+  overflow-y: auto; border-right: 1px solid rgba(255,255,255,0.06);
+  transform: translateX(-100%); transition: transform var(--t-med) var(--ease-smooth);
+}
+.admin-panel.open .admin-sidebar { transform: translateX(0); }
+
+.admin-logo {
+  display: flex; align-items: center; gap: var(--sp-2);
+  padding: 0 var(--sp-5) var(--sp-5);
+  border-bottom: 1px solid rgba(255,255,255,0.06); margin-bottom: var(--sp-4);
+  font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 1rem; color: white;
+}
+.admin-logo-icon {
+  width: 32px; height: 32px; background: var(--grad-primary);
+  border-radius: var(--r-sm); display: flex; align-items: center; justify-content: center; font-size: 0.9rem;
+}
+.admin-logo-sub { font-size: 0.62rem; color: rgba(255,255,255,0.3); display: block; font-weight: 500; font-family: 'Plus Jakarta Sans',sans-serif; }
+
+.admin-nav-label {
+  font-size: 0.63rem; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; color: rgba(255,255,255,0.22); padding: var(--sp-3) var(--sp-5) var(--sp-1);
+}
+.admin-nav-item {
+  display: flex; align-items: center; gap: var(--sp-3);
+  padding: 10px var(--sp-5); color: rgba(255,255,255,0.5);
+  font-size: 0.875rem; font-weight: 500; cursor: pointer;
+  transition: all var(--t-fast); border: none; background: none;
+  width: 100%; text-align: left; font-family: inherit;
+  border-left: 3px solid transparent;
+}
+.admin-nav-item:hover { color: white; background: rgba(255,255,255,0.06); }
+.admin-nav-item.active { color: white; background: rgba(255,107,91,0.15); border-left-color: var(--brand-coral); }
+.admin-nav-item i { width: 18px; text-align: center; font-size: 0.9rem; }
+
+.admin-sidebar-footer {
+  margin-top: auto; padding: var(--sp-4) var(--sp-5);
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.admin-sidebar-user { display: flex; align-items: center; gap: var(--sp-2); }
+.admin-sidebar-user-info { flex: 1; min-width: 0; }
+.admin-sidebar-uname { font-size: 0.82rem; font-weight: 700; color: white; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.admin-sidebar-uemail { font-size: 0.7rem; color: rgba(255,255,255,0.3); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.admin-main {
+  flex: 1; background: var(--bg-base); overflow-y: auto;
+  display: flex; flex-direction: column;
+  transform: translateX(-100%); transition: transform var(--t-med) var(--ease-smooth);
+}
+.admin-panel.open .admin-main { transform: translateX(0); }
+
+.admin-topbar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: var(--sp-4) var(--sp-6); background: var(--bg-surface);
+  border-bottom: 1px solid var(--border-subtle); position: sticky; top: 0; z-index: 10; gap: var(--sp-4);
+}
+.admin-topbar-title { font-family: 'Manrope', sans-serif; font-size: 1.05rem; font-weight: 800; color: var(--text-primary); }
+.admin-topbar-right { display: flex; align-items: center; gap: var(--sp-3); }
+.admin-close-btn {
+  display: inline-flex; align-items: center; gap: var(--sp-2);
+  padding: 8px 16px; border-radius: var(--r-full);
+  border: 1px solid var(--border-medium); background: var(--bg-muted);
+  color: var(--text-secondary); font-size: 0.82rem; font-weight: 600;
+  cursor: pointer; font-family: inherit; transition: all var(--t-fast);
+}
+.admin-close-btn:hover { border-color: var(--text-secondary); color: var(--text-primary); }
+
+.admin-content { padding: var(--sp-6); flex: 1; }
+.admin-section { display: none; }
+.admin-section.active { display: block; }
+
+.admin-stats-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: var(--sp-4); margin-bottom: var(--sp-8); }
+.admin-stat-card {
+  background: var(--bg-surface); border-radius: var(--r-lg);
+  padding: var(--sp-5); border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-card); display: flex; flex-direction: column; gap: var(--sp-3);
+}
+.asc-icon { width: 40px; height: 40px; border-radius: var(--r-md); display: flex; align-items: center; justify-content: center; font-size: 1.05rem; }
+.asc-coral { background: rgba(255,107,91,0.12); color: var(--brand-coral); }
+.asc-sage  { background: rgba(107,203,119,0.12); color: #15803D; }
+.asc-sky   { background: rgba(77,168,218,0.12); color: #0369A1; }
+.asc-lav   { background: rgba(155,127,212,0.12); color: #6D28D9; }
+.asc-num { font-family: 'Manrope', sans-serif; font-size: 1.8rem; font-weight: 800; color: var(--text-primary); line-height: 1; }
+.asc-label { font-size: 0.78rem; color: var(--text-muted); font-weight: 500; }
+
+.admin-table-box { background: var(--bg-surface); border-radius: var(--r-lg); border: 1px solid var(--border-subtle); box-shadow: var(--shadow-card); overflow: hidden; }
+.atb-header { display: flex; justify-content: space-between; align-items: center; padding: var(--sp-4) var(--sp-5); border-bottom: 1px solid var(--border-subtle); flex-wrap: wrap; gap: var(--sp-3); }
+.atb-title { font-family: 'Manrope', sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--text-primary); }
+.atb-search { padding: var(--sp-3) var(--sp-5); border-bottom: 1px solid var(--border-subtle); }
+.atb-search input {
+  width: 100%; max-width: 300px; padding: 8px 14px;
+  border-radius: var(--r-md); border: 1.5px solid var(--border-medium);
+  background: var(--bg-muted); color: var(--text-primary); font-family: inherit; font-size: 0.85rem;
+  transition: border-color var(--t-fast); appearance: none; -webkit-appearance: none;
+}
+.atb-search input:focus { outline: none; border-color: var(--brand-coral); }
+
+.admin-add-btn {
+  display: inline-flex; align-items: center; gap: var(--sp-2);
+  padding: 8px 16px; background: var(--grad-cta); color: white;
+  border-radius: var(--r-full); font-size: 0.8rem; font-weight: 700;
+  border: none; cursor: pointer; font-family: inherit;
+  box-shadow: 0 3px 10px rgba(255,107,91,0.25); transition: transform var(--t-fast);
+}
+.admin-add-btn:hover { transform: translateY(-1px); }
+
+.admin-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+.admin-table th { padding: var(--sp-3) var(--sp-4); text-align: left; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: var(--text-muted); background: var(--bg-muted); white-space: nowrap; }
+.admin-table td { padding: var(--sp-3) var(--sp-4); border-bottom: 1px solid var(--border-subtle); color: var(--text-secondary); vertical-align: middle; }
+.admin-table tr:last-child td { border-bottom: none; }
+.admin-table tr:hover td { background: rgba(0,0,0,0.015); }
+.at-name { font-weight: 600; color: var(--text-primary); max-width: 180px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.at-emoji { font-size: 1.4rem; }
+
+.at-actions { display: flex; gap: var(--sp-2); }
+.at-btn { width: 30px; height: 30px; border-radius: var(--r-sm); border: 1px solid var(--border-medium); background: var(--bg-muted); color: var(--text-muted); font-size: 0.78rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all var(--t-fast); font-family: inherit; }
+.at-btn.edit:hover  { background: rgba(77,168,218,0.12); color: #0369A1; border-color: rgba(77,168,218,0.3); }
+.at-btn.del:hover   { background: rgba(239,68,68,0.10); color: #EF4444; border-color: rgba(239,68,68,0.25); }
+.at-btn.view:hover  { background: rgba(107,203,119,0.10); color: #15803D; border-color: rgba(107,203,119,0.25); }
+
+.atb-footer { display: flex; justify-content: space-between; align-items: center; padding: var(--sp-4) var(--sp-5); border-top: 1px solid var(--border-subtle); font-size: 0.8rem; color: var(--text-muted); flex-wrap: wrap; gap: var(--sp-3); }
+.atb-pag { display: flex; gap: var(--sp-2); }
+.atb-pg { width: 30px; height: 30px; border-radius: var(--r-sm); border: 1px solid var(--border-medium); background: var(--bg-muted); color: var(--text-secondary); cursor: pointer; font-size: 0.8rem; display: flex; align-items: center; justify-content: center; transition: all var(--t-fast); font-family: inherit; }
+.atb-pg:hover { border-color: var(--brand-coral); color: var(--brand-coral); }
+.atb-pg.active { background: var(--brand-coral); border-color: var(--brand-coral); color: white; }
+.atb-pg:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* Form Modal */
+.fmo { position: fixed; inset: 0; background: rgba(0,0,0,0.55); backdrop-filter: blur(4px); z-index: 6000; display: flex; align-items: center; justify-content: center; padding: var(--sp-5); opacity: 0; pointer-events: none; transition: opacity var(--t-med); }
+.fmo.open { opacity: 1; pointer-events: auto; }
+.fmo-box { background: var(--bg-surface); border-radius: var(--r-xl); width: min(560px, 100%); max-height: 85svh; overflow-y: auto; border: 1px solid var(--border-subtle); box-shadow: var(--shadow-lg); transform: scale(0.94) translateY(12px); transition: transform var(--t-med) var(--ease-smooth); }
+.fmo.open .fmo-box { transform: scale(1) translateY(0); }
+.fmo-header { display: flex; justify-content: space-between; align-items: center; padding: var(--sp-5) var(--sp-6); border-bottom: 1px solid var(--border-subtle); position: sticky; top: 0; background: var(--bg-surface); z-index: 2; }
+.fmo-title { font-family: 'Manrope', sans-serif; font-size: 1.05rem; font-weight: 800; color: var(--text-primary); }
+.fmo-body { padding: var(--sp-6); display: flex; flex-direction: column; gap: var(--sp-4); }
+.fmo-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-4); }
+.fmo-group { display: flex; flex-direction: column; gap: var(--sp-2); }
+.fmo-group.full { grid-column: span 2; }
+.fmo-label { font-size: 0.78rem; font-weight: 700; color: var(--text-secondary); }
+.fmo-input, .fmo-select, .fmo-textarea { width: 100%; padding: 10px 14px; border-radius: var(--r-md); border: 1.5px solid var(--border-medium); background: var(--bg-muted); color: var(--text-primary); font-family: inherit; font-size: 0.875rem; transition: border-color var(--t-fast); appearance: none; -webkit-appearance: none; }
+.fmo-input:focus, .fmo-select:focus, .fmo-textarea:focus { outline: none; border-color: var(--brand-coral); box-shadow: 0 0 0 3px rgba(255,107,91,0.10); }
+.fmo-textarea { resize: vertical; min-height: 75px; }
+.fmo-hint { font-size: 0.74rem; color: var(--text-muted); }
+.fmo-footer { display: flex; justify-content: flex-end; gap: var(--sp-3); padding: var(--sp-4) var(--sp-6); border-top: 1px solid var(--border-subtle); background: var(--bg-surface); position: sticky; bottom: 0; z-index: 2; }
+
+.btn-cancel { padding: 10px 20px; border-radius: var(--r-full); border: 1.5px solid var(--border-medium); background: var(--bg-muted); color: var(--text-secondary); font-size: 0.875rem; font-weight: 600; cursor: pointer; font-family: inherit; transition: all var(--t-fast); }
+.btn-cancel:hover { border-color: var(--text-secondary); color: var(--text-primary); }
+.btn-save { padding: 10px 24px; border-radius: var(--r-full); background: var(--grad-cta); color: white; border: none; font-size: 0.875rem; font-weight: 700; cursor: pointer; font-family: inherit; box-shadow: 0 4px 12px rgba(255,107,91,0.25); transition: transform var(--t-fast); }
+.btn-save:hover { transform: translateY(-1px); }
+
+/* Confirm Delete */
+.cmo { position: fixed; inset: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); z-index: 7000; display: flex; align-items: center; justify-content: center; padding: var(--sp-5); opacity: 0; pointer-events: none; transition: opacity var(--t-med); }
+.cmo.open { opacity: 1; pointer-events: auto; }
+.cmo-box { background: var(--bg-surface); border-radius: var(--r-xl); width: min(400px, 100%); border: 1px solid var(--border-subtle); box-shadow: var(--shadow-lg); padding: var(--sp-6); text-align: center; transform: scale(0.94); transition: transform var(--t-med) var(--ease-smooth); }
+.cmo.open .cmo-box { transform: scale(1); }
+.cmo-icon { font-size: 2.5rem; margin-bottom: var(--sp-4); }
+.cmo-title { font-family: 'Manrope', sans-serif; font-size: 1.1rem; font-weight: 800; color: var(--text-primary); margin-bottom: var(--sp-2); }
+.cmo-desc { font-size: 0.875rem; color: var(--text-muted); margin-bottom: var(--sp-6); }
+.cmo-btns { display: flex; gap: var(--sp-3); justify-content: center; }
+.btn-del-confirm { padding: 10px 24px; border-radius: var(--r-full); background: #EF4444; color: white; border: none; font-size: 0.875rem; font-weight: 700; cursor: pointer; font-family: inherit; box-shadow: 0 4px 12px rgba(239,68,68,0.25); transition: transform var(--t-fast); }
+.btn-del-confirm:hover { transform: translateY(-1px); }
+
+/* Permission denied */
+.perm-denied { text-align: center; padding: var(--sp-16) var(--sp-8); }
+.perm-denied .icon { font-size: 3rem; margin-bottom: var(--sp-4); }
+.perm-denied h3 { font-family: 'Manrope', sans-serif; font-size: 1.2rem; font-weight: 700; color: var(--text-secondary); margin-bottom: var(--sp-2); }
+.perm-denied p { font-size: 0.875rem; color: var(--text-muted); }
+
+@media (max-width: 768px) {
+  .admin-sidebar { width: 200px; }
+  .fmo-row { grid-template-columns: 1fr; }
+  .fmo-group.full { grid-column: span 1; }
+}
+
+/* ============================================================
+   AUTH MODAL
+   ============================================================ */
+.auth-overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.60);
+  backdrop-filter: blur(8px); z-index: 5000;
+  display: flex; align-items: center; justify-content: center;
+  padding: var(--sp-5); opacity: 0; pointer-events: none;
+  transition: opacity var(--t-med);
+}
+.auth-overlay.open { opacity: 1; pointer-events: auto; }
+
+.auth-box {
+  background: var(--bg-surface); border-radius: var(--r-xl);
+  width: min(440px, 100%); border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-lg);
+  transform: scale(0.93) translateY(16px);
+  transition: transform var(--t-med) var(--ease-smooth);
+  overflow: hidden;
+}
+.auth-overlay.open .auth-box { transform: scale(1) translateY(0); }
+
+.auth-header {
+  padding: var(--sp-6) var(--sp-6) var(--sp-4);
+  text-align: center; border-bottom: 1px solid var(--border-subtle);
+  background: var(--grad-hero);
+}
+.auth-logo { font-size: 2.5rem; margin-bottom: var(--sp-3); }
+.auth-title {
+  font-family: 'Manrope', sans-serif; font-size: 1.3rem;
+  font-weight: 800; color: var(--text-primary); margin-bottom: var(--sp-1);
+}
+.auth-subtitle { font-size: 0.85rem; color: var(--text-muted); }
+
+.auth-tabs {
+  display: flex; border-bottom: 1px solid var(--border-subtle);
+}
+.auth-tab {
+  flex: 1; padding: var(--sp-4); text-align: center;
+  font-size: 0.875rem; font-weight: 600; color: var(--text-muted);
+  cursor: pointer; border: none; background: none; font-family: inherit;
+  transition: all var(--t-fast); border-bottom: 2px solid transparent;
+}
+.auth-tab.active {
+  color: var(--brand-coral); border-bottom-color: var(--brand-coral);
+  background: rgba(255,107,91,0.04);
+}
+
+.auth-body { padding: var(--sp-6); display: flex; flex-direction: column; gap: var(--sp-4); }
+
+.auth-group { display: flex; flex-direction: column; gap: var(--sp-2); }
+.auth-label {
+  font-size: 0.78rem; font-weight: 700; color: var(--text-secondary);
+  display: flex; align-items: center; gap: var(--sp-2);
+}
+.auth-input {
+  width: 100%; padding: 11px 14px; border-radius: var(--r-md);
+  border: 1.5px solid var(--border-medium); background: var(--bg-muted);
+  color: var(--text-primary); font-family: inherit; font-size: 0.9rem;
+  transition: border-color var(--t-fast), box-shadow var(--t-fast);
+  appearance: none; -webkit-appearance: none;
+}
+.auth-input:focus {
+  outline: none; border-color: var(--brand-coral);
+  box-shadow: 0 0 0 3px rgba(255,107,91,0.12);
+}
+
+.auth-error {
+  display: flex; align-items: center; gap: var(--sp-2);
+  padding: var(--sp-3) var(--sp-4); background: rgba(239,68,68,0.10);
+  border: 1px solid rgba(239,68,68,0.25); border-radius: var(--r-md);
+  font-size: 0.82rem; color: #DC2626; font-weight: 500;
+}
+.auth-error i { font-size: 0.9rem; }
+
+.auth-success {
+  display: flex; align-items: center; gap: var(--sp-2);
+  padding: var(--sp-3) var(--sp-4); background: rgba(107,203,119,0.10);
+  border: 1px solid rgba(107,203,119,0.25); border-radius: var(--r-md);
+  font-size: 0.82rem; color: #15803D; font-weight: 500;
+}
+
+.btn-auth {
+  width: 100%; padding: 12px; background: var(--grad-cta); color: white;
+  border: none; border-radius: var(--r-full); font-size: 0.9rem; font-weight: 700;
+  cursor: pointer; font-family: inherit;
+  box-shadow: 0 4px 14px rgba(255,107,91,0.30);
+  transition: transform var(--t-fast), box-shadow var(--t-fast);
+}
+.btn-auth:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(255,107,91,0.40); }
+.btn-auth:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+.auth-divider {
+  display: flex; align-items: center; gap: var(--sp-3);
+  font-size: 0.75rem; color: var(--text-muted);
+}
+.auth-divider::before, .auth-divider::after {
+  content: ''; flex: 1; height: 1px; background: var(--border-subtle);
+}
+
+.auth-demo-accounts {
+  display: flex; flex-direction: column; gap: var(--sp-2);
+}
+.demo-account-btn {
+  display: flex; align-items: center; gap: var(--sp-3);
+  padding: var(--sp-3) var(--sp-4); border-radius: var(--r-md);
+  border: 1px solid var(--border-medium); background: var(--bg-muted);
+  cursor: pointer; font-family: inherit; text-align: left;
+  transition: all var(--t-fast);
+}
+.demo-account-btn:hover { border-color: var(--brand-coral); background: rgba(255,107,91,0.05); }
+.demo-badge {
+  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.07em;
+  text-transform: uppercase; padding: 2px 8px; border-radius: var(--r-full);
+}
+.demo-badge.admin { background: rgba(155,127,212,0.15); color: #6D28D9; }
+.demo-badge.editor { background: rgba(77,168,218,0.15); color: #0369A1; }
+.demo-badge.user { background: rgba(107,203,119,0.15); color: #15803D; }
+.demo-info { flex: 1; }
+.demo-name { font-size: 0.82rem; font-weight: 600; color: var(--text-primary); }
+.demo-email { font-size: 0.74rem; color: var(--text-muted); }
+
+.auth-footer { padding: var(--sp-4) var(--sp-6); border-top: 1px solid var(--border-subtle); text-align: center; }
+.auth-footer p { font-size: 0.78rem; color: var(--text-muted); }
+
+/* ── Navbar kullanıcı alanı ── */
+.nav-user {
+  display: flex; align-items: center; gap: var(--sp-2);
+  padding: 6px 14px 6px 8px; border-radius: var(--r-full);
+  background: var(--bg-muted); border: 1px solid var(--border-subtle);
+  cursor: pointer; transition: all var(--t-fast);
+}
+.nav-user:hover { border-color: var(--brand-coral); }
+.nav-avatar {
+  width: 28px; height: 28px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.7rem; font-weight: 700; color: white; flex-shrink: 0;
+}
+.nav-user-name { font-size: 0.82rem; font-weight: 600; color: var(--text-primary); }
+.nav-user-role { font-size: 0.68rem; color: var(--text-muted); text-transform: capitalize; }
+
+.user-dropdown {
+  position: absolute; top: calc(var(--nav-height) - 4px); right: var(--sp-6);
+  background: var(--bg-surface); border: 1px solid var(--border-subtle);
+  border-radius: var(--r-lg); box-shadow: var(--shadow-md);
+  min-width: 200px; z-index: 1001; padding: var(--sp-2);
+  transform: translateY(-8px) scale(0.96); opacity: 0; pointer-events: none;
+  transition: all var(--t-med) var(--ease-bounce);
+}
+.user-dropdown.open { transform: translateY(0) scale(1); opacity: 1; pointer-events: auto; }
+.dropdown-item {
+  display: flex; align-items: center; gap: var(--sp-3);
+  padding: 9px var(--sp-3); border-radius: var(--r-sm);
+  font-size: 0.85rem; color: var(--text-secondary); cursor: pointer;
+  transition: all var(--t-fast); font-family: inherit; border: none; background: none; width: 100%;
+}
+.dropdown-item:hover { background: var(--bg-muted); color: var(--text-primary); }
+.dropdown-item.danger:hover { background: rgba(239,68,68,0.08); color: #DC2626; }
+.dropdown-divider { height: 1px; background: var(--border-subtle); margin: var(--sp-2) 0; }
+
+/* ── Admin quick badge in navbar ── */
+.admin-nav-badge {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 6px 14px; background: var(--grad-primary); color: white;
+  border-radius: var(--r-full); font-size: 0.8rem; font-weight: 700;
+  cursor: pointer; border: none; font-family: inherit;
+  box-shadow: 0 3px 10px rgba(255,107,91,0.25);
+  transition: transform var(--t-fast);
+}
+.admin-nav-badge:hover { transform: translateY(-1px); }
+
+</style>
+</head>
+<body>
+  <div id="pageLoader" style="
+  position:fixed;inset:0;background:#FAFAFA;
+  display:flex;align-items:center;justify-content:center;
+  z-index:9999;transition:opacity 0.4s;">
+  <div style="text-align:center">
+    <div style="font-size:3rem;margin-bottom:12px">🍳</div>
+    <div style="font-family:'Manrope',sans-serif;font-weight:700;font-size:1.2rem;color:#FF6B5B">Lezzet Atlası</div>
+    <div style="font-size:0.85rem;color:#A1A1AA;margin-top:6px">Yükleniyor...</div>
+  </div>
+</div>
+
+<!-- ============================================================
+     NAVBAR
+     ============================================================ -->
+<nav class="navbar" id="navbar" role="navigation" aria-label="Ana Navigasyon">
+  <div class="container navbar-inner">
+    <a href="#" class="logo" aria-label="Lezzet Atlası Ana Sayfa">
+      <div class="logo-icon" aria-hidden="true">🍳</div>
+      <span class="logo-text">Lezzet Atlası</span>
+    </a>
+
+    <ul class="nav-links" role="list">
+      <li><a href="#tarifler" class="nav-link">Tarifler</a></li>
+      <li><a href="#one-cikanlar" class="nav-link">Öne Çıkanlar</a></li>
+      <li><a href="#favoriler" class="nav-link">Favorilerim</a></li>
+      <li><a href="#footer" class="nav-link">İletişim</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <button class="btn-theme" id="themeToggle" aria-label="Tema değiştir">
+        <i class="fa-solid fa-moon" aria-hidden="true"></i>
+      </button>
+      <a href="#tarifler" class="btn-primary" aria-label="Tarif keşfet">
+        <i class="fa-solid fa-utensils" aria-hidden="true"></i>
+        Keşfet
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Menüyü aç/kapat" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu" role="menu">
+  <div id="mobileUserInfo" style="
+  padding:12px 16px;margin-bottom:8px;
+  background:rgba(255,107,91,0.08);
+  border-radius:12px;display:none;">
+  <div id="mobileUserName" style="font-weight:700;font-size:0.9rem;color:#FF6B5B"></div>
+  <div id="mobileUserRole" style="font-size:0.75rem;color:#A1A1AA;text-transform:capitalize"></div>
+</div>
+  <a href="#tarifler" class="nav-link" role="menuitem">🍽 Tarifler</a>
+  <a href="#one-cikanlar" class="nav-link" role="menuitem">⭐ Öne Çıkanlar</a>
+  <a href="#favoriler" class="nav-link" role="menuitem">❤️ Favorilerim</a>
+  <a href="#footer" class="nav-link" role="menuitem">📬 İletişim</a>
+</div>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="hero" aria-labelledby="heroTitle">
+  <div class="hero-bg-shapes" aria-hidden="true">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+  </div>
+
+  <div class="container hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge" aria-hidden="true">
+        <span class="dot"></span>
+        <span id="heroBadgeCount">60</span> Özgün Türk Tarifi
+      </div>
+
+      <h1 class="hero-title" id="heroTitle">
+        Her Sofra<br>
+        <span class="grad-text">Bir Sanat Eseri</span>
+      </h1>
+
+      <p class="hero-desc">
+        Geleneksel Türk mutfağından modern füzyon tatlarına — binlerce adım adım tarif ve uzman ipuçlarıyla mutfakta ustalaşın.
+      </p>
+
+      <div class="hero-search" role="search">
+        <i class="fa-solid fa-magnifying-glass search-icon" aria-hidden="true"></i>
+        <label for="heroSearch" class="sr-only" style="position:absolute;left:-9999px">Tarif ara</label>
+        <input
+          type="search"
+          id="heroSearch"
+          placeholder="Tarif ara — örn. mercimek çorbası..."
+          autocomplete="off"
+          aria-label="Tarif ara"
+        >
+        <button class="search-btn" id="heroSearchBtn" aria-label="Ara">Ara</button>
+      </div>
+
+      <div class="hero-stats" aria-label="İstatistikler">
+        <div class="stat">
+          <div class="stat-num" id="heroStatCount">60</div>
+          <div class="stat-label">Tarif</div>
+        </div>
+      </div>
+
+      <!-- Malzemeye Göre Tarif Bul -->
+      <div class="ingredient-search-box">
+        <div class="ingredient-search-label">
+          <i class="fa-solid fa-carrot" aria-hidden="true"></i>
+          Elindeki malzemelere göre tarif bul
+        </div>
+        <div class="ingredient-input-row">
+          <div class="ingredient-field-wrap">
+            <i class="fa-solid fa-pepper-hot ingredient-field-icon" aria-hidden="true"></i>
+            <input
+              type="text"
+              id="ingredientInput"
+              placeholder="Malzeme yaz, Enter ile ekle — yumurta, soğan, domates..."
+              autocomplete="off"
+              aria-label="Malzeme gir"
+            >
+          </div>
+          <button class="btn-ingredient-search" id="ingredientSearchBtn" aria-label="Malzemeye göre tarif bul">
+            <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>
+            Tarif Bul
+          </button>
+        </div>
+        <div class="ingredient-chips" id="ingredientChips"></div>
+      </div>
+    </div>
+
+    <div class="hero-visual" aria-hidden="true" id="heroVisual">
+      <!-- populated via JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FEATURED CAROUSEL
+     ============================================================ -->
+<section class="featured-section fade-in-section" id="one-cikanlar" aria-labelledby="featuredTitle">
+  <div class="container">
+    <div class="featured-header">
+      <div>
+        <div class="section-label">
+          <i class="fa-solid fa-fire" aria-hidden="true"></i> Bu Hafta Trend
+        </div>
+        <h2 class="section-title" id="featuredTitle">Öne Çıkan Tarifler</h2>
+        <p class="section-desc">Topluluğumuzun en çok beğendiği ve denediği tarifler.</p>
+      </div>
+      <div class="carousel-controls" aria-label="Carousel kontrolleri">
+        <button class="carousel-btn" id="carouselPrev" aria-label="Önceki tarif">
+          <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+        </button>
+        <button class="carousel-btn" id="carouselNext" aria-label="Sonraki tarif">
+          <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="carousel-track-wrapper" role="region" aria-label="Öne çıkan tarifler kaydırmalı liste">
+      <div class="carousel-track" id="carouselTrack"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     RECIPE BROWSER
+     ============================================================ -->
+<section class="filter-section fade-in-section" id="tarifler" aria-labelledby="tariflerTitle">
+  <div class="container">
+    <div class="section-label">
+      <i class="fa-solid fa-bowl-food" aria-hidden="true"></i> Tüm Tarifler
+    </div>
+    <h2 class="section-title" id="tariflerTitle">Tariflerimizi Keşfedin</h2>
+    <p class="section-desc">Kategoriye göre filtrele, dilediğini bul ve hemen pişirmeye başla.</p>
+
+    <div class="filter-tabs" role="tablist" aria-label="Kategori filtresi" id="filterTabs"></div>
+
+    <div id="ingredientResultBanner" style="display:none"></div>
+
+    <div class="recipes-grid" id="recipesGrid" role="list" aria-live="polite" aria-label="Tarif listesi"></div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FAVORITES
+     ============================================================ -->
+<section class="favorites-section fade-in-section" id="favoriler" aria-labelledby="favTitle">
+  <div class="container">
+    <div class="section-label">
+      <i class="fa-solid fa-heart" aria-hidden="true"></i> Favorilerim
+    </div>
+    <h2 class="section-title" id="favTitle">Kaydettiğin Tarifler</h2>
+    <p class="section-desc">Favori olarak işaretlediğin tarifler burada saklanır.</p>
+
+    <div class="recipes-grid" id="favGrid" role="list" aria-live="polite" aria-label="Favori tarif listesi" style="margin-top: var(--sp-8)">
+      <div class="favorites-empty">
+        <div class="icon">🤍</div>
+        <h3>Henüz favorin yok</h3>
+        <p>Tarif kartlarındaki ❤ ikonuna tıklayarak tarifleri kaydet.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     MODAL
+     ============================================================ -->
+<div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal" id="modal">
+    <div class="modal-hero" id="modalHero">
+      <button class="modal-close" id="modalClose" aria-label="Kapat">
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+      </button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<!-- ============================================================
+     AUTH MODAL
+     ============================================================ -->
+<div class="auth-overlay" id="authOverlay" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+  <div class="auth-box">
+    <div class="auth-header">
+      <div class="auth-logo" aria-hidden="true">🍳</div>
+      <h2 class="auth-title" id="authTitle">Lezzet Atlası</h2>
+      <p class="auth-subtitle">Türk mutfağının en lezzetli tarifleri</p>
+    </div>
+
+    <div class="auth-tabs" role="tablist">
+      <button class="auth-tab active" id="loginTab" role="tab" aria-selected="true" onclick="switchAuthTab('login')">
+        <i class="fa-solid fa-right-to-bracket" aria-hidden="true"></i> Giriş Yap
+      </button>
+      <button class="auth-tab" id="registerTab" role="tab" aria-selected="false" onclick="switchAuthTab('register')">
+        <i class="fa-solid fa-user-plus" aria-hidden="true"></i> Kayıt Ol
+      </button>
+    </div>
+
+    <!-- Login Form -->
+    <div id="loginForm">
+      <div class="auth-body">
+        <div id="loginError" style="display:none"></div>
+        <div class="auth-group">
+          <label class="auth-label" for="loginEmail">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i> E-posta
+          </label>
+          <input type="email" id="loginEmail" class="auth-input" placeholder="ornek@email.com" autocomplete="email">
+        </div>
+        <div class="auth-group">
+          <label class="auth-label" for="loginPassword">
+            <i class="fa-solid fa-lock" aria-hidden="true"></i> Şifre
+          </label>
+          <input type="password" id="loginPassword" class="auth-input" placeholder="••••••••" autocomplete="current-password">
+        </div>
+        <button class="btn-auth" id="loginBtn" onclick="handleLogin()">
+          <i class="fa-solid fa-right-to-bracket" aria-hidden="true"></i> Giriş Yap
+        </button>
+        <div class="auth-divider">Hızlı giriş
+        </div>
+        <div class="auth-demo-accounts">
+<button class="demo-account-btn" onclick="quickLogin('karakuzuhira92@gmail.com','admin')">
+</button>
+       <span class="demo-badge admin">Admin
+       </span>
+     <div class="demo-info">
+       <div class="demo-name">Hira Nur Karakuzu
+       </div>
+     <div class="demo-email">karakuzuhira92@gmail.com
+     </div>
+       </div>
+    <i class="fa-solid fa-arrow-right" style="color:var(--text-muted);font-size:0.8rem" aria-hidden="true"></i>
+       </button>
+            <i class="fa-solid fa-arrow-right" style="color:var(--text-muted);font-size:0.8rem" aria-hidden="true"></i>
+          </button>
+          <button class="demo-account-btn" onclick="quickLogin('editor@lezzet.com','Editor2024!')">
+            <span class="demo-badge editor">Editör</span>
+            <div class="demo-info">
+              <div class="demo-name">Editör Kullanıcı</div>
+              <div class="demo-email">editor@lezzet.com</div>
+            </div>
+            <i class="fa-solid fa-arrow-right" style="color:var(--text-muted);font-size:0.8rem" aria-hidden="true"></i>
+          </button>
+          <button class="demo-account-btn" onclick="quickLogin('user@lezzet.com','User2024!')">
+            <span class="demo-badge user">Kullanıcı</span>
+            <div class="demo-info">
+              <div class="demo-name">Normal Kullanıcı</div>
+              <div class="demo-email">user@lezzet.com</div>
+            </div>
+            <i class="fa-solid fa-arrow-right" style="color:var(--text-muted);font-size:0.8rem" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Register Form -->
+    <div id="registerForm" style="display:none">
+      <div class="auth-body">
+        <div id="registerError" style="display:none"></div>
+        <div class="auth-group">
+          <label class="auth-label" for="regName">
+            <i class="fa-solid fa-user" aria-hidden="true"></i> Ad Soyad
+          </label>
+          <input type="text" id="regName" class="auth-input" placeholder="Adınız Soyadınız" autocomplete="name">
+        </div>
+        <div class="auth-group">
+          <label class="auth-label" for="regEmail">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i> E-posta
+          </label>
+          <input type="email" id="regEmail" class="auth-input" placeholder="ornek@email.com" autocomplete="email">
+        </div>
+        <div class="auth-group">
+          <label class="auth-label" for="regPassword">
+            <i class="fa-solid fa-lock" aria-hidden="true"></i> Şifre
+            <span style="font-weight:400;color:var(--text-muted)">(en az 6 karakter)</span>
+          </label>
+          <input type="password" id="regPassword" class="auth-input" placeholder="••••••••" autocomplete="new-password">
+        </div>
+        <div class="auth-group">
+          <label class="auth-label" for="regPassword2">
+            <i class="fa-solid fa-lock" aria-hidden="true"></i> Şifre Tekrar
+          </label>
+          <input type="password" id="regPassword2" class="auth-input" placeholder="••••••••" autocomplete="new-password">
+        </div>
+        <button class="btn-auth" id="registerBtn" onclick="handleRegister()">
+          <i class="fa-solid fa-user-plus" aria-hidden="true"></i> Hesap Oluştur
+        </button>
+      </div>
+    </div>
+
+    <div class="auth-footer">
+      <p>Giriş yaparak <a href="#" style="color:var(--brand-coral)">Kullanım Şartları</a>'nı kabul etmiş sayılırsınız.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     TOAST
+     ============================================================ -->
+
+
+
+     <div class="toast-container" id="toastContainer" aria-live="polite" aria-atomic="true"></div>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#" class="logo" aria-label="Lezzet Atlası">
+          <div class="logo-icon" aria-hidden="true">🍳</div>
+          <span class="logo-text">Lezzet Atlası</span>
+        </a>
+        <p>Türk mutfağının en lezzet Atlası tariflerini keşfet, pişir ve sevdiklerinle paylaş.</p>
+        <form class="newsletter-form" onsubmit="handleNewsletter(event)" aria-label="Bülten aboneliği">
+          <label for="nlEmail" style="position:absolute;left:-9999px">E-posta adresiniz</label>
+          <input type="email" id="nlEmail" placeholder="E-posta adresiniz" required autocomplete="email">
+          <button type="submit">Abone Ol</button>
+        </form>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Keşfet</div>
+        <ul class="footer-links">
+          <li><a href="#tarifler">Tüm Tarifler</a></li>
+          <li><a href="#one-cikanlar">Öne Çıkanlar</a></li>
+          <li><a href="#favoriler">Favorilerim</a></li>
+          <li><a href="#">Yeni Tarifler</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Kategoriler</div>
+        <ul class="footer-links">
+          <li><a href="#">Kahvaltı</a></li>
+          <li><a href="#">Ana Yemek</a></li>
+          <li><a href="#">Tatlılar</a></li>
+          <li><a href="#">Vejetaryen</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Destek</div>
+        <ul class="footer-links">
+          <li><a href="#">Hakkımızda</a></li>
+          <li><a href="#">Gizlilik Politikası</a></li>
+          <li><a href="#">Kullanım Şartları</a></li>
+          <li><a href="#">İletişim</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 Lezzet Atlası. Tüm hakları saklıdır.</div>
+      <nav class="social-links" aria-label="Sosyal medya">
+        <a href="#" class="social-link" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+        <a href="#" class="social-link" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+        <a href="#" class="social-link" aria-label="YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
+        <a href="#" class="social-link" aria-label="Pinterest"><i class="fa-brands fa-pinterest" aria-hidden="true"></i></a>
+        <a href="#" class="social-link" aria-label="TikTok"><i class="fa-brands fa-tiktok" aria-hidden="true"></i></a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     JAVASCRIPT
+     ============================================================ -->
+<script>
+'use strict';
+
+/* ── DATA ─────────────────────────────────────────────── */
+const RECIPES = [
+  {
+    id: 1,
+    emoji: '🍲',
+    name: 'Mercimek Çorbası',
+    category: 'corba',
+    time: 30,
+    difficulty: 'Kolay',
+    servings: 4,
+    desc: 'Türk mutfağının vazgeçilmezi, kadifemsi kırmızı mercimek çorbası.',
+    tags: ['Kış', 'Pratik', 'Besleyici'],
+    ingredients: ['2 su bardağı kırmızı mercimek', '1 adet soğan', '2 diş sarımsak', '2 adet havuç', '4 su bardağı et veya sebze suyu', '2 yemek kaşığı sıvıyağ', 'Tuz, karabiber, kimyon', 'Kırmızı pul biber', 'Limon'],
+    steps: ['Mercimeği yıkayıp süzün.', 'Soğanı ve sarımsağı yağda kavurun.', 'Havuç ve mercimeği ekleyip 2 dk daha kavurun.', 'Suyu ilave edin, 20-25 dk pişirin.', 'Blenderdan geçirin. Tuz-baharat ayarlayın.', 'Tereyağında kızdırılmış pul biberle servis yapın.'],
+  },
+  {
+    id: 2,
+    emoji: '🥗',
+    name: 'Çoban Salatası',
+    category: 'salata',
+    time: 10,
+    difficulty: 'Kolay',
+    servings: 4,
+    desc: 'Taze sebzeler ve zeytinyağlı sosuyla çıtır çıtır bir Türk klasiği.',
+    tags: ['Sağlıklı', 'Hızlı', 'Vegan'],
+    ingredients: ['3 adet domates', '2 adet salatalık', '1 adet soğan', '1 demet maydanoz', '1 adet yeşil biber', 'Zeytinyağı', 'Limon suyu', 'Tuz'],
+    steps: ['Tüm sebzeleri küçük küpler halinde doğrayın.', 'Maydanozu ince kıyın.', 'Zeytinyağı, limon suyu ve tuz karıştırın.', 'Sebzeleri sosla harmanlayın ve servis yapın.'],
+  },
+  {
+    id: 3,
+    emoji: '🥞',
+    name: 'Peynirli Gözleme',
+    category: 'kahvalti',
+    time: 25,
+    difficulty: 'Orta',
+    servings: 6,
+    desc: 'İnce yufka, bol peynir ve taze otlarla hazırlanan geleneksel pide.',
+    tags: ['Kahvaltı', 'El yapımı', 'Geleneksel'],
+    ingredients: ['3 su bardağı un', '1 çay kaşığı tuz', '1 su bardağı ılık su', '300 g beyaz peynir', '1 demet maydanoz', '2 yemek kaşığı tereyağı'],
+    steps: ['Unu, tuzu ve suyu yoğurarak hamur yapın, 20 dk dinlendirin.', 'Peyniri ve maydanozu karıştırın.', 'Hamuru ince açın, iç harcı bir tarafa koyun.', 'Katladıktan sonra tavada tereyağıyla pişirin.', 'Her iki yüzü altın rengi olana kadar kızartın.'],
+  },
+  {
+    id: 4,
+    emoji: '🍖',
+    name: 'Etli Güveç',
+    category: 'ana-yemek',
+    time: 90,
+    difficulty: 'Orta',
+    servings: 6,
+    desc: 'Güveç içinde yavaş pişen, nefis soslu sebzeli et yemeği.',
+    tags: ['Fırın', 'Kış', 'Özel Gün'],
+    ingredients: ['700 g kuşbaşı et', '2 adet patlıcan', '2 adet biber', '3 adet domates', '2 adet soğan', '4 diş sarımsak', 'Zeytinyağı', 'Tuz, karabiber, kekik'],
+    steps: ['Eti tuz ve baharatla marine edin.', 'Sebzeleri dilimleyin.', 'Güveç kabına katmanlar halinde yerleştirin.', 'Üzerine domates ve sarımsak ekleyin.', '170°C fırında 1.5 saat pişirin.', 'Fırından çıkarmadan 10 dk önce folyo açın.'],
+  },
+  {
+    id: 5,
+    emoji: '🍮',
+    name: 'Sütlaç',
+    category: 'tatli',
+    time: 45,
+    difficulty: 'Kolay',
+    servings: 6,
+    desc: 'Kremsi fırın sütlacı — Türk mutfağının en sevilen tatlısı.',
+    tags: ['Geleneksel', 'Fırın', 'Çocuklara Özel'],
+    ingredients: ['1 su bardağı pirinç', '6 su bardağı süt', '1 su bardağı şeker', '2 yemek kaşığı nişasta', '2 yemek kaşığı su', '1 çay kaşığı vanilya'],
+    steps: ['Pirinci haşlayın.', 'Sütü ısıtın, şeker ve vanilyayı ekleyin.', 'Nişastayı soğuk suyla açıp süte karıştırın.', 'Pirinci ekleyip koyulaşana kadar pişirin.', 'Kaselere dökün, fırında üstü kizarana kadar pişirin.', 'Soğuk servis yapın.'],
+  },
+  {
+    id: 6,
+    emoji: '🥙',
+    name: 'Dürüm Döner',
+    category: 'atistirma',
+    time: 20,
+    difficulty: 'Kolay',
+    servings: 4,
+    desc: 'Evde hazırlanan, soslu ve sebzeli nefis dürüm döner.',
+    tags: ['Fast Food', 'Pratik', 'Sokak Yemeği'],
+    ingredients: ['500 g tavuk eti (ince dilim)', 'Lavaş ekmek', 'Domates', 'Salatalık', 'Soğan', 'Maydanoz', 'Yoğurt sosu', 'Biber salçası', 'Tuz, karabiber, kimyon, kekik'],
+    steps: ['Tavuğu baharat ve yağla marine edin.', 'Tavada veya ızgarada pişirin.', 'Lavaşı hafifçe ısıtın.', 'Yoğurt sosu, sebzeler ve eti lavaşa yerleştirin.', 'Dürüm yapıp servis edin.'],
+  },
+  {
+    id: 7,
+    emoji: '🫙',
+    name: 'Ayran',
+    category: 'icecek',
+    time: 5,
+    difficulty: 'Kolay',
+    servings: 4,
+    desc: 'Serinleten, probiyotik dolu geleneksel Türk içeceği.',
+    tags: ['Soğuk İçecek', 'Probiyotik', 'Sağlıklı'],
+    ingredients: ['2 su bardağı yoğurt', '2 su bardağı soğuk su', '1 çay kaşığı tuz', 'Birkaç nane yaprağı (isteğe bağlı)'],
+    steps: ['Yoğurt ve soğuk suyu blenderda çırpın.', 'Tuz ekleyip tekrar çırpın.', 'Üzerine nane koyarak servis yapın.'],
+  },
+  {
+    id: 8,
+    emoji: '🥦',
+    name: 'Sebzeli Pirinç Pilavı',
+    category: 'vejetaryen',
+    time: 35,
+    difficulty: 'Kolay',
+    servings: 4,
+    desc: 'Renkli sebzeler ve aromatik baharatlarla zenginleştirilmiş pilav.',
+    tags: ['Vegan', 'Sağlıklı', 'Pratik'],
+    ingredients: ['2 su bardağı pirinç', '1 adet havuç', '1 adet kırmızı biber', '1 su bardağı bezelye', '3 su bardağı sebze suyu', '2 yemek kaşığı zeytinyağı', 'Tuz, karabiber, zerdeçal, kimyon'],
+    steps: ['Pirinci yıkayıp 30 dk suda bekletin.', 'Sebzeleri küçük doğrayın, zeytinyağında kavurun.', 'Pirinci ekleyip 2-3 dk daha kavurun.', 'Baharatları ve suyu ekleyin.', 'Kısık ateşte 20 dk pişirin, 10 dk dinlendirin.'],
+  },
+  {
+    id: 9,
+    emoji: '🥣',
+    name: 'İşkembe Çorbası',
+    category: 'corba',
+    time: 120,
+    difficulty: 'Zor',
+    servings: 6,
+    desc: 'Türk mutfağının efsanevi gece çorbası — sarımsaklı ve sirkeli.',
+    tags: ['Geleneksel', 'Gece Yemeği', 'Doyurucu'],
+    ingredients: ['500 g pişmiş işkembe', '1 L kemik suyu', '2 yumurta sarısı', '3 yemek kaşığı un', '1 su bardağı süt', 'Sarımsak, sirke, kırmızı biber, tereyağı'],
+    steps: ['İşkembeyi temizleyip haşlayın.', 'Un ve sütle beyaz sos hazırlayın.', 'Kemik suyunu kaynatın, sosu ekleyin.', 'Yumurta sarısını karıştırarak ilave edin.', 'İşkembeyi ekleyin, 10 dk pişirin.', 'Sarımsak-sirke ve biberli tereyağıyla servis yapın.'],
+  },
+  {
+    id: 10,
+    emoji: '🧁',
+    name: 'Revani',
+    category: 'tatli',
+    time: 55,
+    difficulty: 'Orta',
+    servings: 12,
+    desc: 'İrmikten yapılan, şerbetli nefis Osmanlı tatlısı.',
+    tags: ['Osmanlı', 'Şerbetli', 'Özel Gün'],
+    ingredients: ['2 su bardağı irmik', '1 su bardağı un', '1 su bardağı şeker', '4 yumurta', '1 su bardağı yoğurt', '1 su bardağı sıvıyağ', '1 paket kabartma tozu', 'Şerbet için: 2 su bardağı şeker, 2 su bardağı su, limon'],
+    steps: ['Tüm malzemeleri çırpın.', 'Yağlanmış tepsiye dökün.', '180°C fırında 25-30 dk pişirin.', 'Şerbeti hazırlayın (şeker+su+limon kaynayınca).', 'Sıcak tatlının üzerine sıcak şerbet dökün.', 'Soğuduktan sonra servis yapın.'],
+  },
+  {
+    id: 11,
+    emoji: '🫔',
+    name: 'Kuru Fasulye',
+    category: 'ana-yemek',
+    time: 75,
+    difficulty: 'Kolay',
+    servings: 6,
+    desc: 'Pirinç pilavıyla servis edilen, doyurucu Türk klasiği.',
+    tags: ['Geleneksel', 'Doyurucu', 'Ekonomik'],
+    ingredients: ['2 su bardağı kuru fasulye', '200 g kuşbaşı et', '1 adet soğan', '2 yemek kaşığı domates salçası', '2 yemek kaşığı biber salçası', 'Zeytinyağı', 'Tuz, karabiber, pul biber'],
+    steps: ['Fasulyeyi bir gece önceden ıslatın.', 'Eti ve soğanı yağda kavurun.', 'Salçaları ekleyip 2 dk kavurun.', 'Fasulyeyi ve sıcak suyu ilave edin.', 'Kısık ateşte 60-70 dk pişirin.', 'Yanında pirinç pilavıyla servis yapın.'],
+  },
+  {
+    id: 12,
+    emoji: '🫗',
+    name: 'Türk Kahvesi',
+    category: 'icecek',
+    time: 8,
+    difficulty: 'Kolay',
+    servings: 2,
+    desc: 'Köpüklü, cezve ile hazırlanan geleneksel Türk kahvesi.',
+    tags: ['Geleneksel', 'Sabah', 'Misafirlik'],
+    ingredients: ['2 çay kaşığı Türk kahvesi', '2 fincan su', 'Şeker (isteğe göre)'],
+    steps: ['Cezveye su ve şekeri koyun.', 'Kahveyi ekleyin, karıştırın.', 'Orta ateşte yavaş yavaş ısıtın.', 'Köpük oluşunca fincanlara biraz alın.', 'Tekrar ısıtın ve üzerine dökerek servis edin.'],
+  },
+  /* ── YENİ TARİFLER ── */
+  {
+    id: 13,
+    emoji: '🫕',
+    name: 'Hünkar Beğendi',
+    category: 'ana-yemek',
+    time: 80,
+    difficulty: 'Zor',
+    servings: 6,
+    desc: 'Közlenmiş patlıcan püresi üzerinde servis edilen Osmanlı saray yemeği.',
+    tags: ['Osmanlı', 'Özel Gün', 'Geleneksel'],
+    ingredients: ['500 g kuşbaşı kuzu eti', '3 adet büyük patlıcan', '2 yemek kaşığı tereyağı', '3 yemek kaşığı un', '2 su bardağı süt', '100 g kaşar peyniri', '2 adet soğan', '2 adet domates', 'Tuz, karabiber, kırmızı biber'],
+    steps: ['Patlıcanları açık ateşte veya fırında közleyin, kabuklarını soyun.', 'Patlıcan etini ezin.', 'Tereyağında unu kavurun, sütü ekleyip béchamel yapın.', 'Patlıcanı ve rendelenmiş peyniri béchamele katın.', 'Ayrı bir tavada eti ve soğanı kavurun.', 'Domatesi ekleyip et suyuyla pişirin.', 'Patlıcan püresini tabağa alın, üzerine eti dökün.'],
+  },
+  {
+    id: 14,
+    emoji: '🥚',
+    name: 'Menemen',
+    category: 'kahvalti',
+    time: 15,
+    difficulty: 'Kolay',
+    servings: 2,
+    desc: 'Domates, biber ve yumurtayla hazırlanan İzmir\'in meşhur kahvaltılık tabağı.',
+    tags: ['Kahvaltı', 'Hızlı', 'Geleneksel'],
+    ingredients: ['3 adet yumurta', '2 adet domates', '2 adet yeşil biber', '1 adet soğan (isteğe bağlı)', '2 yemek kaşığı zeytinyağı', 'Tuz, karabiber, pul biber'],
+    steps: ['Zeytinyağını ısıtın, biberleri kavurun.', 'Domatesleri ekleyip suyu çekene kadar pişirin.', 'Baharatları ekleyin.', 'Yumurtaları kırın, sürekli karıştırarak pişirin.', 'Üzerine pul biber serpin ve hemen servis yapın.'],
+  },
+  {
+    id: 15,
+    emoji: '🫙',
+    name: 'Cacık',
+    category: 'salata',
+    time: 10,
+    difficulty: 'Kolay',
+    servings: 4,
+    desc: 'Yoğurt, salatalık ve sarımsak — Türk sofralarının serinleten klasiği.',
+    tags: ['Sağlıklı', 'Soğuk', 'Pratik'],
+    ingredients: ['2 su bardağı süzme yoğurt', '1 adet salatalık', '2 diş sarımsak', '2 yemek kaşığı zeytinyağı', '1 yemek kaşığı kuru nane', 'Tuz'],
+    steps: ['Salatalığı rendeleyin veya ince doğrayın, suyunu sıkın.', 'Yoğurdu çırpın.', 'Sarımsağı ezin ve yoğurda ekleyin.', 'Salatalık ve zeytinyağını karıştırın.', 'Üzerine nane ve zeytinyağı gezdirin.', 'Soğuk servis yapın.'],
+  },
+  {
+    id: 16,
+    emoji: '🍜',
+    name: 'Tarhana Çorbası',
+    category: 'corba',
+    time: 25,
+    difficulty: 'Kolay',
+    servings: 6,
+    desc: 'Anadolu\'nun fermente tarhana unu ile hazırlanan kışın gözdesi.',
+    tags: ['Kış', 'Geleneksel', 'Besleyici'],
+    ingredients: ['4 yemek kaşığı tarhana', '1.5 L et veya tavuk suyu', '2 yemek kaşığı domates salçası', '2 yemek kaşığı tereyağı', 'Tuz, pul biber', 'Kuru nane'],
+    steps: ['Tarhanayı biraz soğuk suyla ıslatın.', 'Et suyunu kaynatın.', 'Domates salçasını ekleyin.', 'Tarhanayı çorbaya ilave edin, topak kalmayacak şekilde karıştırın.', '15-20 dk kısık ateşte pişirin.', 'Tereyağında pul biber kızartıp üzerine dökün.'],
+  },
+  {
+    id: 17,
+    emoji: '🍡',
+    name: 'Lokma Tatlısı',
+    category: 'tatli',
+    time: 40,
+    difficulty: 'Orta',
+    servings: 8,
+    desc: 'Şerbete bandırılmış, çıtır dışı yumuşak içi nefis hamur tatlısı.',
+    tags: ['Geleneksel', 'Şerbetli', 'Bayram'],
+    ingredients: ['2 su bardağı un', '1 paket kuru maya', '1 su bardağı ılık su', '1 yemek kaşığı şeker', 'Yarım çay kaşığı tuz', 'Kızartma yağı', 'Şerbet için: 2 su bardağı şeker, 1.5 su bardağı su, yarım limon suyu'],
+    steps: ['Mayayı şeker ve ılık suda eritin.', 'Unu, tuzu ve mayalı suyu karıştırarak yumuşak hamur yapın.', '1 saat mayalandırın.', 'Şerbeti hazırlayın, ılımaya bırakın.', 'Hamuru kaşıkla alıp kızgın yağa bırakın.', 'Altın rengi olunca çıkarın, hemen şerbete atın.'],
+  },
+  {
+    id: 18,
+    emoji: '🥓',
+    name: 'Sucuklu Yumurta',
+    category: 'kahvalti',
+    time: 12,
+    difficulty: 'Kolay',
+    servings: 2,
+    desc: 'Sulu sucukla birlikte pişirilen, nefis Türk kahvaltısı ikonu.',
+    tags: ['Kahvaltı', 'Hızlı', 'Doyurucu'],
+    ingredients: ['150 g sucuk', '3 adet yumurta', '1 adet domates', '1 adet yeşil biber', 'Tuz'],
+    steps: ['Sucuğu halka halka kesin.', 'Yağsız tavada sucukları kızartın.', 'Yağ saldıktan sonra domatesi ve biberi ekleyin.', 'Yumurtaları kırın.', 'Ağır ateşte istenilen kıvamda pişirin.', 'Taze ekmekle servis yapın.'],
+  },
+  {
+    id: 19,
+    emoji: '🫒',
+    name: 'Zeytinyağlı Enginar',
+    category: 'vejetaryen',
+    time: 50,
+    difficulty: 'Orta',
+    servings: 4,
+    desc: 'Zeytinyağında pişirilmiş, limonlu ferah bir Ege yemeği.',
+    tags: ['Ege', 'Vegan', 'Sağlıklı'],
+    ingredients: ['4 adet taze enginar', '2 adet havuç', '1 su bardağı bezelye', '1 adet patates', '1 adet limon', '5 yemek kaşığı zeytinyağı', '1 çay kaşığı şeker', 'Tuz, dereotu'],
+    steps: ['Enginarları temizleyip limonlu suya koyun.', 'Havuç ve patatesi doğrayın.', 'Enginarları tencereye yerleştirin.', 'Sebzeleri, zeytinyağı, şeker ve tuzu ekleyin.', 'Üzerine su ilave edin, kapağı kapalı pişirin.', 'Soğuk servis yapın, üzerine dereotu serpin.'],
+  },
+  {
+    id: 20,
+    emoji: '🍝',
+    name: 'Kıymalı Pide',
+    category: 'atistirma',
+    time: 45,
+    difficulty: 'Orta',
+    servings: 4,
+    desc: 'Kıyma, soğan ve biber harciyle doldurulmuş, fırında pişirilmiş geleneksel pide.',
+    tags: ['Fırın', 'Doyurucu', 'Sokak Yemeği'],
+    ingredients: ['Pide hamuru için: 3 su bardağı un, 1 paket maya, 1 su bardağı ılık su, tuz', '300 g kıyma', '1 adet soğan', '1 adet domates', '1 adet sivri biber', '1 yemek kaşığı biber salçası', 'Tuz, pul biber, kimyon', '2 yumurta (üzeri için)'],
+    steps: ['Hamuru hazırlayın, 30 dk mayalandırın.', 'Kıymayı soğan ve baharatlarla kavurun.', 'Domatesi ve biberi ekleyip suyu çekene kadar pişirin.', 'Hamuru uzun oval şekilde açın.', 'Üzerine kıyma harcını yayın.', 'Kenarları kıvırın, fırça ile yumurta sürün.', '220°C fırında 15-18 dk pişirin.'],
+  },
+  {
+    id: 21,
+    emoji: '🫚',
+    name: 'Patlıcan Musakka',
+    category: 'ana-yemek',
+    time: 70,
+    difficulty: 'Orta',
+    servings: 6,
+    desc: 'Kızarmış patlıcan ve kıymalı harcın mükemmel buluşması.',
+    tags: ['Fırın', 'Geleneksel', 'Doyurucu'],
+    ingredients: ['4 adet patlıcan', '400 g kıyma', '2 adet domates', '2 adet yeşil biber', '2 adet soğan', '3 diş sarımsak', 'Kızartma yağı', 'Domates sosu', 'Tuz, pul biber, karabiber'],
+    steps: ['Patlıcanları dilimleyip tuzlu suda bekletin.', 'Patlıcanları kızartın.', 'Kıymayı soğan ve sarımsak ile kavurun.', 'Salçayı ve domatesi ekleyip pişirin.', 'Fırın kabına patlıcan ve harç sıralayın.', 'Üzerine domates sosu dökün.', '180°C fırında 30-35 dk pişirin.'],
+  },
+  {
+    id: 22,
+    emoji: '🫛',
+    name: 'Zeytinyağlı Taze Fasulye',
+    category: 'vejetaryen',
+    time: 45,
+    difficulty: 'Kolay',
+    servings: 4,
+    desc: 'Yaz sofralarının vazgeçilmezi, zeytinyağlı ve domatesli taze fasulye.',
+    tags: ['Ege', 'Vegan', 'Hafif'],
+    ingredients: ['500 g taze fasulye', '2 adet domates', '1 adet soğan', '3 diş sarımsak', '4 yemek kaşığı zeytinyağı', '1 çay kaşığı şeker', 'Tuz'],
+    steps: ['Fasulyeyi ayıklayın ve yıkayın.', 'Zeytinyağında soğanı kavurun.', 'Sarımsak ve domatesi ekleyin.', 'Fasulyeyi ilave edin.', 'Tuz ve şeker ekleyip su ilave edin.', 'Kısık ateşte 35-40 dk pişirin.', 'Soğuk veya ılık servis yapın.'],
+  },
+  {
+    id: 23,
+    emoji: '🍵',
+    name: 'Çay',
+    category: 'icecek',
+    time: 15,
+    difficulty: 'Kolay',
+    servings: 4,
+    desc: 'Demlik yöntemiyle hazırlanan, Türk misafirperverliğinin simgesi çay.',
+    tags: ['Geleneksel', 'Sıcak İçecek', 'Günlük'],
+    ingredients: ['2 yemek kaşığı siyah çay (dökme)', '4 su bardağı su', 'Şeker (isteğe göre)'],
+    steps: ['Alt demliğe suyu doldurun ve kaynatın.', 'Üst demliğe çayı koyun.', 'Üst demliğe biraz kaynar su ekleyin.', 'Kısık ateşte 10-15 dk demlenmeye bırakın.', 'İstenilen kıvamda bardağa çay koyun, üzerine su ekleyin.', 'Yanında şekerle servis yapın.'],
+  },
+  {
+    id: 24,
+    emoji: '🫓',
+    name: 'Simit',
+    category: 'kahvalti',
+    time: 90,
+    difficulty: 'Zor',
+    servings: 8,
+    desc: 'Susamlı, çıtır çıtır halka şeklinde sokağın efsanevi Türk simidi.',
+    tags: ['Sokak Yemeği', 'El Yapımı', 'Geleneksel'],
+    ingredients: ['4 su bardağı un', '1 paket kuru maya', '1.5 su bardağı ılık su', '1 çay kaşığı tuz', '1 yemek kaşığı şeker', '1 yemek kaşığı sıvıyağ', '1 su bardağı pekmez', '1 su bardağı su (pekmez için)', '2 su bardağı susam'],
+    steps: ['Mayayı şeker ve suyla eritin.', 'Un, tuz ve yağla hamur yoğurun, 1 saat dinlendirin.', 'Hamuru bölün, uzun rulo yapın ve halka oluşturun.', 'Pekmezi su ile karıştırın.', 'Simitleri pekmez karışımına batırın.', 'Susamda yuvarlayın.', '200°C fırında 20-25 dk altın rengi olana kadar pişirin.'],
+  },
+  {
+    id: 25,
+    emoji: '🥘',
+    name: 'İmam Bayıldı',
+    category: 'vejetaryen',
+    time: 60,
+    difficulty: 'Orta',
+    servings: 4,
+    desc: 'Zeytinyağında yavaş pişen, soğanlı ve domatesli patlıcan yemeği.',
+    tags: ['Vegan', 'Ege', 'Geleneksel'],
+    ingredients: ['4 adet patlıcan', '4 adet soğan', '4 diş sarımsak', '3 adet domates', '1 demet maydanoz', '6 yemek kaşığı zeytinyağı', '1 çay kaşığı şeker', 'Tuz, karabiber'],
+    steps: ['Patlıcanları soyup ortadan yarın, tuzlu suda bekletin.', 'Soğanları ince doğrayın.', 'Zeytinyağında soğan ve sarımsağı kavurun.', 'Domates ve maydanozu ekleyin, 5 dk pişirin.', 'Patlıcanlara harcı doldurun.', 'Tencereye dizin, üzerine su ve zeytinyağı ekleyin.', 'Kısık ateşte 45 dk pişirin.'],
+  },
+  {
+    id: 26,
+    emoji: '🍢',
+    name: 'Köfte',
+    category: 'ana-yemek',
+    time: 30,
+    difficulty: 'Kolay',
+    servings: 4,
+    desc: 'Baharatlı kıyma karışımından hazırlanan Türk mutfağının vazgeçilmez ızgara köftesi.',
+    tags: ['Izgara', 'Doyurucu', 'Pratik'],
+    ingredients: ['500 g dana kıyma', '1 adet soğan (rendelenmiş)', '2 dilim bayat ekmek (suya ıslatılmış)', '1 adet yumurta', '2 diş sarımsak', '1 demet maydanoz', 'Tuz, karabiber, kimyon, pul biber'],
+    steps: ['Tüm malzemeleri derin bir kaba alın.', 'İyice yoğurarak homojen karışım elde edin.', '30 dk buzdolabında dinlendirin.', 'Avuç içinde şekillendirin.', 'Mangal veya ızgarada her iki yüzü de pişirin.', 'Yanında soğan, domates ve lavaşla servis yapın.'],
+  },
+  {
+    id: 27,
+    emoji: '🫘',
+    name: 'Nohutlu Pilav',
+    category: 'ana-yemek',
+    time: 40,
+    difficulty: 'Kolay',
+    servings: 6,
+    desc: 'Haşlanmış nohutla pişirilen, tereyağlı ve doyurucu Türk pilavı.',
+    tags: ['Doyurucu', 'Pratik', 'Ekonomik'],
+    ingredients: ['2 su bardağı baldo pirinç', '1 su bardağı haşlanmış nohut', '3 su bardağı tavuk veya et suyu', '3 yemek kaşığı tereyağı', '1 çay kaşığı tuz'],
+    steps: ['Pirinci yıkayıp tuzlu suda 20 dk bekletin.', 'Tereyağını eritin, pirinci kavurun.', 'Nohutları ekleyin.', 'Et suyunu ve tuzu ilave edin.', 'Kaynayınca kısık ateşe alın, kapağı kapalı 18 dk pişirin.', 'Üzerine bez koyup 10 dk demlenmeye bırakın.'],
+  },
+  {
+    id: 28,
+    emoji: '🧆',
+    name: 'Falafel',
+    category: 'vejetaryen',
+    time: 35,
+    difficulty: 'Orta',
+    servings: 4,
+    desc: 'Nohuttan yapılan, çıtır çıtır kızartılmış vegan protein bombası.',
+    tags: ['Vegan', 'Sağlıklı', 'Pratik'],
+    ingredients: ['2 su bardağı ıslak nohut (haşlanmamış)', '1 adet soğan', '3 diş sarımsak', '1 demet maydanoz', '1 demet kişniş', '1 çay kaşığı kimyon', '1 çay kaşığı kişniş tozu', 'Tuz, karabiber', '3 yemek kaşığı un', 'Kızartma yağı'],
+    steps: ['Islak nohutları robottan geçirin, pürüzsüz olmasın.', 'Soğan, sarımsak ve yeşillikleri ekleyip çekin.', 'Baharat ve unu ekleyin, karıştırın.', 'Buzdolabında 30 dk dinlendirin.', 'Toplar şekillendirip kızgın yağda kızartın.', 'Tahin sosuyla servis yapın.'],
+  },
+  {
+    id: 29,
+    emoji: '🍰',
+    name: 'Kazandibi',
+    category: 'tatli',
+    time: 50,
+    difficulty: 'Zor',
+    servings: 8,
+    desc: 'Altı hafifçe karamelize edilmiş, kadifemsi Türk sütlü tatlısı.',
+    tags: ['Geleneksel', 'Osmanlı', 'Özel Gün'],
+    ingredients: ['1 L süt', '1.5 su bardağı şeker', '5 yemek kaşığı nişasta', '3 yemek kaşığı pirinç unu', '1 çay kaşığı gülsuyu', 'Tereyağı (kap için)'],
+    steps: ['Sütü şekerle kaynatın.', 'Nişasta ve pirinç ununu soğuk sütla açıp ekleyin.', 'Sürekli karıştırarak koyulaştırın.', 'Gülsuyunu ekleyin.', 'Tereyağlı ve şekerlenmiş tepsiye dökün.', 'Ocakta altı kızarana kadar tutun.', 'Soğuyunca çevirin ve dilimleyerek servis yapın.'],
+  },
+  {
+    id: 30,
+    emoji: '🍗',
+    name: 'Tavuk Şiş',
+    category: 'atistirma',
+    time: 35,
+    difficulty: 'Kolay',
+    servings: 4,
+    desc: 'Marine edilmiş tavuğun şişte ızgara edilmesiyle hazırlanan hafif ve lezzetli tarif.',
+    tags: ['Izgara', 'Sağlıklı', 'Yaz'],
+    ingredients: ['600 g tavuk göğsü', '1 su bardağı yoğurt', '3 diş sarımsak', '2 yemek kaşığı zeytinyağı', '1 adet limon (suyu ve kabuğu)', 'Tuz, pul biber, kimyon, kekik, kırmızı biber'],
+    steps: ['Tavukları küpler halinde kesin.', 'Yoğurt, sarımsak, zeytinyağı ve baharatları karıştırın.', 'Tavukları marinada en az 2 saat bekletin.', 'Şişlere dizin.', 'Izgara veya mangalda her tarafını pişirin.', 'Yanında salata ve lavaşla servis yapın.'],
+  },
+  {
+    id: 31,
+    emoji: '🥜',
+    name: 'Fıstıklı Baklava',
+    category: 'tatli',
+    time: 120,
+    difficulty: 'Zor',
+    servings: 20,
+    desc: 'Antep fıstığı ve tereyağıyla hazırlanan Türk mutfağının kraliçesi.',
+    tags: ['Osmanlı', 'Özel Gün', 'Gaziantep'],
+    ingredients: ['500 g yufka (hazır)', '250 g tereyağı', '300 g antep fıstığı (öğütülmüş)', 'Şerbet için: 3 su bardağı şeker, 2 su bardağı su, 1 adet limon dilimleri'],
+    steps: ['Şerbeti önceden hazırlayıp soğutun.', 'Tereyağını eritin.', 'Tepsiye yağlanmış yufkaları sıralayın, her yufkaya yağ sürün.', 'Ortasına fıstığı yayın.', 'Kalan yufkaları yağlayarak üstüne koyun.', 'Dilimleyip 180°C fırında altın rengi olana kadar pişirin.', 'Fırından çıkınca üzerine soğuk şerbet dökün.'],
+  },
+  {
+    id: 32,
+    emoji: '🍳',
+    name: 'Sahanda Yumurta',
+    category: 'kahvalti',
+    time: 8,
+    difficulty: 'Kolay',
+    servings: 1,
+    desc: 'Tereyağında pişirilmiş, kenarları çıtır klasik Türk kahvaltı yumurtası.',
+    tags: ['Kahvaltı', 'Hızlı', 'Pratik'],
+    ingredients: ['2 adet yumurta', '1 yemek kaşığı tereyağı', 'Tuz', 'Pul biber (isteğe bağlı)'],
+    steps: ['Sahanda tereyağını eritin.', 'Yumurtaları kırın.', 'Tuz ekleyin.', 'Ağır ateşte beyaz kısım donana kadar pişirin.', 'Pul biberle servis yapın.'],
+  },
+  {
+    id: 33,
+    emoji: '🥒',
+    name: 'Tarator',
+    category: 'salata',
+    time: 10,
+    difficulty: 'Kolay',
+    servings: 4,
+    desc: 'Cevizli, sarımsaklı yoğurt sosu — meze sofralarının vazgeçilmezi.',
+    tags: ['Meze', 'Sağlıklı', 'Hızlı'],
+    ingredients: ['2 su bardağı yoğurt', '1 su bardağı ceviz (kıyılmış)', '2 diş sarımsak', '2 yemek kaşığı zeytinyağı', '1 yemek kaşığı kuru nane', 'Tuz'],
+    steps: ['Cevizleri iri dövün.', 'Yoğurdu ve ezilmiş sarımsağı karıştırın.', 'Cevizleri ekleyin.', 'Tuz ayarlayın.', 'Üzerine zeytinyağı ve nane gezdirin.', 'Soğuk servis yapın.'],
+  },
+  {
+    id: 34,
+    emoji: '🍲',
+    name: 'Yayla Çorbası',
+    category: 'corba',
+    time: 30,
+    difficulty: 'Kolay',
+    servings: 6,
+    desc: 'Yoğurtlu, pirinçli ve nane tereyağıyla servis edilen hafif Türk çorbası.',
+    tags: ['Sağlıklı', 'Hafif', 'Pratik'],
+    ingredients: ['1 su bardağı pirinç', '2 su bardağı yoğurt', '1 yumurta', '3 yemek kaşığı un', '5 su bardağı et veya sebze suyu', '2 yemek kaşığı tereyağı', '1 yemek kaşığı kuru nane', 'Tuz'],
+    steps: ['Pirinci suda haşlayın.', 'Yoğurt, yumurta ve unu çırpın.', 'Sıcak suyu yavaşça yoğurt karışımına ekleyin.', 'Pirinci tencereye alın, yoğurtlu karışımı ilave edin.', 'Sürekli karıştırarak kısık ateşte pişirin.', 'Tereyağında naneleri kızartıp üzerine dökün.'],
+  },
+  {
+    id: 35,
+    emoji: '🧇',
+    name: 'Börek (Su Böreği)',
+    category: 'kahvalti',
+    time: 75,
+    difficulty: 'Zor',
+    servings: 8,
+    desc: 'Elde açılan yufka, beyaz peynir ve maydanozla hazırlanan Türk böreği.',
+    tags: ['El Yapımı', 'Geleneksel', 'Özel Gün'],
+    ingredients: ['500 g yufka (elde açılmış veya hazır)', '300 g beyaz peynir', '1 demet maydanoz', '3 yumurta', '1 su bardağı süt', '1 su bardağı sıvıyağ', 'Tuz'],
+    steps: ['Peyniri ve maydanozu karıştırın.', 'Yumurta, süt ve yağı çırpın.', 'Yufkaları haşlayıp soğuk suya alın, süzün.', 'Tepsiye yufka serip iç harcı koyun, katmanlayın.', 'Her katmana yumurtalı karışımdan dökün.', '180°C fırında 35-40 dk pişirin.', 'Dinlendirip dilimleyerek servis yapın.'],
+  },
+  {
+    id: 36,
+    emoji: '🫐',
+    name: 'Vişneli Şerbet',
+    category: 'icecek',
+    time: 20,
+    difficulty: 'Kolay',
+    servings: 6,
+    desc: 'Taze vişneden hazırlanan, serinleten geleneksel Osmanlı şerbeti.',
+    tags: ['Osmanlı', 'Yaz', 'Soğuk İçecek'],
+    ingredients: ['500 g vişne', '1.5 su bardağı şeker', '4 su bardağı su', '1 adet limon suyu', 'Tarçın (isteğe bağlı)', 'Nane yaprağı'],
+    steps: ['Vişneleri yıkayıp çekirdeklerini çıkarın.', 'Su ve şekeri kaynatın.', 'Vişneleri ekleyip 10 dk pişirin.', 'Limon suyunu ilave edin.', 'Süzgeçten geçirin.', 'Soğuyunca buz ve nane ile servis yapın.'],
+  },
+  {
+    id: 37,
+    emoji: '🍛',
+    name: 'Karnıyarık',
+    category: 'ana-yemek',
+    time: 65,
+    difficulty: 'Orta',
+    servings: 4,
+    desc: 'Ortası kıyma harçlı, fırında pişirilmiş dolma patlıcan — Türk mutfağının gözdesi.',
+    tags: ['Geleneksel', 'Fırın', 'Doyurucu'],
+    ingredients: ['4 adet uzun patlıcan', '300 g kıyma', '2 adet soğan', '3 diş sarımsak', '3 adet domates', '2 adet yeşil biber', '2 yemek kaşığı domates salçası', 'Sıvıyağ', 'Tuz, karabiber, pul biber, maydanoz'],
+    steps: ['Patlıcanları soyduktan sonra ortasını bıçakla yarın.', 'Tuzlu suda 20 dk bekletin, sonra yağda kızartın.', 'Kıymayı soğan ve sarımsak ile kavurun.', 'Salça, domates ve biberleri ekleyip pişirin.', 'Patlıcanların içine harç doldurun.', 'Üzerine domates ve biber dilimleyin.', '180°C fırında 25-30 dk pişirin.'],
+  },
+  {
+    id: 38,
+    emoji: '🫕',
+    name: 'Kuzu Tandır',
+    category: 'ana-yemek',
+    time: 240,
+    difficulty: 'Zor',
+    servings: 8,
+    desc: 'Saatlerce yavaş pişirilerek kemiğinden ayrılan, efsanevi Anadolu tandır eti.',
+    tags: ['Özel Gün', 'Geleneksel', 'Bayram'],
+    ingredients: ['2 kg kuzu but veya kol', '1 baş sarımsak', '3 adet soğan', '2 adet domates', '2 çay bardağı zeytinyağı', 'Tuz, karabiber, kekik, kimyon, pul biber', '1 su bardağı su'],
+    steps: ['Kuzu etini yıkayıp kurulayın.', 'Sarımsak dilimlerini etin içine bastırın.', 'Zeytinyağı ve baharatları karıştırıp ete sürün.', 'Derin fırın kabına soğan ve domatesi yerleştirin.', 'Eti üzerine koyun, su ekleyin.', 'Folyoyla kapatıp 160°C fırında 3.5-4 saat pişirin.', 'Son 20 dk folyoyu açıp üstünü kızartın.'],
+  },
+  {
+    id: 39,
+    emoji: '🌯',
+    name: 'Lahmacun',
+    category: 'atistirma',
+    time: 40,
+    difficulty: 'Orta',
+    servings: 6,
+    desc: 'İnce hamur üzerine kıymalı harç serilmiş, fırında pişirilmiş Türk pizzası.',
+    tags: ['Sokak Yemeği', 'Gaziantep', 'Pratik'],
+    ingredients: ['3 su bardağı un', '1 paket maya', '1 su bardağı ılık su', 'Tuz', '250 g kıyma', '2 adet domates (rendelenmiş)', '1 adet soğan (rendelenmiş)', '2 adet kırmızı biber', '1 adet yeşil biber', '1 yemek kaşığı biber salçası', 'Maydanoz, pul biber, kimyon'],
+    steps: ['Hamur malzemelerini karıştırıp 30 dk mayalandırın.', 'Kıyma ve tüm harç malzemelerini robotta çekin.', 'Hamuru çok ince açın.', 'Üzerine harç yayın.', '250°C fırında 8-10 dk pişirin.', 'Üzerine maydanoz, soğan ve limon sıkarak servis edin.'],
+  },
+  {
+    id: 40,
+    emoji: '🥗',
+    name: 'Gavurdağı Salatası',
+    category: 'salata',
+    time: 15,
+    difficulty: 'Kolay',
+    servings: 4,
+    desc: 'Cevizli, narlı ve sumak baharatlı Güneydoğu Anadolu mezeleri arasındaki parlayan yıldız.',
+    tags: ['Gaziantep', 'Meze', 'Sağlıklı'],
+    ingredients: ['3 adet domates', '1 adet salatalık', '1 adet soğan', '1 su bardağı ceviz', '1 avuç nar tanesi', '1 demet maydanoz', '2 yemek kaşığı nar ekşisi', '2 yemek kaşığı zeytinyağı', '1 çay kaşığı sumak', 'Tuz, pul biber'],
+    steps: ['Sebzeleri küçük küpler halinde doğrayın.', 'Cevizleri iri kırın.', 'Maydanozu ince kıyın.', 'Nar ekşisi, zeytinyağı, sumak ve tuzu karıştırın.', 'Tüm malzemeleri büyük bir kasede harmanlayın.', 'Servis etmeden önce 10 dk bekletin.'],
+  },
+  {
+    id: 41,
+    emoji: '🫔',
+    name: 'Etli Dolma',
+    category: 'ana-yemek',
+    time: 90,
+    difficulty: 'Zor',
+    servings: 6,
+    desc: 'Biberler ve domatesler kıymalı pirinç harciyle doldurulmuş, bir Türk klasiği.',
+    tags: ['Geleneksel', 'Özel Gün', 'Doyurucu'],
+    ingredients: ['8 adet dolmalık biber', '4 adet domates', '300 g kıyma', '1 su bardağı pirinç', '2 adet soğan', '2 yemek kaşığı domates salçası', 'Zeytinyağı', 'Tuz, karabiber, nane, maydanoz'],
+    steps: ['Biberlerin tepesini kesin, içini temizleyin.', 'Domateslerin tepesini kesin, içini çıkarın.', 'Kıymayı, pirinci, soğanı ve baharatları karıştırın.', 'Sebzeleri 3/4 oranında doldurun.', 'Tencereye sıralayın, domates suyunu ilave edin.', 'Kısık ateşte 45-50 dk pişirin.', 'Yoğurtla servis yapın.'],
+  },
+  {
+    id: 42,
+    emoji: '🥣',
+    name: 'Ezogelin Çorbası',
+    category: 'corba',
+    time: 35,
+    difficulty: 'Kolay',
+    servings: 6,
+    desc: 'Kırmızı mercimek, bulgur ve domates salçasıyla hazırlanan Türk çorbası efsanesi.',
+    tags: ['Geleneksel', 'Kış', 'Doyurucu'],
+    ingredients: ['1 su bardağı kırmızı mercimek', '3 yemek kaşığı ince bulgur', '1 adet soğan', '2 yemek kaşığı domates salçası', '1 yemek kaşığı biber salçası', '2 yemek kaşığı tereyağı', '5 su bardağı et veya sebze suyu', 'Tuz, kuru nane, pul biber, kimyon'],
+    steps: ['Soğanı yağda kavurun.', 'Salçaları ekleyip 2 dk kavurun.', 'Mercimek ve bulguру ekleyin.', 'Suyu ilave edin, kaynatın.', 'Kısık ateşte 25 dk pişirin.', 'Tereyağında kızartılmış nane ve pul biberle servis yapın.'],
+  },
+  {
+    id: 43,
+    emoji: '🍡',
+    name: 'Aşure',
+    category: 'tatli',
+    time: 120,
+    difficulty: 'Orta',
+    servings: 12,
+    desc: 'On farklı tahıl ve meyveyle hazırlanan, bereketli Muharrem tatlısı.',
+    tags: ['Geleneksel', 'Muharrem', 'Paylaşım'],
+    ingredients: ['1 su bardağı buğday', '1 su bardağı nohut (haşlanmış)', '1 su bardağı kuru fasulye (haşlanmış)', '1 su bardağı pirinç', '1.5 su bardağı şeker', 'Kuru kayısı, kuru üzüm, incir, erik', 'Portakal kabuğu', 'Tarçın, karanfil', 'Gülsuyu', 'Nar, ceviz, fındık (garnitür)'],
+    steps: ['Buğdayı bir gece önceden ıslatın.', 'Tüm tahılları ayrı ayrı haşlayın.', 'Büyük tencerede tahılları birleştirin.', 'Şeker ve kuru meyveleri ekleyin.', 'Baharatları ilave edip 30 dk pişirin.', 'Gülsuyunu ekleyin.', 'Kaselere doldurun, garnitürlerle süsleyin.'],
+  },
+  {
+    id: 44,
+    emoji: '🫚',
+    name: 'Mücver',
+    category: 'vejetaryen',
+    time: 25,
+    difficulty: 'Kolay',
+    servings: 4,
+    desc: 'Rendelenmiş kabak, peynir ve dereotundan yapılan çıtır Ege meze gözesi.',
+    tags: ['Ege', 'Meze', 'Vejetaryen'],
+    ingredients: ['3 adet kabak', '2 yumurta', '100 g beyaz peynir', '4 yemek kaşığı un', '1 demet dereotu', '1 demet maydanoz', '2 yemek kaşığı zeytinyağı', 'Tuz, karabiber'],
+    steps: ['Kabakları rendeleyin, tuzlayıp 10 dk bekletin.', 'Suyunu sıkın.', 'Yumurta, ufalanmış peynir, ince kıyılmış otları ekleyin.', 'Unu ilave edip karıştırın.', 'Zeytinyağında kaşıkla alıp her iki yüzü kızartın.', 'Yoğurtla servis yapın.'],
+  },
+  {
+    id: 45,
+    emoji: '🧆',
+    name: 'Çiğ Köfte',
+    category: 'atistirma',
+    time: 30,
+    difficulty: 'Kolay',
+    servings: 6,
+    desc: 'Bulgur ve domates salçasıyla yoğrulan, acılı-ekşili Urfa usulü çiğ köfte.',
+    tags: ['Vegan', 'Sokak Yemeği', 'Pratik'],
+    ingredients: ['2 su bardağı ince bulgur', '2 su bardağı kaynar su', '2 yemek kaşığı domates salçası', '2 yemek kaşığı biber salçası', '1 adet limon suyu', '2 yemek kaşığı zeytinyağı', '1 demet maydanoz', 'Pul biber, kimyon, tuz'],
+    steps: ['Bulguru kaseye alın, kaynar suyu dökün, 15 dk bekletin.', 'Salçaları, zeytinyağı ve limon suyunu ekleyin.', 'Uzun süre yoğurun.', 'Baharatları ilave edip yoğurmaya devam edin.', 'Maydanozu kıyıp karıştırın.', 'Marul yaprağıyla rulo yaparak servis edin.'],
+  },
+  {
+    id: 46,
+    emoji: '🍵',
+    name: 'Ihlamur',
+    category: 'icecek',
+    time: 10,
+    difficulty: 'Kolay',
+    servings: 2,
+    desc: 'Soğuk algınlığına ve strese karşı şifalı geleneksel Türk bitkisel çayı.',
+    tags: ['Şifalı', 'Sıcak İçecek', 'Kış'],
+    ingredients: ['2 yemek kaşığı kuru ıhlamur çiçeği', '2 fincan kaynar su', 'Bal (isteğe göre)', 'Limon dilimi'],
+    steps: ['Ihlamuru demliğe koyun.', 'Üzerine kaynar su dökün.', '7-8 dk demlenmesine izin verin.', 'Süzerek fincanlara alın.', 'Bal ve limon dilimiyle servis yapın.'],
+  },
+  {
+    id: 47,
+    emoji: '🥘',
+    name: 'Keşkek',
+    category: 'ana-yemek',
+    time: 180,
+    difficulty: 'Zor',
+    servings: 10,
+    desc: 'Dövülmüş buğday ve etle hazırlanan, UNESCO listesindeki Anadolu düğün yemeği.',
+    tags: ['UNESCO', 'Geleneksel', 'Özel Gün'],
+    ingredients: ['500 g dövme buğday', '500 g kuzu eti (kemikli)', '3 L su veya et suyu', '100 g tereyağı', 'Tuz, kimyon'],
+    steps: ['Buğdayı bir gece ıslatın.', 'Eti tencereye alın, su ekleyin, yumuşayana kadar haşlayın.', 'Buğdayı ete ekleyin.', 'Sürekli karıştırarak çekene kadar pişirin (2-2.5 saat).', 'Et liflenince yoğurun.', 'Tereyağında kızartılmış kimyonla servis yapın.'],
+  },
+  {
+    id: 48,
+    emoji: '🧁',
+    name: 'Kadayıf',
+    category: 'tatli',
+    time: 60,
+    difficulty: 'Orta',
+    servings: 10,
+    desc: 'Tel tel kadayıf ve kaymak ile hazırlanan, şerbetli Türk tatlısının simgesi.',
+    tags: ['Geleneksel', 'Şerbetli', 'Özel Gün'],
+    ingredients: ['500 g tel kadayıf', '200 g tereyağı', '250 g kaymak veya dil peyniri', 'Şerbet için: 2 su bardağı şeker, 1.5 su bardağı su, limon suyu', 'Antep fıstığı (garnitür)'],
+    steps: ['Kadayıfı ince ince parçalayın.', 'Eritilmiş tereyağıyla harmanlayın.', 'Tepsiye yarısını yayın.', 'Üzerine kaymak veya peyniri koyun.', 'Kalan kadayıfı üstüne yayın.', '180°C fırında 35-40 dk kızartın.', 'Sıcakken ılık şerbet dökün. Fıstıkla süsleyin.'],
+  },
+  {
+    id: 49,
+    emoji: '🥦',
+    name: 'Kısır',
+    category: 'salata',
+    time: 20,
+    difficulty: 'Kolay',
+    servings: 6,
+    desc: 'Bulgur, domates, nar ekşisi ve taze otlarla hazırlanan Türk meze klasiği.',
+    tags: ['Meze', 'Vegan', 'Pratik'],
+    ingredients: ['2 su bardağı köftelik bulgur', '2 su bardağı kaynar su', '2 yemek kaşığı domates salçası', '3 yemek kaşığı nar ekşisi', '3 yemek kaşığı zeytinyağı', '1 demet maydanoz', '1 demet yeşil soğan', '2 adet domates', 'Limon, tuz, pul biber, kimyon'],
+    steps: ['Bulguru kaba alın, kaynar su ve salçayı ekleyin.', '15-20 dk örtüp demlenmeye bırakın.', 'Zeytinyağı, nar ekşisi ve limon suyunu ilave edin.', 'İyice yoğurun.', 'Kıyılmış maydanoz, yeşil soğan ve domatesi ekleyin.', 'Baharatları ayarlayın, servis edin.'],
+  },
+  {
+    id: 50,
+    emoji: '🍢',
+    name: 'Adana Kebabı',
+    category: 'ana-yemek',
+    time: 40,
+    difficulty: 'Orta',
+    servings: 4,
+    desc: 'Acılı kıyma ve kuyruk yağıyla hazırlanan, şişte ızgara edilen Adana usulü kebap.',
+    tags: ['Adana', 'Izgara', 'Doyurucu'],
+    ingredients: ['500 g dana+kuzu karışık kıyma', '100 g kuyruk yağı (kıyılmış)', '1 adet soğan (rendelenmiş, suyu sıkılmış)', '2 adet sivri kırmızı biber (kıyılmış)', '1 yemek kaşığı kırmızı biber salçası', 'Tuz, karabiber, pul biber (bol)'],
+    steps: ['Kuyruk yağını bıçakla çok ince kıyın.', 'Tüm malzemeleri derin kapta uzun süre yoğurun.', 'Buzdolabında 1 saat dinlendirin.', 'Islak ellerle geniş şişlere şekil verin.', 'Kömür ateşinde döndürerek pişirin.', 'Közlenmiş biber, domates ve sumak soğanıyla servis yapın.'],
+  },
+  {
+    id: 51,
+    emoji: '🫙',
+    name: 'Boza',
+    category: 'icecek',
+    time: 2880,
+    difficulty: 'Zor',
+    servings: 8,
+    desc: 'Fermente edilmiş mısır veya buğday unundan yapılan, kışın içilen geleneksel içecek.',
+    tags: ['Geleneksel', 'Osmanlı', 'Kış'],
+    ingredients: ['2 su bardağı mısır unu', '6 su bardağı su', '1 su bardağı şeker', '1 paket yaş maya', 'Tarçın ve leblebi (servis için)'],
+    steps: ['Mısır ununu suda kaynatın, sürekli karıştırın.', 'Koyulaşınca şekeri ekleyin.', 'Soğuyunca mayayı ekleyin.', 'Oda sıcaklığında 1-2 gün mayalanmaya bırakın.', 'Buzdolabında 1 gün daha dinlendirin.', 'Tarçın ve leblebiyle servis yapın.'],
+  },
+  {
+    id: 52,
+    emoji: '🥚',
+    name: 'Çılbır',
+    category: 'kahvalti',
+    time: 15,
+    difficulty: 'Orta',
+    servings: 2,
+    desc: 'Sarımsaklı yoğurt ve pul biberli tereyağı üzerinde poşe yumurta — Osmanlı saray kahvaltısı.',
+    tags: ['Osmanlı', 'Şık', 'Kahvaltı'],
+    ingredients: ['4 yumurta', '1.5 su bardağı süzme yoğurt', '2 diş sarımsak', '3 yemek kaşığı tereyağı', '1 çay kaşığı pul biber', '1 çay kaşığı kırmızı toz biber', 'Limon, tuz, sirke (poşe için)'],
+    steps: ['Sarımsaklı yoğurdu hazırlayıp tabağa yayın.', 'Sirkelі kaynar suda yumurtaları poşe yapın (3-4 dk).', 'Poşe yumurtaları yoğurdun üzerine koyun.', 'Tereyağını eritin, pul biber ve kırmızı biberi ekleyin.', 'Kızdırılmış yağı yumurtaların üzerine gezdirin.', 'Hemen servis yapın.'],
+  },
+  {
+    id: 53,
+    emoji: '🍲',
+    name: 'Düğün Çorbası',
+    category: 'corba',
+    time: 60,
+    difficulty: 'Orta',
+    servings: 8,
+    desc: 'Yumurtalı terbiyeyle zenginleştirilmiş, kuzu etli geleneksel düğün çorbası.',
+    tags: ['Geleneksel', 'Özel Gün', 'Doyurucu'],
+    ingredients: ['500 g kuzu eti (kemikli)', '2 yumurta sarısı', '3 yemek kaşığı un', '1 su bardağı yoğurt', '2 yemek kaşığı tereyağı', 'Pul biber, kuru nane', 'Tuz, karabiber'],
+    steps: ['Eti 2 L suda kemik suyu olana kadar haşlayın.', 'Eti kemikten ayırın.', 'Yumurta, yoğurt ve unu çırpın.', 'Sıcak suyu yavaşça yoğurt karışımına ekleyin.', 'Tencereye alıp kısık ateşte karıştırarak pişirin.', 'Et parçalarını ekleyin.', 'Tereyağında pul biber ve naneyi kızartıp üzerine dökün.'],
+  },
+  {
+    id: 54,
+    emoji: '🥐',
+    name: 'Açma',
+    category: 'kahvalti',
+    time: 90,
+    difficulty: 'Orta',
+    servings: 8,
+    desc: 'Tereyağlı, yumuşacık, Türk usulü geleneksel fırın açması.',
+    tags: ['Fırın', 'El Yapımı', 'Kahvaltı'],
+    ingredients: ['4 su bardağı un', '1 paket kuru maya', '1 su bardağı ılık süt', '2 yumurta', '1 su bardağı sıvıyağ', '1 yemek kaşığı şeker', '1 çay kaşığı tuz', 'Üzeri için: 1 yumurta sarısı, susam veya çörek otu'],
+    steps: ['Mayayı şekerli ılık sütte eritin.', 'Un, yumurta, yağ ve tuzu ekleyin, hamur yoğurun.', '45 dk mayalandırın.', 'Hamuru bölüp uzun şekiller verin.', 'Halka ya da boyun bağı şeklinde açın.', 'Üzerine yumurta ve susam sürün.', '180°C fırında 20-25 dk pişirin.'],
+  },
+  {
+    id: 55,
+    emoji: '🍮',
+    name: 'Kemal Paşa Tatlısı',
+    category: 'tatli',
+    time: 50,
+    difficulty: 'Orta',
+    servings: 8,
+    desc: 'Peynirli, şerbetli toplar halinde Bursa\'nın meşhur geleneksel tatlısı.',
+    tags: ['Bursa', 'Şerbetli', 'Geleneksel'],
+    ingredients: ['300 g taze lor peyniri', '1 su bardağı un', '1 yumurta', '1 çay kaşığı kabartma tozu', 'Kızartma yağı', 'Şerbet için: 2 su bardağı şeker, 1.5 su bardağı su, limon suyu'],
+    steps: ['Lor, un, yumurta ve kabartma tozunu karıştırın.', 'Hamurdan ceviz büyüklüğünde toplar yapın.', 'Şerbeti hazırlayıp ılımaya bırakın.', 'Orta ısılı yağda topları kızartın.', 'Kızaran topları hemen şerbete atın.', '20 dk şerbette bekletin.', 'Kaymakla servis yapın.'],
+  },
+  {
+    id: 56,
+    emoji: '🥒',
+    name: 'Haydari',
+    category: 'salata',
+    time: 10,
+    difficulty: 'Kolay',
+    servings: 4,
+    desc: 'Sarımsaklı süzme yoğurt mezesi — Türk sofralarının olmazsa olmazı.',
+    tags: ['Meze', 'Pratik', 'Sağlıklı'],
+    ingredients: ['2 su bardağı süzme yoğurt', '2 diş sarımsak', '2 yemek kaşığı zeytinyağı', '1 yemek kaşığı kuru nane', '1 çay kaşığı kekik', 'Tuz', 'Pul biber (servis için)'],
+    steps: ['Sarımsakları ezin.', 'Yoğurt ve sarımsağı karıştırın.', 'Nane ve kekiği ekleyin.', 'Tuz ayarlayın.', 'Servis tabağına alın.', 'Üzerine zeytinyağı ve pul biber gezdirin.'],
+  },
+  {
+    id: 57,
+    emoji: '🍖',
+    name: 'Hamsili Pilav',
+    category: 'ana-yemek',
+    time: 50,
+    difficulty: 'Orta',
+    servings: 6,
+    desc: 'Hamsiyle kaplı fırın pilavı — Karadeniz mutfağının şaheseri.',
+    tags: ['Karadeniz', 'Fırın', 'Deniz Ürünü'],
+    ingredients: ['500 g hamsi (temizlenmiş)', '2 su bardağı baldo pirinç', '1 adet soğan', '1 demet dereotu', '1 demet maydanoz', '1 su bardağı fındık (kavrulmuş)', '1 çay bardağı kuş üzümü', '3 su bardağı sıcak su', 'Zeytinyağı, tuz, karabiber, kimyon, tarçın'],
+    steps: ['Pirinci yağda kavurun, soğan ekleyin.', 'Fındık, üzüm ve baharatları ekleyin.', 'Sıcak suyu ilave edip kısık ateşte pişirin.', 'Dereotu ve maydanozu karıştırın.', 'Yağlanmış fırın kabının tabanına hamsı dizin.', 'Pilavı hamsın üzerine koyun.', 'Üstüne de hamsi sıralayın, 200°C fırında 30 dk pişirin.'],
+  },
+  {
+    id: 58,
+    emoji: '🫙',
+    name: 'Şalgam Suyu',
+    category: 'icecek',
+    time: 4320,
+    difficulty: 'Zor',
+    servings: 10,
+    desc: 'Fermente şalgam ve mor havuçtan yapılan, Adana\'nın efsanevi asidik içeceği.',
+    tags: ['Adana', 'Fermente', 'Geleneksel'],
+    ingredients: ['1 kg mor havuç', '500 g şalgam', '4 L su', '3 yemek kaşığı tuz', '2 su bardağı bulgur', '1 yemek kaşığı ekmek mayası', 'Limon'],
+    steps: ['Bulguru önceden kaynatıp süzün, suyunu saklayın.', 'Şalgam ve havuçları doğrayın.', 'Bulgur suyuna tuz ve maya ekleyin.', 'Sebzeleri büyük kavanoza doldurun, üzerine dökün.', '3 gün oda sıcaklığında mayalanmaya bırakın.', 'Süzerek soğukta saklayın.', 'Buz ve limonla servis yapın.'],
+  },
+  {
+    id: 59,
+    emoji: '🧇',
+    name: 'Pişi',
+    category: 'kahvalti',
+    time: 30,
+    difficulty: 'Kolay',
+    servings: 4,
+    desc: 'Çay yanında yenen, yağda kızartılmış hafif hamur tatlısı.',
+    tags: ['Kahvaltı', 'Hızlı', 'Çocuklar'],
+    ingredients: ['2 su bardağı un', '1 paket instant maya', '1 su bardağı ılık su', '1 yemek kaşığı şeker', 'Yarım çay kaşığı tuz', 'Kızartma yağı', 'Bal veya pekmez (servis için)'],
+    steps: ['Mayayı şeker ve suyla eritin.', 'Unu ve tuzu ekleyip yumuşak hamur yapın.', '20 dk mayalandırın.', 'Islak ellerle parçalar koparıp yuvarlak açın.', 'Kızgın yağda her iki yüzü kızartın.', 'Kâğıt havluya alın.', 'Bal veya pekmezle servis yapın.'],
+  },
+  {
+    id: 60,
+    emoji: '🍵',
+    name: 'Papatya Çayı',
+    category: 'icecek',
+    time: 8,
+    difficulty: 'Kolay',
+    servings: 2,
+    desc: 'Sakinleştirici ve uyku düzenleyici, doğal papatya bitkisel çayı.',
+    tags: ['Şifalı', 'Bitkisel', 'Gece'],
+    ingredients: ['2 yemek kaşığı kuru papatya çiçeği', '2 fincan kaynar su', 'Bal', 'Limon dilimi'],
+    steps: ['Papatyayı demliğe koyun.', 'Kaynar su dökün.', '5-6 dk demlenmesine izin verin.', 'Süzerek fincanlara alın.', 'Bal ve limon dilimiyle servis yapın.'],
+  },
+    {
+    id: 61,
+    emoji: '🥩',
+    name: 'Tas Kebabı',
+    category: 'ana-yemek',
+    time: 80,
+    difficulty: 'Orta',
+    servings: 6,
+    desc: 'Sebzelerle birlikte uzun süre pişirilen yumuşacık et yemeği.',
+    tags: ['Geleneksel', 'Doyurucu', 'Kış'],
+    ingredients: ['600 g dana eti', '2 patates', '2 havuç', '1 soğan', '2 yemek kaşığı salça', 'Tuz', 'Karabiber'],
+    steps: ['Eti kavurun.', 'Sebzeleri ekleyin.', 'Salça ve su ilave edin.', 'Kısık ateşte pişirin.', 'Sıcak servis edin.'],
+  },
+  {
+    id: 62,
+    emoji: '🍚',
+    name: 'Perde Pilavı',
+    category: 'ana-yemek',
+    time: 90,
+    difficulty: 'Zor',
+    servings: 8,
+    desc: 'Hamur kaplı, tavuklu ve bademli özel gün pilavı.',
+    tags: ['Özel Gün', 'Geleneksel', 'Siirt'],
+    ingredients: ['2 su bardağı pirinç', '300 g tavuk eti', 'Badem', 'Tereyağı', 'Yufka'],
+    steps: ['Pilavı hazırlayın.', 'Tavukları haşlayın.', 'Bademleri kavurun.', 'Hepsini karıştırın.', 'Hamurlu kapta fırınlayın.'],
+  },
+  {
+    id: 63,
+    emoji: '🥘',
+    name: 'Ali Nazik',
+    category: 'ana-yemek',
+    time: 50,
+    difficulty: 'Orta',
+    servings: 4,
+    desc: 'Köz patlıcanlı yoğurt üzerine servis edilen kebap yemeği.',
+    tags: ['Gaziantep', 'Kebap', 'Geleneksel'],
+    ingredients: ['400 g kıyma', '3 patlıcan', 'Yoğurt', 'Sarımsak', 'Tereyağı'],
+    steps: ['Patlıcanları közleyin.', 'Yoğurtla karıştırın.', 'Kıymayı kavurun.', 'Patlıcan üzerine dökün.', 'Servis edin.'],
+  },
+  {
+    id: 64,
+    emoji: '🍗',
+    name: 'Tavuk Kapama',
+    category: 'ana-yemek',
+    time: 70,
+    difficulty: 'Kolay',
+    servings: 6,
+    desc: 'Pilav ve tavuğun birlikte piştiği doyurucu yemek.',
+    tags: ['Pilav', 'Pratik', 'Aile'],
+    ingredients: ['1 tavuk', '2 su bardağı pirinç', 'Tereyağı', 'Tavuk suyu'],
+    steps: ['Tavuğu haşlayın.', 'Pirinci kavurun.', 'Tavuk suyuyla pişirin.', 'Tavuğu üzerine yerleştirin.', 'Servis edin.'],
+  },
+  {
+    id: 65,
+    emoji: '🥣',
+    name: 'Bamya Çorbası',
+    category: 'corba',
+    time: 45,
+    difficulty: 'Orta',
+    servings: 6,
+    desc: 'Konyaya özgü ekşili bamya çorbası.',
+    tags: ['Konya', 'Geleneksel', 'Ekşili'],
+    ingredients: ['Kuru bamya', 'Et suyu', 'Domates', 'Limon'],
+    steps: ['Bamyaları haşlayın.', 'Et suyunu kaynatın.', 'Malzemeleri ekleyin.', 'Kısık ateşte pişirin.', 'Limonla servis edin.'],
+  },
+  {
+    id: 66,
+    emoji: '🫓',
+    name: 'Katmer',
+    category: 'tatli',
+    time: 35,
+    difficulty: 'Orta',
+    servings: 4,
+    desc: 'İnce hamurlu, kaymaklı ve fıstıklı Gaziantep tatlısı.',
+    tags: ['Gaziantep', 'Tatlı', 'Fıstıklı'],
+    ingredients: ['Yufka', 'Kaymak', 'Antep fıstığı', 'Tereyağı'],
+    steps: ['Hamuru açın.', 'Kaymak sürün.', 'Fıstık ekleyin.', 'Katlayıp pişirin.', 'Sıcak servis edin.'],
+  },
+  {
+    id: 67,
+    emoji: '🍖',
+    name: 'İzmir Köfte',
+    category: 'ana-yemek',
+    time: 55,
+    difficulty: 'Kolay',
+    servings: 5,
+    desc: 'Patates ve domates soslu fırın köfte.',
+    tags: ['Fırın', 'Aile', 'Pratik'],
+    ingredients: ['Kıyma', 'Patates', 'Domates sosu', 'Soğan'],
+    steps: ['Köfte hazırlayın.', 'Patatesleri kızartın.', 'Tepsiye dizin.', 'Sos dökün.', 'Fırınlayın.'],
+  },
+  {
+    id: 68,
+    emoji: '🍆',
+    name: 'Şakşuka',
+    category: 'salata',
+    time: 35,
+    difficulty: 'Kolay',
+    servings: 4,
+    desc: 'Kızarmış sebzeler ve domates sosuyla hazırlanan meze.',
+    tags: ['Meze', 'Ege', 'Vegan'],
+    ingredients: ['Patlıcan', 'Kabak', 'Biber', 'Domates'],
+    steps: ['Sebzeleri doğrayın.', 'Kızartın.', 'Sos hazırlayın.', 'Karıştırın.', 'Soğuk servis edin.'],
+  },
+  {
+    id: 69,
+    emoji: '🥟',
+    name: 'Mantı',
+    category: 'ana-yemek',
+    time: 120,
+    difficulty: 'Zor',
+    servings: 6,
+    desc: 'Minik hamurlar içine kıyma doldurularak yapılan Kayseri klasiği.',
+    tags: ['Kayseri', 'El Yapımı', 'Geleneksel'],
+    ingredients: ['Un', 'Kıyma', 'Yoğurt', 'Sarımsak', 'Tereyağı'],
+    steps: ['Hamur hazırlayın.', 'İç harcı koyun.', 'Kapatın.', 'Haşlayın.', 'Yoğurtla servis edin.'],
+  },
+  {
+    id: 70,
+    emoji: '🍮',
+    name: 'Tavuk Göğsü',
+    category: 'tatli',
+    time: 40,
+    difficulty: 'Orta',
+    servings: 8,
+    desc: 'Liflenmiş tavuk etiyle yapılan Osmanlı sütlü tatlısı.',
+    tags: ['Osmanlı', 'Sütlü Tatlı', 'Geleneksel'],
+    ingredients: ['Süt', 'Şeker', 'Tavuk göğsü', 'Nişasta'],
+    steps: ['Tavuğu haşlayın.', 'Lifleyin.', 'Sütlü karışımı hazırlayın.', 'Karıştırın.', 'Soğutun.'],
+  },
+{
+  id: 71,
+  emoji: '🍲',
+  name: 'Ekşili Köfte',
+  category: 'ana-yemek',
+  time: 60,
+  difficulty: 'Orta',
+  servings: 4,
+  desc: 'Nişastalı ve limonlu geleneksel köfte yemeği.',
+  tags: ['Ekşili', 'Geleneksel', 'Et'],
+  ingredients: ['400 g kıyma', '1 yumurta', 'Pirinç', 'Limon suyu'],
+  steps: ['Köfteyi hazırlayın.', 'Et suyunda pişirin.', 'Terbiyeyi ekleyin.', 'Servis yapın.']
+},
+{
+  id: 72,
+  emoji: '🫙',
+  name: 'Biber Turşusu',
+  category: 'salata',
+  time: 30,
+  difficulty: 'Kolay',
+  servings: 8,
+  desc: 'Çıtır sivri biber turşusu.',
+  tags: ['Turşu', 'Meze', 'Kışlık'],
+  ingredients: ['1 kg sivri biber', 'Sirke', 'Tuz', 'Sarımsak'],
+  steps: ['Biberleri hazırlayın.', 'Kavanoza dizin.', 'Turşu suyunu ekleyin.', 'Bekletin.']
+},
+{
+  id: 73,
+  emoji: '🍜',
+  name: 'Analı Kızlı',
+  category: 'corba',
+  time: 90,
+  difficulty: 'Zor',
+  servings: 6,
+  desc: 'İçli köfteli Güneydoğu çorbası.',
+  tags: ['Güneydoğu', 'Geleneksel', 'Doyurucu'],
+  ingredients: ['Nohut', 'Kıyma', 'Bulgur', 'Et suyu'],
+  steps: ['Nohudu haşlayın.', 'Köfteleri hazırlayın.', 'Çorbada pişirin.', 'Servis yapın.']
+},
+{
+  id: 74,
+  emoji: '🫔',
+  name: 'Ispanaklı Börek',
+  category: 'kahvalti',
+  time: 60,
+  difficulty: 'Orta',
+  servings: 6,
+  desc: 'Ispanaklı ve peynirli çıtır börek.',
+  tags: ['Fırın', 'Hamur İşi', 'Vejeteryan'],
+  ingredients: ['Yufka', 'Ispanak', 'Peynir', 'Yumurta'],
+  steps: ['İç harcı hazırlayın.', 'Yufkaları dizin.', 'Fırında pişirin.', 'Servis yapın.']
+},
+{
+  id: 75,
+  emoji: '🌿',
+  name: 'Lahana Sarması',
+  category: 'ana-yemek',
+  time: 90,
+  difficulty: 'Orta',
+  servings: 6,
+  desc: 'Kıymalı ve pirinçli lahana sarması.',
+  tags: ['Geleneksel', 'Kış', 'Et'],
+  ingredients: ['Lahana', 'Kıyma', 'Pirinç', 'Soğan'],
+  steps: ['Lahanayı haşlayın.', 'İç harcı hazırlayın.', 'Sarmaları sarın.', 'Pişirin.']
+},
+{
+  id: 76,
+  emoji: '🥩',
+  name: 'Tirit',
+  category: 'ana-yemek',
+  time: 45,
+  difficulty: 'Kolay',
+  servings: 4,
+  desc: 'Et suyu ve yoğurtla hazırlanan geleneksel yemek.',
+  tags: ['Geleneksel', 'Doyurucu', 'Et'],
+  ingredients: ['Bayat ekmek', 'Kuzu eti', 'Yoğurt', 'Et suyu'],
+  steps: ['Eti haşlayın.', 'Ekmeği hazırlayın.', 'Yoğurt ekleyin.', 'Servis yapın.']
+},
+{
+  id: 77,
+  emoji: '🫘',
+  name: 'Mercimekli Köfte',
+  category: 'atistirma',
+  time: 40,
+  difficulty: 'Kolay',
+  servings: 6,
+  desc: 'Mercimek ve bulgurdan yapılan vegan köfte.',
+  tags: ['Vegan', 'Meze', 'Pratik'],
+  ingredients: ['Kırmızı mercimek', 'İnce bulgur', 'Soğan', 'Salça'],
+  steps: ['Mercimeği pişirin.', 'Bulguru ekleyin.', 'Yoğurun.', 'Servis yapın.']
+},
+{
+  id: 78,
+  emoji: '🍮',
+  name: 'Kemal Paşa Tatlısı',
+  category: 'tatli',
+  time: 60,
+  difficulty: 'Orta',
+  servings: 12,
+  desc: 'Şerbetli Bursa tatlısı.',
+  tags: ['Şerbetli', 'Tatlı', 'Bursa'],
+  ingredients: ['Lor peyniri', 'Un', 'Yumurta', 'Şerbet'],
+  steps: ['Hamuru hazırlayın.', 'Top şekli verin.', 'Kızartın.', 'Şerbete atın.']
+},
+{
+  id: 79,
+  emoji: '🌾',
+  name: 'Fırın Makarna',
+  category: 'ana-yemek',
+  time: 50,
+  difficulty: 'Kolay',
+  servings: 4,
+  desc: 'Beşamel soslu fırın makarna.',
+  tags: ['Fırın', 'Pratik', 'Aile'],
+  ingredients: ['Makarna', 'Kıyma', 'Süt', 'Kaşar peyniri'],
+  steps: ['Makarnayı haşlayın.', 'İç harcı hazırlayın.', 'Katmanlayın.', 'Fırında pişirin.']
+},
+{
+  id: 80,
+  emoji: '🐟',
+  name: 'Levrek Buğulama',
+  category: 'ana-yemek',
+  time: 30,
+  difficulty: 'Kolay',
+  servings: 2,
+  desc: 'Sebzeler üzerinde buharda pişirilmiş sağlıklı levrek.',
+  tags: ['Deniz Ürünü', 'Sağlıklı', 'Hafif'],
+  ingredients: ['Levrek', 'Domates', 'Soğan', 'Kapya biber'],
+  steps: ['Sebzeleri hazırlayın.', 'Levreği yerleştirin.', 'Baharat ekleyin.', 'Pişirin.']
+},
+{
+  id: 81,
+  emoji: '🥗',
+  name: 'Piyaz',
+  category: 'atistirma',
+  time: 20,
+  difficulty: 'Kolay',
+  servings: 4,
+  desc: 'Antalya usulü fasulye salatası.',
+  tags: ['Antalya', 'Meze', 'Soğuk'],
+  ingredients: ['Beyaz fasulye', 'Yumurta', 'Soğan', 'Maydanoz'],
+  steps: ['Fasulyeyi hazırlayın.', 'Sebzeleri doğrayın.', 'Karıştırın.', 'Servis yapın.']
+},
+{
+  id: 82,
+  emoji: '🫕',
+  name: 'Kabak Dolması',
+  category: 'ana-yemek',
+  time: 75,
+  difficulty: 'Orta',
+  servings: 4,
+  desc: 'Kıymalı iç harçla doldurulmuş kabak.',
+  tags: ['Yazlık', 'Et', 'Klasik'],
+  ingredients: ['Kabak', 'Kıyma', 'Pirinç', 'Soğan'],
+  steps: ['Kabakları oyun.', 'İç harcı hazırlayın.', 'Doldurun.', 'Pişirin.']
+},
+{
+  id: 83,
+  emoji: '🍵',
+  name: 'Ada Çayı',
+  category: 'icecek',
+  time: 8,
+  difficulty: 'Kolay',
+  servings: 2,
+  desc: 'Aromatik bitki çayı.',
+  tags: ['Bitki Çayı', 'Şifalı', 'Ege'],
+  ingredients: ['Ada çayı', 'Kaynar su', 'Bal', 'Limon'],
+  steps: ['Çayı demliğe koyun.', 'Suyu ekleyin.', 'Demleyin.', 'Servis yapın.']
+},
+{
+  id: 84,
+  emoji: '🧀',
+  name: 'Sigara Böreği',
+  category: 'kahvalti',
+  time: 30,
+  difficulty: 'Kolay',
+  servings: 20,
+  desc: 'Peynir dolgulu çıtır börek.',
+  tags: ['Çıtır', 'Kahvaltı', 'Pratik'],
+  ingredients: ['Yufka', 'Beyaz peynir', 'Maydanoz', 'Sıvıyağ'],
+  steps: ['İç harcı hazırlayın.', 'Yufkaları sarın.', 'Kızartın.', 'Servis yapın.']
+},
+{
+  id: 85,
+  emoji: '🌶️',
+  name: 'Acılı Ezme',
+  category: 'kahvalti',
+  time: 15,
+  difficulty: 'Kolay',
+  servings: 6,
+  desc: 'Gaziantep usulü acılı meze.',
+  tags: ['Acılı', 'Meze', 'Gaziantep'],
+  ingredients: ['Kapya biber', 'Ceviz', 'Sarımsak', 'Nar ekşisi'],
+  steps: ['Biberleri közleyin.', 'Malzemeleri çekin.', 'Baharat ekleyin.', 'Servis yapın.']
+},
+{
+  id: 86,
+  emoji: '🥘',
+  name: 'Fırın Tavuk',
+  category: 'ana-yemek',
+  time: 90,
+  difficulty: 'Kolay',
+  servings: 4,
+  desc: 'Sebzeli baharatlı bütün tavuk.',
+  tags: ['Fırın', 'Pratik', 'Aile'],
+  ingredients: ['Bütün tavuk', 'Patates', 'Soğan', 'Baharatlar'],
+  steps: ['Tavuğu marine edin.', 'Sebzeleri hazırlayın.', 'Tepsiye yerleştirin.', 'Fırında pişirin.']
+},
+{
+  id: 87,
+  emoji: '🍚',
+  name: 'Nohutlu Bulgur Pilavı',
+  category: 'ana-yemek',
+  time: 35,
+  difficulty: 'Kolay',
+  servings: 4,
+  desc: 'Nohutlu doyurucu bulgur pilavı.',
+  tags: ['Pilav', 'Pratik', 'Vegan'],
+  ingredients: ['Bulgur', 'Nohut', 'Soğan', 'Tereyağı'],
+  steps: ['Soğanı kavurun.', 'Bulguru ekleyin.', 'Nohut ve su ekleyin.', 'Pişirin.']
+},
+{
+  id: 88,
+  emoji: '🫙',
+  name: 'Çerkez Tavuğu',
+  category: 'ana-yemek',
+  time: 60,
+  difficulty: 'Orta',
+  servings: 6,
+  desc: 'Cevizli soslu tavuk mezesi.',
+  tags: ['Özel', 'Meze', 'Soğuk'],
+  ingredients: ['Tavuk göğsü', 'Ceviz', 'Sarımsak', 'Bayat ekmek'],
+  steps: ['Tavuğu haşlayın.', 'Sosu hazırlayın.', 'Karıştırın.', 'Servis yapın.']
+},
+{
+  id: 89,
+  emoji: '🌿',
+  name: 'Fasulye Pilaki',
+  category: 'ana-yemek',
+  time: 80,
+  difficulty: 'Kolay',
+  servings: 4,
+  desc: 'Zeytinyağlı kuru fasulye yemeği.',
+  tags: ['Zeytinyağlı', 'Vegan', 'Soğuk'],
+  ingredients: ['Kuru fasulye', 'Soğan', 'Havuç', 'Domates'],
+  steps: ['Fasulyeyi haşlayın.', 'Sebzeleri kavurun.', 'Birleştirin.', 'Pişirin.']
+},
+{
+  id: 90,
+  emoji: '🍲',
+  name: 'Kelle Paça Çorbası',
+  category: 'corba',
+  time: 240,
+  difficulty: 'Zor',
+  servings: 8,
+  desc: 'Kuzu kelle ve paçadan yapılan geleneksel çorba.',
+  tags: ['Geleneksel', 'Kış', 'Doyurucu'],
+  ingredients: ['Kuzu kelle', 'Paça', 'Sarımsak', 'Soğan'],
+  steps: ['Malzemeleri temizleyin.', 'Uzun süre haşlayın.', 'Etleri ayırın.', 'Servis yapın.']
+},
+{
+  id: 91,
+  emoji: '🥞',
+  name: 'Katmer',
+  category: 'tatli',
+  time: 30,
+  difficulty: 'Orta',
+  servings: 4,
+  desc: 'Kaymak ve fıstıklı Gaziantep katmeri.',
+  tags: ['Gaziantep', 'Kahvaltı', 'Tatlı'],
+  ingredients: ['Yufka', 'Kaymak', 'Antep fıstığı', 'Tereyağı'],
+  steps: ['Yufkayı açın.', 'İç harcı ekleyin.', 'Katlayın.', 'Pişirin.']
+},
+{
+  id: 92,
+  emoji: '🫕',
+  name: 'Kıymalı Ispanak',
+  category: 'ana-yemek',
+  time: 35,
+  difficulty: 'Kolay',
+  servings: 4,
+  desc: 'Kıyma ile pişirilen klasik ıspanak yemeği.',
+  tags: ['Pratik', 'Et', 'Klasik'],
+  ingredients: ['Ispanak', 'Kıyma', 'Soğan', 'Baharat'],
+  steps: ['Soğanı kavurun.', 'Kıymayı pişirin.', 'Ispanağı ekleyin.', 'Servis yapın.']
+},
+{
+  id: 93,
+  emoji: '🧆',
+  name: 'İçli Köfte',
+  category: 'ana-yemek',
+  time: 90,
+  difficulty: 'Zor',
+  servings: 6,
+  desc: 'İçi kıymalı ve cevizli geleneksel içli köfte.',
+  tags: ['Özel', 'Geleneksel', 'Zaman Alıcı'],
+  ingredients: ['İnce bulgur', 'Kıyma', 'İrmik', 'Ceviz'],
+  steps: ['Dış harcı hazırlayın.', 'İç harcı kavurun.', 'Şekil verin.', 'Haşlayın veya kızartın.']
+},
+{
+  id: 94,
+  emoji: '🌾',
+  name: 'Tarhana',
+  category: 'corba',
+  time: 2880,
+  difficulty: 'Zor',
+  servings: 20,
+  desc: 'Fermente edilerek hazırlanan geleneksel tarhana.',
+  tags: ['Kışlık', 'Geleneksel', 'Uzun Süre'],
+  ingredients: ['Domates', 'Biber', 'Yoğurt', 'Un'],
+  steps: ['Sebzeleri hazırlayın.', 'Karıştırın.', 'Fermente edin.', 'Kurutun.']
+},
+{
+  id: 95,
+  emoji: '🥙',
+  name: 'Tavuk Döner',
+  category: 'atistirma',
+  time: 60,
+  difficulty: 'Orta',
+  servings: 4,
+  desc: 'Ev usulü tavuk döner.',
+  tags: ['Sokak', 'Pratik', 'Tavuk'],
+  ingredients: ['Tavuk but', 'Yoğurt', 'Sarımsak', 'Baharat'],
+  steps: ['Tavuğu marine edin.', 'Bekletin.', 'Tavada pişirin.', 'Servis yapın.']
+},
+{
+  id: 96,
+  emoji: '🍮',
+  name: 'Lokma Tatlısı',
+  category: 'tatli',
+  time: 45,
+  difficulty: 'Orta',
+  servings: 20,
+  desc: 'Şerbetli lokma tatlısı.',
+  tags: ['Tatlı', 'Geleneksel', 'Şerbetli'],
+  ingredients: ['Un', 'Maya', 'Şeker', 'Su'],
+  steps: ['Hamuru hazırlayın.', 'Mayalandırın.', 'Kızartın.', 'Şerbete batırın.']
+},
+
+
+];
+
+const CATEGORIES = [
+  { key: 'hepsi',     label: '🍽 Hepsi' },
+  { key: 'kahvalti',  label: '🥞 Kahvaltı' },
+  { key: 'ana-yemek', label: '🍖 Ana Yemek' },
+  { key: 'corba',     label: '🥣 Çorba' },
+  { key: 'salata',    label: '🥗 Salata' },
+  { key: 'tatli',     label: '🍮 Tatlı' },
+  { key: 'atistirma', label: '🥙 Atıştırmalık' },
+  { key: 'icecek',    label: '🫗 İçecek' },
+  { key: 'vejetaryen',label: '🥦 Vejetaryen' },
+];
+
+const FEATURED_IDS = [38, 50, 31, 37, 48, 39, 47, 13, 26, 4];
+
+/* Category color helper */
+function catClass(cat) { return `cat-${cat}`; }
+function bgClass(cat)  { return `bg-${cat}`; }
+
+function diffClass(diff) {
+  if (diff === 'Kolay') return 'diff-kolay';
+  if (diff === 'Orta')  return 'diff-orta';
+  return 'diff-zor';
+}
+
+/* ── STATE ─────────────────────────────────────────────── */
+const state = {
+  favorites: JSON.parse(localStorage.getItem('lezzet-atlası-favs') || '[]'),
+  activeFilter: 'hepsi',
+  searchQuery: '',
+  ingredientList: [],   // active ingredient filter chips
+  carouselIndex: 0,
+  carouselAuto: null,
+};
+
+function saveFavs() {
+  localStorage.setItem('lezzet-atlası-favs', JSON.stringify(state.favorites));
+}
+
+function isFav(id) { return state.favorites.includes(id); }
+
+function toggleFav(id) {
+  if (isFav(id)) {
+    state.favorites = state.favorites.filter(f => f !== id);
+    showToast('Favorilerden kaldırıldı', '💔');
+  } else {
+    state.favorites.push(id);
+    showToast('Favorilere eklendi', '❤️');
+  }
+  saveFavs();
+  renderFavGrid();
+  updateAllFavBtns(id);
+}
+
+function updateAllFavBtns(id) {
+  document.querySelectorAll(`[data-fav-btn="${id}"]`).forEach(btn => {
+    if (isFav(id)) {
+      btn.classList.add('active');
+      btn.setAttribute('aria-label', 'Favorilerden kaldır');
+    } else {
+      btn.classList.remove('active');
+      btn.setAttribute('aria-label', 'Favorilere ekle');
+    }
+  });
+  document.querySelectorAll(`[data-modal-fav="${id}"]`).forEach(btn => {
+    if (isFav(id)) {
+      btn.classList.add('active');
+      btn.innerHTML = '<i class="fa-solid fa-heart" aria-hidden="true"></i> Favoride';
+    } else {
+      btn.classList.remove('active');
+      btn.innerHTML = '<i class="fa-regular fa-heart" aria-hidden="true"></i> Favoriye Ekle';
+    }
+  });
+}
+
+/* ── INGREDIENT SEARCH ─────────────────────────────────── */
+function normalizeStr(s) {
+  return s.toLowerCase().trim()
+    .replace(/[çÇ]/g,'c').replace(/[ğĞ]/g,'g').replace(/[ıİ]/g,'i')
+    .replace(/[öÖ]/g,'o').replace(/[şŞ]/g,'s').replace(/[üÜ]/g,'u');
+}
+
+function recipeMatchesIngredients(recipe, ingredients) {
+  if (!ingredients.length) return true;
+  const allText = normalizeStr([
+    recipe.name,
+    ...recipe.ingredients,
+    ...recipe.tags,
+    recipe.desc
+  ].join(' '));
+  return ingredients.every(ing => allText.includes(normalizeStr(ing)));
+}
+
+function addIngredient(raw) {
+  // Support comma-separated input
+  const parts = raw.split(/[,،]/);
+  parts.forEach(p => {
+    const val = p.trim();
+    if (val && !state.ingredientList.includes(val)) {
+      state.ingredientList.push(val);
+    }
+  });
+  renderIngredientChips();
+}
+
+function removeIngredient(ing) {
+  state.ingredientList = state.ingredientList.filter(i => i !== ing);
+  renderIngredientChips();
+  renderRecipesGrid();
+  updateStats();
+}
+
+function clearIngredients() {
+  state.ingredientList = [];
+  renderIngredientChips();
+  renderRecipesGrid();
+  updateStats();
+}
+
+function renderIngredientChips() {
+  const container = document.getElementById('ingredientChips');
+  container.innerHTML = state.ingredientList.map(ing => `
+    <span class="ingredient-chip">
+      ${ing}
+      <button class="chip-remove" onclick="removeIngredient('${ing.replace(/'/g,"&#39;")}')" aria-label="${ing} malzemesini kaldır">
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+      </button>
+    </span>
+  `).join('');
+}
+
+function updateStats() {
+  const count = RECIPES.length;
+  document.getElementById('heroBadgeCount').textContent = count;
+  document.getElementById('heroStatCount').textContent = count;
+}
+
+/* ── INGREDIENT RESULT BANNER ──────────────────────────── */
+function renderIngredientBanner(matchCount, total) {
+  const banner = document.getElementById('ingredientResultBanner');
+  if (!state.ingredientList.length) {
+    banner.style.display = 'none';
+    return;
+  }
+  banner.style.display = '';
+  banner.innerHTML = `
+    <div class="ingredient-result-banner" role="status" aria-live="polite">
+      <div class="info">
+        <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+        <span>
+          <strong>${state.ingredientList.join(', ')}</strong> malzemeleriyle
+          <strong>${matchCount}</strong> tarif bulundu
+          ${matchCount === 0 ? '— farklı malzeme deneyin' : ''}
+        </span>
+      </div>
+      <button class="btn-clear-ingredient" onclick="clearIngredients()" aria-label="Malzeme filtresini temizle">
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i> Temizle
+      </button>
+    </div>
+  `;
+}
+
+/* ── TOAST ─────────────────────────────────────────────── */
+function showToast(msg, icon = '✅') {
+  const tc = document.getElementById('toastContainer');
+  const t = document.createElement('div');
+  t.className = 'toast';
+  t.setAttribute('role', 'status');
+  t.innerHTML = `<span class="toast-icon" aria-hidden="true">${icon}</span>${msg}`;
+  tc.appendChild(t);
+  setTimeout(() => {
+    t.classList.add('fade-out');
+    t.addEventListener('animationend', () => t.remove(), { once: true });
+  }, 2800);
+}
+
+/* ── RECIPE CARD HTML ────────────────────────────────────── */
+function recipeCardHTML(recipe, inFavSection = false) {
+  const fav = isFav(recipe.id);
+  return `
+<article class="recipe-card" role="listitem" data-id="${recipe.id}" tabindex="0" aria-label="${recipe.name}">
+  <div class="recipe-card-media ${bgClass(recipe.category)}" aria-hidden="true">
+    <span role="img" aria-label="${recipe.name}">${recipe.emoji}</span>
+    <button
+      class="fav-btn ${fav ? 'active' : ''}"
+      data-fav-btn="${recipe.id}"
+      aria-label="${fav ? 'Favorilerden kaldır' : 'Favorilere ekle'}"
+      onclick="event.stopPropagation(); toggleFav(${recipe.id})"
+    >
+      <i class="${fav ? 'fa-solid' : 'fa-regular'} fa-heart" aria-hidden="true"></i>
+    </button>
+    <span class="difficulty-badge ${diffClass(recipe.difficulty)}" aria-label="Zorluk: ${recipe.difficulty}">
+      ${recipe.difficulty}
+    </span>
+  </div>
+  <div class="recipe-card-body">
+    <div class="recipe-cat-tag ${catClass(recipe.category)}">${CATEGORIES.find(c=>c.key===recipe.category)?.label.split(' ').slice(1).join(' ') || recipe.category}</div>
+    <h3 class="recipe-title">${recipe.name}</h3>
+    <div class="recipe-meta">
+      <div class="recipe-meta-item">
+        <i class="fa-regular fa-clock" aria-hidden="true"></i>
+        <span>${recipe.time} dk</span>
+      </div>
+      <span class="sep" aria-hidden="true">·</span>
+      <div class="recipe-meta-item">
+        <i class="fa-solid fa-users" aria-hidden="true"></i>
+        <span>${recipe.servings} kişi</span>
+      </div>
+
+    </div>
+  </div>
+</article>`;
+}
+
+/* ── RECIPE GRID ─────────────────────────────────────────── */
+function renderRecipesGrid() {
+  const grid = document.getElementById('recipesGrid');
+  const query = state.searchQuery.toLowerCase().trim();
+  const filtered = RECIPES.filter(r => {
+    const matchCat    = state.activeFilter === 'hepsi' || r.category === state.activeFilter;
+    const matchSearch = !query || r.name.toLowerCase().includes(query) || r.desc.toLowerCase().includes(query);
+    const matchIng    = recipeMatchesIngredients(r, state.ingredientList);
+    return matchCat && matchSearch && matchIng;
+  });
+
+  renderIngredientBanner(filtered.length, RECIPES.length);
+
+  if (!filtered.length) {
+    grid.innerHTML = `
+      <div class="empty-state" role="alert">
+        <div class="icon" aria-hidden="true">${state.ingredientList.length ? '🛒' : '🔍'}</div>
+        <h3>${state.ingredientList.length ? 'Eşleşen tarif bulunamadı' : 'Sonuç bulunamadı'}</h3>
+        <p>${state.ingredientList.length
+          ? 'Daha az malzeme girerek veya farklı malzemeler deneyerek tekrar arayın.'
+          : 'Farklı bir arama terimi veya kategori deneyin.'
+        }</p>
+      </div>`;
+    return;
+  }
+
+  grid.innerHTML = filtered.map(r => recipeCardHTML(r)).join('');
+  attachCardListeners(grid);
+}
+
+/* ── FAV GRID ─────────────────────────────────────────────── */
+function renderFavGrid() {
+  const grid = document.getElementById('favGrid');
+  const favRecipes = RECIPES.filter(r => isFav(r.id));
+  if (!favRecipes.length) {
+    grid.innerHTML = `
+      <div class="favorites-empty">
+        <div class="icon" aria-hidden="true">🤍</div>
+        <h3>Henüz favorin yok</h3>
+        <p>Tarif kartlarındaki ❤ ikonuna tıklayarak tarifleri kaydet.</p>
+      </div>`;
+    return;
+  }
+  grid.innerHTML = favRecipes.map(r => recipeCardHTML(r, true)).join('');
+  attachCardListeners(grid);
+}
+
+/* ── CARD CLICK LISTENERS ──────────────────────────────────── */
+function attachCardListeners(container) {
+  container.querySelectorAll('.recipe-card').forEach(card => {
+    card.addEventListener('click', (e) => {
+      if (e.target.closest('.fav-btn')) return;
+      const id = parseInt(card.dataset.id);
+      openModal(id);
+    });
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        const id = parseInt(card.dataset.id);
+        openModal(id);
+      }
+    });
+  });
+}
+
+/* ── FILTER TABS ─────────────────────────────────────────── */
+function renderFilterTabs() {
+  const container = document.getElementById('filterTabs');
+  container.innerHTML = CATEGORIES.map(c => `
+    <button
+      class="filter-tab ${state.activeFilter === c.key ? 'active' : ''}"
+      role="tab"
+      aria-selected="${state.activeFilter === c.key}"
+      data-filter="${c.key}"
+    >${c.label}</button>
+  `).join('');
+
+  container.querySelectorAll('.filter-tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      state.activeFilter = btn.dataset.filter;
+      renderFilterTabs();
+      renderRecipesGrid();
+    });
+  });
+}
+
+/* ── MODAL ─────────────────────────────────────────────────── */
+function openModal(id) {
+  const r = RECIPES.find(x => x.id === id);
+  if (!r) return;
+
+  const overlay = document.getElementById('modalOverlay');
+  const hero = document.getElementById('modalHero');
+  const body = document.getElementById('modalBody');
+  const fav = isFav(id);
+
+  hero.className = `modal-hero ${bgClass(r.category)}`;
+  hero.innerHTML = `
+    <button class="modal-close" id="modalClose" aria-label="Kapat">
+      <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+    </button>
+    <span role="img" aria-label="${r.name}" style="font-size:6rem">${r.emoji}</span>
+  `;
+
+  body.innerHTML = `
+    <div class="modal-header">
+      <h2 class="modal-title" id="modalTitle">${r.name}</h2>
+      <button
+        class="modal-fav-btn ${fav ? 'active' : ''}"
+        data-modal-fav="${r.id}"
+        onclick="toggleFav(${r.id})"
+        aria-label="${fav ? 'Favorilerden kaldır' : 'Favorilere ekle'}"
+      >
+        ${fav
+          ? '<i class="fa-solid fa-heart" aria-hidden="true"></i> Favoride'
+          : '<i class="fa-regular fa-heart" aria-hidden="true"></i> Favoriye Ekle'
+        }
+      </button>
+    </div>
+
+    <div class="modal-stats" role="list" aria-label="Tarif bilgileri">
+      <div class="modal-stat" role="listitem">
+        <i class="fa-regular fa-clock" aria-hidden="true"></i>
+        <span>Süre:</span><strong>${r.time} dakika</strong>
+      </div>
+      <div class="modal-stat" role="listitem">
+        <i class="fa-solid fa-users" aria-hidden="true"></i>
+        <span>Porsiyon:</span><strong>${r.servings} kişilik</strong>
+      </div>
+      <div class="modal-stat" role="listitem">
+        <i class="fa-solid fa-gauge-high" aria-hidden="true"></i>
+        <span>Zorluk:</span><strong>${r.difficulty}</strong>
+      </div>
+      <div class="modal-stat" role="listitem">
+        <i class="fa-solid fa-star" aria-hidden="true"></i>
+      
+      </div>
+    </div>
+
+    <div class="modal-section-title">
+      <i class="fa-solid fa-carrot" aria-hidden="true"></i> Malzemeler
+    </div>
+    <ul class="ingredients-list" aria-label="Malzeme listesi">
+      ${r.ingredients.map(i => `<li class="ingredient-item">${i}</li>`).join('')}
+    </ul>
+
+    <div class="modal-section-title">
+      <i class="fa-solid fa-list-ol" aria-hidden="true"></i> Hazırlanışı
+    </div>
+    <ol class="steps-list" aria-label="Yapılış adımları">
+      ${r.steps.map((s, i) => `
+        <li class="step-item">
+          <div class="step-num" aria-hidden="true">${i + 1}</div>
+          <p class="step-text">${s}</p>
+        </li>
+      `).join('')}
+    </ol>
+
+    <div class="modal-section-title">
+      <i class="fa-solid fa-tags" aria-hidden="true"></i> Etiketler
+    </div>
+    <div class="modal-tags" aria-label="Etiketler">
+      ${r.tags.map(t => `<span class="modal-tag">${t}</span>`).join('')}
+    </div>
+  `;
+
+  overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+
+  document.getElementById('modalClose').addEventListener('click', closeModal);
+  overlay.addEventListener('click', (e) => { if (e.target === overlay) closeModal(); });
+}
+
+function closeModal() {
+  const overlay = document.getElementById('modalOverlay');
+  overlay.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+/* ── CAROUSEL ─────────────────────────────────────────────── */
+const FEATURED = FEATURED_IDS.map(id => RECIPES.find(r => r.id === id)).filter(Boolean);
+
+function renderCarousel() {
+  const track = document.getElementById('carouselTrack');
+  // Duplicate for infinite feel
+  const items = [...FEATURED, ...FEATURED, ...FEATURED];
+  track.innerHTML = items.map(r => {
+    const catLabel = CATEGORIES.find(c => c.key === r.category)?.label.split(' ').slice(1).join(' ') || r.category;
+    return `
+<article class="featured-card" data-id="${r.id}" tabindex="0" aria-label="${r.name}">
+  <div class="featured-card-img ${bgClass(r.category)}" aria-hidden="true">
+    <span role="img" aria-label="${r.name}">${r.emoji}</span>
+  </div>
+  <div class="featured-card-body">
+    <span class="featured-card-tag ${catClass(r.category)}">${catLabel}</span>
+    <h3 class="featured-card-title">${r.name}</h3>
+    <p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:var(--sp-4);overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;line-clamp:2;-webkit-box-orient:vertical;">${r.desc}</p>
+    <div class="featured-card-footer">
+
+      <div class="meta-pill" aria-label="${r.time} dakika">
+        <i class="fa-regular fa-clock" aria-hidden="true"></i>
+        ${r.time} dk
+      </div>
+    </div>
+  </div>
+</article>`;
+  }).join('');
+
+  // Start at middle set
+  state.carouselIndex = FEATURED.length;
+  updateCarouselPosition(false);
+
+  // Click to open modal
+  track.querySelectorAll('.featured-card').forEach(card => {
+    card.addEventListener('click', () => openModal(parseInt(card.dataset.id)));
+    card.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(parseInt(card.dataset.id)); }
+    });
+  });
+}
+
+function getCardWidth() {
+  const card = document.querySelector('.featured-card');
+  if (!card) return 340;
+  const style = window.getComputedStyle(card);
+  const gap = 20; // var(--sp-5) = 20px
+  return card.offsetWidth + gap;
+}
+
+function updateCarouselPosition(animate = true) {
+  const track = document.getElementById('carouselTrack');
+  if (!track) return;
+  const offset = state.carouselIndex * getCardWidth();
+  if (!animate) {
+    track.style.transition = 'none';
+    track.style.transform = `translateX(-${offset}px)`;
+    requestAnimationFrame(() => { track.style.transition = ''; });
+  } else {
+    track.style.transform = `translateX(-${offset}px)`;
+  }
+}
+
+function carouselNext() {
+  state.carouselIndex++;
+  updateCarouselPosition();
+  const track = document.getElementById('carouselTrack');
+  track.addEventListener('transitionend', () => {
+    if (state.carouselIndex >= FEATURED.length * 2) {
+      state.carouselIndex = FEATURED.length;
+      updateCarouselPosition(false);
+    }
+  }, { once: true });
+}
+
+function carouselPrev() {
+  state.carouselIndex--;
+  updateCarouselPosition();
+  const track = document.getElementById('carouselTrack');
+  track.addEventListener('transitionend', () => {
+    if (state.carouselIndex < FEATURED.length) {
+      state.carouselIndex = FEATURED.length * 2 - 1;
+      updateCarouselPosition(false);
+    }
+  }, { once: true });
+}
+
+function startCarouselAuto() {
+  state.carouselAuto = setInterval(carouselNext, 4000);
+}
+
+function stopCarouselAuto() {
+  clearInterval(state.carouselAuto);
+}
+
+// Drag/swipe on carousel
+function initCarouselDrag() {
+  const wrapper = document.querySelector('.carousel-track-wrapper');
+  if (!wrapper) return;
+  let startX = 0, dragging = false, moved = 0;
+
+  const onStart = e => {
+    dragging = true;
+    startX = (e.touches ? e.touches[0].clientX : e.clientX);
+    stopCarouselAuto();
+  };
+  const onMove = e => {
+    if (!dragging) return;
+    moved = (e.touches ? e.touches[0].clientX : e.clientX) - startX;
+  };
+  const onEnd = () => {
+    if (!dragging) return;
+    dragging = false;
+    if (moved < -40) carouselNext();
+    else if (moved > 40) carouselPrev();
+    moved = 0;
+    startCarouselAuto();
+  };
+
+  wrapper.addEventListener('mousedown', onStart);
+  wrapper.addEventListener('touchstart', onStart, { passive: true });
+  window.addEventListener('mousemove', onMove);
+  window.addEventListener('touchmove', onMove, { passive: true });
+  window.addEventListener('mouseup', onEnd);
+  window.addEventListener('touchend', onEnd);
+}
+
+/* ── HERO MINI CARDS ─────────────────────────────────────── */
+function renderHeroVisual() {
+  const picks = [RECIPES[0], RECIPES[3], RECIPES[4], RECIPES[7]];
+  document.getElementById('heroVisual').innerHTML = picks.map(r => `
+    <div class="mini-card" aria-hidden="true">
+      <div class="mini-emoji">${r.emoji}</div>
+      <div class="mini-card-name">${r.name}</div>
+      
+    </div>
+  `).join('');
+}
+
+/* ── THEME ────────────────────────────────────────────────── */
+function initTheme() {
+  const saved = localStorage.getItem('lezzet-atlası-theme');
+  const preferred = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  const theme = saved || preferred;
+  document.documentElement.setAttribute('data-theme', theme);
+  updateThemeIcon(theme);
+}
+
+function updateThemeIcon(theme) {
+  const btn = document.getElementById('themeToggle');
+  btn.innerHTML = theme === 'dark'
+    ? '<i class="fa-solid fa-sun" aria-hidden="true"></i>'
+    : '<i class="fa-solid fa-moon" aria-hidden="true"></i>';
+}
+
+document.getElementById('themeToggle').addEventListener('click', () => {
+  const current = document.documentElement.getAttribute('data-theme');
+  const next = current === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  localStorage.setItem('lezzet-atlası-theme', next);
+  updateThemeIcon(next);
+});
+
+/* ── NAVBAR ────────────────────────────────────────────────── */
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('navbar');
+  if (window.scrollY > 20) nav.classList.add('scrolled');
+  else nav.classList.remove('scrolled');
+}, { passive: true });
+
+/* ── HAMBURGER ─────────────────────────────────────────────── */
+const ham = document.getElementById('hamburger');
+const mob = document.getElementById('mobileMenu');
+
+ham.addEventListener('click', () => {
+  const open = ham.classList.toggle('open');
+  mob.classList.toggle('open', open);
+  ham.setAttribute('aria-expanded', open);
+});
+
+mob.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    ham.classList.remove('open');
+    mob.classList.remove('open');
+    ham.setAttribute('aria-expanded', 'false');
+  });
+});
+
+/* ── SEARCH ────────────────────────────────────────────── */
+const heroInput = document.getElementById('heroSearch');
+let searchDebounce;
+
+heroInput.addEventListener('input', () => {
+  clearTimeout(searchDebounce);
+  searchDebounce = setTimeout(() => {
+    state.searchQuery = heroInput.value;
+    renderRecipesGrid();
+    if (heroInput.value.length > 0) {
+      document.getElementById('tarifler').scrollIntoView({ behavior: 'smooth' });
+    }
+  }, 350);
+});
+
+document.getElementById('heroSearchBtn').addEventListener('click', () => {
+  state.searchQuery = heroInput.value;
+  renderRecipesGrid();
+  document.getElementById('tarifler').scrollIntoView({ behavior: 'smooth' });
+});
+
+heroInput.addEventListener('keydown', e => {
+  if (e.key === 'Enter') {
+    state.searchQuery = heroInput.value;
+    renderRecipesGrid();
+    document.getElementById('tarifler').scrollIntoView({ behavior: 'smooth' });
+  }
+});
+
+/* ── INGREDIENT SEARCH EVENTS ───────────────────────────── */
+const ingInput = document.getElementById('ingredientInput');
+
+ingInput.addEventListener('keydown', e => {
+  if (e.key === 'Enter' && ingInput.value.trim()) {
+    addIngredient(ingInput.value);
+    ingInput.value = '';
+    renderRecipesGrid();
+    updateStats();
+    document.getElementById('tarifler').scrollIntoView({ behavior: 'smooth' });
+  }
+});
+
+document.getElementById('ingredientSearchBtn').addEventListener('click', () => {
+  if (ingInput.value.trim()) {
+    addIngredient(ingInput.value);
+    ingInput.value = '';
+  }
+  if (state.ingredientList.length) {
+    renderRecipesGrid();
+    updateStats();
+    document.getElementById('tarifler').scrollIntoView({ behavior: 'smooth' });
+  }
+});
+
+/* ── NEWSLETTER ─────────────────────────────────────────────── */
+function handleNewsletter(e) {
+  e.preventDefault();
+  const input = document.getElementById('nlEmail');
+  showToast('Bültene başarıyla abone oldunuz!', '✅');
+  input.value = '';
+}
+
+/* ── INTERSECTION OBSERVER ─────────────────────────────────── */
+function initIntersectionObserver() {
+  if (!('IntersectionObserver' in window)) {
+    document.querySelectorAll('.fade-in-section').forEach(el => el.classList.add('visible'));
+    return;
+  }
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fade-in-section').forEach(el => obs.observe(el));
+}
+
+/* ── CAROUSEL CONTROLS ─────────────────────────────────────── */
+document.getElementById('carouselNext').addEventListener('click', () => { stopCarouselAuto(); carouselNext(); startCarouselAuto(); });
+document.getElementById('carouselPrev').addEventListener('click', () => { stopCarouselAuto(); carouselPrev(); startCarouselAuto(); });
+
+/* ── INIT ──────────────────────────────────────────────────── */
+function init() {
+  initTheme();
+  updateStats();
+  renderHeroVisual();
+  renderCarousel();
+  initCarouselDrag();
+  startCarouselAuto();
+  renderFilterTabs();
+  renderRecipesGrid();
+  renderFavGrid();
+  initIntersectionObserver();
+  auth.init();
+  const loader = document.getElementById('pageLoader');
+if(loader){ loader.style.opacity='0'; setTimeout(()=>loader.remove(),400); 
+}
+}
+
+
+document.addEventListener('DOMContentLoaded', init);
+
+/* ============================================================
+   AUTH & ADMIN SYSTEM
+   ============================================================ */
+
+/* ── Sabit Demo Hesaplar (hashlenmiş şifre simülasyonu) ── */
+const DEFAULT_USERS = [
+  {
+    id: 'u1', name: 'Hira Nur Karakuzu', email: 'karakuzuhira92@gmail.com',
+    passwordHash: btoa('admin'), role: 'admin',
+    createdAt: '2025-01-01', avatar: '#FF6B5B'
+  },
+  {
+    id: 'u2', name: 'Editör Kullanıcı', email: 'editor@lezzet.com',
+    passwordHash: btoa('Editor2024!'), role: 'editor',
+    createdAt: '2024-02-01', avatar: '#4DA8DA'
+  },
+  {
+    id: 'u3', name: 'Normal Kullanıcı', email: 'user@lezzet.com',
+    passwordHash: btoa('User2024!'), role: 'user',
+    createdAt: '2024-03-01', avatar: '#6BCB77'
+  }
+];
+
+/* ── Auth State ── */
+const auth = {
+  currentUser: null,
+  users: [],
+  session: null,
+
+  init() {
+    // Kullanıcıları yükle
+    const stored = localStorage.getItem('la-users');
+    this.users = stored ? JSON.parse(stored) : [...DEFAULT_USERS];
+    if (!stored) this.saveUsers();
+
+    // Oturum kontrolü
+    const sess = localStorage.getItem('la-session');
+    if (sess) {
+      const s = JSON.parse(sess);
+      const user = this.users.find(u => u.id === s.userId);
+      if (user && s.expires > Date.now()) {
+        this.currentUser = user;
+        this.session = s;
+        this.onLogin();
+        return;
+      }
+      localStorage.removeItem('la-session');
+    }
+
+    // Giriş yapılmamışsa modal aç
+    this.showAuthModal();
+  },
+
+  saveUsers() {
+    localStorage.setItem('la-users', JSON.stringify(this.users));
+  },
+
+  createSession(user) {
+    const sess = {
+      userId: user.id,
+      token: Math.random().toString(36).slice(2),
+      expires: Date.now() + 7 * 24 * 60 * 60 * 1000 // 7 gün
+    };
+    localStorage.setItem('la-session', JSON.stringify(sess));
+    this.session = sess;
+    this.currentUser = user;
+  },
+
+  logout() {
+    localStorage.removeItem('la-session');
+    this.currentUser = null;
+    this.session = null;
+    updateNavForAuth(null);
+    closeAdminPanel();
+    showToast('Çıkış yapıldı', '👋');
+    setTimeout(() => this.showAuthModal(), 400);
+  },
+
+  showAuthModal() {
+    document.getElementById('authOverlay').classList.add('open');
+  },
+
+  hideAuthModal() {
+    document.getElementById('authOverlay').classList.remove('open');
+  },
+
+  onLogin() {
+    updateNavForAuth(this.currentUser);
+    this.hideAuthModal();
+    showToast(`Hoş geldin, ${this.currentUser.name.split(' ')[0]}! 👋`, '✅');
+  },
+
+  can(action) {
+    if (!this.currentUser) return false;
+    const perms = {
+      admin:  ['view','add','edit','delete','manage_users'],
+      editor: ['view','add','edit'],
+      user:   ['view']
+    };
+    return perms[this.currentUser.role]?.includes(action) || false;
+  }
+};
+
+/* ── Auth Tab Switch ── */
+function switchAuthTab(tab) {
+  const isLogin = tab === 'login';
+  document.getElementById('loginTab').classList.toggle('active', isLogin);
+  document.getElementById('registerTab').classList.toggle('active', !isLogin);
+  document.getElementById('loginTab').setAttribute('aria-selected', isLogin);
+  document.getElementById('registerTab').setAttribute('aria-selected', !isLogin);
+  document.getElementById('loginForm').style.display = isLogin ? '' : 'none';
+  document.getElementById('registerForm').style.display = isLogin ? 'none' : '';
+  document.getElementById('loginError').style.display = 'none';
+  document.getElementById('registerError').style.display = 'none';
+}
+
+/* ── Login Handler ── */
+function handleLogin() {
+  const email    = document.getElementById('loginEmail').value.trim().toLowerCase();
+  const password = document.getElementById('loginPassword').value;
+  const errEl    = document.getElementById('loginError');
+  const btn      = document.getElementById('loginBtn');
+
+  errEl.style.display = 'none';
+
+  if (!email || !password) {
+    showAuthError(errEl, 'E-posta ve şifre zorunludur.');
+    return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = 'Giriş yapılıyor...';
+
+  setTimeout(() => {
+    const user = auth.users.find(u => u.email === email);
+    if (!user || user.passwordHash !== btoa(password)) {
+      showAuthError(errEl, 'E-posta veya şifre hatalı.');
+      btn.disabled = false;
+      btn.innerHTML = '<i class="fa-solid fa-right-to-bracket"></i> Giriş Yap';
+      document.getElementById('mobileUserInfo').style.display = 'none';
+      return;
+    }
+    const mobileInfo = document.getElementById('mobileUserInfo');
+document.getElementById('mobileUserName').textContent = user.name;
+document.getElementById('mobileUserRole').textContent = user.role;
+mobileInfo.style.display = 'block';
+    auth.createSession(user);
+    auth.onLogin();
+    btn.disabled = false;
+    btn.innerHTML = '<i class="fa-solid fa-right-to-bracket"></i> Giriş Yap';
+    document.getElementById('loginEmail').value = '';
+    document.getElementById('loginPassword').value = '';
+  }, 600);
+}
+
+/* ── Register Handler ── */
+function handleRegister() {
+  const name   = document.getElementById('regName').value.trim();
+  const email  = document.getElementById('regEmail').value.trim().toLowerCase();
+  const pass   = document.getElementById('regPassword').value;
+  const pass2  = document.getElementById('regPassword2').value;
+  const errEl  = document.getElementById('registerError');
+  const btn    = document.getElementById('registerBtn');
+
+  errEl.style.display = 'none';
+
+  if (!name || !email || !pass) { showAuthError(errEl, 'Tüm alanlar zorunludur.'); return; }
+  if (pass.length < 6)          { showAuthError(errEl, 'Şifre en az 6 karakter olmalı.'); return; }
+  if (pass !== pass2)            { showAuthError(errEl, 'Şifreler eşleşmiyor.'); return; }
+  if (auth.users.find(u => u.email === email)) { showAuthError(errEl, 'Bu e-posta zaten kayıtlı.'); return; }
+
+  btn.disabled = true;
+  btn.textContent = 'Hesap oluşturuluyor...';
+
+  setTimeout(() => {
+    const newUser = {
+      id: 'u' + Date.now(),
+      name, email,
+      passwordHash: btoa(pass),
+      role: 'user',
+      createdAt: new Date().toISOString().slice(0,10),
+      avatar: '#' + Math.floor(Math.random()*0xffffff).toString(16).padStart(6,'0')
+    };
+    auth.users.push(newUser);
+    auth.saveUsers();
+    auth.createSession(newUser);
+    auth.onLogin();
+    btn.disabled = false;
+    btn.innerHTML = '<i class="fa-solid fa-user-plus"></i> Hesap Oluştur';
+  }, 600);
+}
+
+/* ── Quick Login (demo butonları) ── */
+function quickLogin(email, pass) {
+  document.getElementById('loginEmail').value = email;
+  document.getElementById('loginPassword').value = pass;
+  switchAuthTab('login');
+  handleLogin();
+}
+
+/* ── Auth Error Helper ── */
+function showAuthError(el, msg) {
+  el.style.display = 'flex';
+  el.className = 'auth-error';
+  el.innerHTML = `<i class="fa-solid fa-triangle-exclamation"></i> ${msg}`;
+}
+
+/* ── Navbar Auth Update ── */
+function updateNavForAuth(user) {
+  const actions = document.querySelector('.nav-actions');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  // Dropdown varsa kaldır
+  document.querySelector('.user-dropdown')?.remove();
+
+  if (!user) {
+    // Giriş butonunu geri koy
+    const existing = actions.querySelector('.nav-user, .admin-nav-badge');
+    existing?.remove();
+    if (!actions.querySelector('.btn-primary')) {
+      const btn = document.createElement('a');
+      btn.href = '#tarifler';
+      btn.className = 'btn-primary';
+      btn.innerHTML = '<i class="fa-solid fa-utensils"></i> Keşfet';
+      actions.insertBefore(btn, actions.querySelector('.hamburger'));
+    }
+    return;
+  }
+
+  // Keşfet butonunu kaldır
+  actions.querySelector('.btn-primary')?.remove();
+  actions.querySelector('.nav-user')?.remove();
+  actions.querySelector('.admin-nav-badge')?.remove();
+
+  // Admin Badge
+  if (user.role === 'admin' || user.role === 'editor') {
+    const badge = document.createElement('button');
+    badge.className = 'admin-nav-badge';
+    badge.innerHTML = `<i class="fa-solid fa-shield-halved"></i> ${user.role === 'admin' ? 'Admin' : 'Editör'}`;
+    badge.setAttribute('aria-label', 'Admin panelini aç');
+    badge.onclick = openAdminPanel;
+    actions.insertBefore(badge, actions.querySelector('.hamburger'));
+  }
+
+  // User avatar + dropdown
+  const navUser = document.createElement('div');
+  navUser.className = 'nav-user';
+  navUser.setAttribute('role', 'button');
+  navUser.setAttribute('aria-label', 'Kullanıcı menüsü');
+  navUser.setAttribute('tabindex', '0');
+  navUser.innerHTML = `
+    <div class="nav-avatar" style="background:${user.avatar}">${user.name.slice(0,2).toUpperCase()}</div>
+    <div>
+      <div class="nav-user-name">${user.name.split(' ')[0]}</div>
+      <div class="nav-user-role">${user.role}</div>
+    </div>
+    <i class="fa-solid fa-chevron-down" style="font-size:0.65rem;color:var(--text-muted)" aria-hidden="true"></i>
+  `;
+
+  const dropdown = document.createElement('div');
+  dropdown.className = 'user-dropdown';
+  dropdown.innerHTML = `
+    <div style="padding:var(--sp-3) var(--sp-3) var(--sp-2);border-bottom:1px solid var(--border-subtle);margin-bottom:var(--sp-2)">
+      <div style="font-weight:700;font-size:0.875rem;color:var(--text-primary)">${user.name}</div>
+      <div style="font-size:0.75rem;color:var(--text-muted)">${user.email}</div>
+    </div>
+    ${(user.role === 'admin' || user.role === 'editor') ? `
+    <button class="dropdown-item" onclick="openAdminPanel();closeDropdown()">
+      <i class="fa-solid fa-shield-halved" style="color:var(--brand-coral)"></i> Admin Paneli
+    </button>` : ''}
+    <button class="dropdown-item" onclick="closeDropdown()">
+      <i class="fa-regular fa-heart" style="color:#EF4444"></i> Favorilerim
+    </button>
+    <div class="dropdown-divider"></div>
+    <button class="dropdown-item danger" onclick="auth.logout();closeDropdown()">
+      <i class="fa-solid fa-right-from-bracket"></i> Çıkış Yap
+    </button>
+  `;
+
+  navUser.onclick = toggleDropdown;
+  navUser.onkeydown = e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleDropdown(); } };
+
+  actions.insertBefore(navUser, actions.querySelector('.hamburger'));
+  document.body.appendChild(dropdown);
+
+  function toggleDropdown() {
+    const isOpen = dropdown.classList.toggle('open');
+    navUser.setAttribute('aria-expanded', isOpen);
+  }
+}
+
+function closeDropdown() {
+  document.querySelector('.user-dropdown')?.classList.remove('open');
+}
+
+document.addEventListener('click', e => {
+  if (!e.target.closest('.nav-user') && !e.target.closest('.user-dropdown')) {
+    closeDropdown();
+  }
+});
+
+/* ============================================================
+   ADMIN PANEL
+   ============================================================ */
+let adminPanel = null;
+let editingRecipeId = null;
+let deletingRecipeId = null;
+let adminSearch = '';
+let adminUserSearch = '';
+let adminSection = 'overview';
+let recipePage = 1;
+const RECIPES_PER_PAGE = 10;
+
+// Dinamik tarif listesi (orijinal RECIPES dizisini extend ediyoruz)
+const savedRecipes = localStorage.getItem('la-recipes');
+let dynamicRecipes = savedRecipes ? JSON.parse(savedRecipes) : [...RECIPES];
+
+function openAdminPanel() {
+  if (!auth.currentUser || (auth.currentUser.role !== 'admin' && auth.currentUser.role !== 'editor')) {
+    showToast('Yetkiniz yok', '🚫');
+    return;
+  }
+  if (adminPanel) { adminPanel.remove(); }
+
+  adminPanel = document.createElement('div');
+  adminPanel.id = 'adminPanel';
+  adminPanel.className = 'admin-panel';
+  adminPanel.innerHTML = buildAdminPanelHTML();
+  document.body.appendChild(adminPanel);
+  document.body.style.overflow = 'hidden';
+
+  requestAnimationFrame(() => {
+    adminPanel.classList.add('open');
+    switchAdminSection('overview');
+  });
+}
+
+function closeAdminPanel() {
+  if (!adminPanel) return;
+  adminPanel.classList.remove('open');
+  document.body.style.overflow = '';
+  setTimeout(() => { adminPanel?.remove(); adminPanel = null; }, 300);
+}
+
+function buildAdminPanelHTML() {
+  const u = auth.currentUser;
+  const canDelete = auth.can('delete');
+  const canManageUsers = auth.can('manage_users');
+
+  return `
+  <div class="admin-sidebar">
+    <div class="admin-logo">
+      <div class="admin-logo-icon">🍳</div>
+      <div>
+        Lezzet Atlası
+        <span class="admin-logo-sub">Yönetim Paneli</span>
+      </div>
+    </div>
+
+    <div class="admin-nav-label">Genel</div>
+    <button class="admin-nav-item active" id="nav-overview" onclick="switchAdminSection('overview')">
+      <i class="fa-solid fa-chart-pie"></i> Genel Bakış
+    </button>
+
+    <div class="admin-nav-label">İçerik</div>
+    <button class="admin-nav-item" id="nav-recipes" onclick="switchAdminSection('recipes')">
+      <i class="fa-solid fa-utensils"></i> Tarifler
+    </button>
+    <button class="admin-nav-item" id="nav-add" onclick="switchAdminSection('add')">
+      <i class="fa-solid fa-plus"></i> Yeni Tarif
+    </button>
+
+    ${canManageUsers ? `
+    <div class="admin-nav-label">Yönetim</div>
+    <button class="admin-nav-item" id="nav-users" onclick="switchAdminSection('users')">
+      <i class="fa-solid fa-users"></i> Kullanıcılar
+    </button>` : ''}
+
+    <div class="admin-sidebar-footer">
+      <div class="admin-sidebar-user">
+        <div class="nav-avatar" style="background:${u.avatar};width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.72rem;font-weight:700;color:white;flex-shrink:0">${u.name.slice(0,2).toUpperCase()}</div>
+        <div class="admin-sidebar-user-info">
+          <div class="admin-sidebar-uname">${u.name}</div>
+          <div class="admin-sidebar-uemail">${u.role.toUpperCase()}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="admin-main">
+    <div class="admin-topbar">
+      <div class="admin-topbar-title" id="adminTopbarTitle">Genel Bakış</div>
+      <div class="admin-topbar-right">
+        <button class="admin-add-btn" onclick="switchAdminSection('add')">
+          <i class="fa-solid fa-plus"></i> Yeni Tarif
+        </button>
+        <button class="admin-close-btn" onclick="closeAdminPanel()">
+          <i class="fa-solid fa-xmark"></i> Kapat
+        </button>
+      </div>
+    </div>
+
+    <div class="admin-content" id="adminContent"></div>
+  </div>
+  `;
+}
+
+function switchAdminSection(section) {
+  adminSection = section;
+  const titles = { overview: 'Genel Bakış', recipes: 'Tarifler', add: 'Yeni Tarif Ekle', users: 'Kullanıcı Yönetimi' };
+  document.getElementById('adminTopbarTitle').textContent = titles[section] || '';
+
+  // Nav highlight
+  document.querySelectorAll('.admin-nav-item').forEach(b => b.classList.remove('active'));
+  document.getElementById(`nav-${section}`)?.classList.add('active');
+
+  const content = document.getElementById('adminContent');
+  if (section === 'overview') content.innerHTML = buildOverviewHTML();
+ else if (section === 'recipes') { content.innerHTML = buildRecipesTableHTML(); setTimeout(refreshRecipesTable, 50); }
+  else if (section === 'add') content.innerHTML = buildRecipeFormHTML(null);
+  else if (section === 'users') content.innerHTML = buildUsersTableHTML();
+
+  // Attach events after render
+  if (section === 'recipes') {
+    document.getElementById('adminRecipeSearch')?.addEventListener('input', e => {
+      adminSearch = e.target.value.toLowerCase();
+      recipePage = 1;
+      refreshRecipesTable();
+    });
+  }
+  if (section === 'users') {
+    document.getElementById('adminUserSearch')?.addEventListener('input', e => {
+      adminUserSearch = e.target.value.toLowerCase();
+      refreshUsersTable();
+    });
+  }
+  if (section === 'add') {
+    editingRecipeId = null;
+    document.getElementById('recipeFormTitle').textContent = 'Yeni Tarif';
+  }
+}
+
+/* ── Overview ── */
+function buildOverviewHTML() {
+  const totalRecipes = dynamicRecipes.length;
+  const totalUsers = auth.users.length;
+  const totalFavs = auth.users.reduce((acc, _) => acc + state.favorites.length, 0);
+  const catCount = [...new Set(dynamicRecipes.map(r => r.category))].length;
+
+  const catStats = CATEGORIES.filter(c => c.key !== 'hepsi').map(c => ({
+    label: c.label,
+    count: dynamicRecipes.filter(r => r.category === c.key).length
+  })).sort((a,b) => b.count - a.count).slice(0,5);
+
+  return `
+  <div class="admin-stats-grid">
+    <div class="admin-stat-card">
+      <div class="asc-icon asc-coral"><i class="fa-solid fa-utensils"></i></div>
+      <div class="asc-num">${totalRecipes}</div>
+      <div class="asc-label">Toplam Tarif</div>
+    </div>
+    <div class="admin-stat-card">
+      <div class="asc-icon asc-sage"><i class="fa-solid fa-users"></i></div>
+      <div class="asc-num">${totalUsers}</div>
+      <div class="asc-label">Kullanıcı</div>
+    </div>
+    <div class="admin-stat-card">
+      <div class="asc-icon asc-sky"><i class="fa-solid fa-layer-group"></i></div>
+      <div class="asc-num">${catCount}</div>
+      <div class="asc-label">Kategori</div>
+    </div>
+    <div class="admin-stat-card">
+      <div class="asc-icon asc-lav"><i class="fa-solid fa-heart"></i></div>
+      <div class="asc-num">${state.favorites.length}</div>
+      <div class="asc-label">Toplam Favori</div>
+    </div>
+  </div>
+
+  <div class="admin-table-box" style="margin-bottom:var(--sp-6)">
+    <div class="atb-header"><div class="atb-title">Kategori Dağılımı</div></div>
+    <div style="padding:var(--sp-5);display:flex;flex-direction:column;gap:var(--sp-3)">
+      ${catStats.map(c => `
+        <div style="display:flex;align-items:center;gap:var(--sp-3)">
+          <div style="font-size:0.82rem;color:var(--text-secondary);width:110px;flex-shrink:0">${c.label}</div>
+          <div style="flex:1;height:6px;background:var(--bg-muted);border-radius:999px;overflow:hidden">
+            <div style="width:${Math.round(c.count/totalRecipes*100)}%;height:100%;background:var(--grad-primary);border-radius:999px"></div>
+          </div>
+          <div style="font-size:0.8rem;font-weight:700;color:var(--text-primary);width:32px;text-align:right">${c.count}</div>
+        </div>
+      `).join('')}
+    </div>
+  </div>
+
+  <div class="admin-table-box">
+    <div class="atb-header"><div class="atb-title">Son Eklenen Tarifler</div></div>
+    <table class="admin-table">
+      <thead><tr>
+        <th>Tarif</th><th>Kategori</th><th>Süre</th><th>Zorluk</th><th>İşlem</th>
+      </tr></thead>
+      <tbody>
+        ${dynamicRecipes.slice(-5).reverse().map(r => `
+        <tr>
+          <td><span class="at-emoji">${r.emoji}</span> <span class="at-name">${r.name}</span></td>
+          <td><span class="recipe-cat-tag ${catClass(r.category)}" style="font-size:0.68rem">${r.category}</span></td>
+          <td>${r.time} dk</td>
+          <td>${r.difficulty}</td>
+          <td class="at-actions">
+            <button class="at-btn edit" title="Düzenle" onclick="openEditForm(${r.id})"><i class="fa-solid fa-pen"></i></button>
+          </td>
+        </tr>`).join('')}
+      </tbody>
+    </table>
+  </div>
+  `;
+}
+
+/* ── Recipes Table ── */
+function buildRecipesTableHTML() {
+  return `
+  <div class="admin-table-box">
+    <div class="atb-header">
+      <div class="atb-title">Tüm Tarifler</div>
+      <button class="admin-add-btn" onclick="switchAdminSection('add')">
+        <i class="fa-solid fa-plus"></i> Yeni Ekle
+      </button>
+    </div>
+    <div class="atb-search">
+      <input type="text" id="adminRecipeSearch" placeholder="Tarif ara..." value="${adminSearch}">
+    </div>
+    <div id="recipesTableBody"></div>
+    <div class="atb-footer" id="recipesTableFooter"></div>
+  </div>`;
+}
+
+function refreshRecipesTable() {
+  const filtered = dynamicRecipes.filter(r =>
+    r.name.toLowerCase().includes(adminSearch) ||
+    r.category.toLowerCase().includes(adminSearch)
+  );
+  const total = filtered.length;
+  const pages = Math.ceil(total / RECIPES_PER_PAGE);
+  const start = (recipePage - 1) * RECIPES_PER_PAGE;
+  const slice = filtered.slice(start, start + RECIPES_PER_PAGE);
+  const canDelete = auth.can('delete');
+
+  document.getElementById('recipesTableBody').innerHTML = `
+  <table class="admin-table">
+    <thead><tr>
+      <th>Emoji</th><th>Ad</th><th>Kategori</th><th>Süre</th><th>Zorluk</th><th>Porsiyon</th><th>İşlem</th>
+    </tr></thead>
+    <tbody>
+      ${slice.map(r => `
+      <tr>
+        <td class="at-emoji">${r.emoji}</td>
+        <td><span class="at-name" title="${r.name}">${r.name}</span></td>
+        <td><span class="recipe-cat-tag ${catClass(r.category)}" style="font-size:0.68rem">${r.category}</span></td>
+        <td>${r.time} dk</td>
+        <td>${r.difficulty}</td>
+        <td>${r.servings}</td>
+        <td class="at-actions">
+          <button class="at-btn view" title="Görüntüle" onclick="closeAdminPanel();openModal(${r.id})"><i class="fa-solid fa-eye"></i></button>
+          <button class="at-btn edit" title="Düzenle" onclick="openEditForm(${r.id})"><i class="fa-solid fa-pen"></i></button>
+          ${canDelete ? `<button class="at-btn del" title="Sil" onclick="openDeleteConfirm(${r.id})"><i class="fa-solid fa-trash"></i></button>` : ''}
+        </td>
+      </tr>`).join('')}
+      ${slice.length === 0 ? '<tr><td colspan="7" style="text-align:center;padding:var(--sp-8);color:var(--text-muted)">Sonuç bulunamadı</td></tr>' : ''}
+    </tbody>
+  </table>`;
+
+  document.getElementById('recipesTableFooter').innerHTML = `
+  <span>${total} tarif listeleniyor</span>
+  <div class="atb-pag">
+    <button class="atb-pg" onclick="setRecipePage(${recipePage-1})" ${recipePage<=1?'disabled':''}>‹</button>
+    ${Array.from({length:Math.min(pages,5)}, (_,i) => {
+      const p = i+1;
+      return `<button class="atb-pg ${p===recipePage?'active':''}" onclick="setRecipePage(${p})">${p}</button>`;
+    }).join('')}
+    <button class="atb-pg" onclick="setRecipePage(${recipePage+1})" ${recipePage>=pages?'disabled':''}>›</button>
+  </div>`;
+}
+
+function setRecipePage(p) {
+  const filtered = dynamicRecipes.filter(r => r.name.toLowerCase().includes(adminSearch));
+  const pages = Math.ceil(filtered.length / RECIPES_PER_PAGE);
+  if (p < 1 || p > pages) return;
+  recipePage = p;
+  refreshRecipesTable();
+}
+
+/* ── Recipe Form (Add / Edit) ── */
+function buildRecipeFormHTML(recipe) {
+  const r = recipe || {};
+  return `
+  <div class="admin-table-box">
+    <div class="atb-header">
+      <div class="atb-title" id="recipeFormTitle">${recipe ? 'Tarif Düzenle' : 'Yeni Tarif'}</div>
+    </div>
+    <div style="padding:var(--sp-6);display:flex;flex-direction:column;gap:var(--sp-4)">
+      <div class="fmo-row">
+        <div class="fmo-group">
+          <label class="fmo-label">Emoji</label>
+          <input type="text" class="fmo-input" id="rf-emoji" value="${r.emoji||''}" placeholder="🍲">
+        </div>
+        <div class="fmo-group">
+          <label class="fmo-label">Kategori</label>
+          <select class="fmo-select" id="rf-category">
+            ${CATEGORIES.filter(c=>c.key!=='hepsi').map(c =>
+              `<option value="${c.key}" ${r.category===c.key?'selected':''}>${c.label}</option>`
+            ).join('')}
+          </select>
+        </div>
+      </div>
+      <div class="fmo-group fmo-group-full">
+        <label class="fmo-label">Tarif Adı</label>
+        <input type="text" class="fmo-input" id="rf-name" value="${r.name||''}" placeholder="Tarif adını girin">
+      </div>
+      <div class="fmo-group fmo-group-full">
+        <label class="fmo-label">Açıklama</label>
+        <textarea class="fmo-textarea" id="rf-desc" placeholder="Kısa açıklama">${r.desc||''}</textarea>
+      </div>
+      <div class="fmo-row">
+        <div class="fmo-group">
+          <label class="fmo-label">Süre (dk)</label>
+          <input type="number" class="fmo-input" id="rf-time" value="${r.time||30}" min="1">
+        </div>
+        <div class="fmo-group">
+          <label class="fmo-label">Porsiyon</label>
+          <input type="number" class="fmo-input" id="rf-servings" value="${r.servings||4}" min="1">
+        </div>
+        <div class="fmo-group">
+          <label class="fmo-label">Zorluk</label>
+          <select class="fmo-select" id="rf-difficulty">
+            <option ${r.difficulty==='Kolay'?'selected':''}>Kolay</option>
+            <option ${r.difficulty==='Orta'?'selected':''}>Orta</option>
+            <option ${r.difficulty==='Zor'?'selected':''}>Zor</option>
+          </select>
+        </div>
+      </div>
+      <div class="fmo-group fmo-group-full">
+        <label class="fmo-label">Malzemeler <span style="font-weight:400;color:var(--text-muted)">(her satıra bir malzeme)</span></label>
+        <textarea class="fmo-textarea" id="rf-ingredients" style="min-height:100px" placeholder="Malzeme 1&#10;Malzeme 2">${(r.ingredients||[]).join('\n')}</textarea>
+      </div>
+      <div class="fmo-group fmo-group-full">
+        <label class="fmo-label">Yapılış Adımları <span style="font-weight:400;color:var(--text-muted)">(her satıra bir adım)</span></label>
+        <textarea class="fmo-textarea" id="rf-steps" style="min-height:120px" placeholder="Adım 1&#10;Adım 2">${(r.steps||[]).join('\n')}</textarea>
+      </div>
+      <div class="fmo-group fmo-group-full">
+        <label class="fmo-label">Etiketler <span style="font-weight:400;color:var(--text-muted)">(virgülle ayırın)</span></label>
+        <input type="text" class="fmo-input" id="rf-tags" value="${(r.tags||[]).join(', ')}" placeholder="Geleneksel, Hızlı, Pratik">
+      </div>
+      <div style="display:flex;gap:var(--sp-3);justify-content:flex-end;padding-top:var(--sp-4);border-top:1px solid var(--border-subtle)">
+        <button class="btn-cancel" onclick="switchAdminSection('recipes')">İptal</button>
+        <button class="btn-save" onclick="saveRecipeForm()">
+          <i class="fa-solid fa-floppy-disk"></i> ${recipe ? 'Güncelle' : 'Kaydet'}
+        </button>
+      </div>
+    </div>
+  </div>`;
+}
+
+function openEditForm(id) {
+  const r = dynamicRecipes.find(x => x.id === id);
+  if (!r) return;
+  editingRecipeId = id;
+  switchAdminSection('add');
+  document.getElementById('adminContent').innerHTML = buildRecipeFormHTML(r);
+  document.getElementById('recipeFormTitle').textContent = 'Tarif Düzenle';
+  document.getElementById('adminTopbarTitle').textContent = 'Tarif Düzenle';
+}
+
+function saveRecipeForm() {
+  if (!auth.can('add') && !auth.can('edit')) { showToast('Yetkiniz yok', '🚫'); return; }
+
+  const name        = document.getElementById('rf-name').value.trim();
+  const emoji       = document.getElementById('rf-emoji').value.trim();
+  const category    = document.getElementById('rf-category').value;
+  const desc        = document.getElementById('rf-desc').value.trim();
+  const time        = parseInt(document.getElementById('rf-time').value) || 30;
+  const servings    = parseInt(document.getElementById('rf-servings').value) || 4;
+  const difficulty  = document.getElementById('rf-difficulty').value;
+  const ingredients = document.getElementById('rf-ingredients').value.split('\n').map(s=>s.trim()).filter(Boolean);
+  const steps       = document.getElementById('rf-steps').value.split('\n').map(s=>s.trim()).filter(Boolean);
+  const tags        = document.getElementById('rf-tags').value.split(',').map(s=>s.trim()).filter(Boolean);
+
+  if (!name || !emoji) { showToast('Ad ve emoji zorunludur', '⚠️'); return; }
+
+  if (editingRecipeId) {
+    if (!auth.can('edit')) { showToast('Düzenleme yetkiniz yok', '🚫'); return; }
+    const idx = dynamicRecipes.findIndex(r => r.id === editingRecipeId);
+    if (idx > -1) {
+      dynamicRecipes[idx] = { ...dynamicRecipes[idx], name, emoji, category, desc, time, servings, difficulty, ingredients, steps, tags };
+      showToast('Tarif güncellendi!', '✅');
+    }
+    editingRecipeId = null;
+  } else {
+    if (!auth.can('add')) { showToast('Ekleme yetkiniz yok', '🚫'); return; }
+    const newId = Math.max(...dynamicRecipes.map(r=>r.id)) + 1;
+    dynamicRecipes.push({ id: newId, name, emoji, category, desc, time, servings, difficulty, ingredients, steps, tags });
+    showToast('Yeni tarif eklendi!', '🎉');
+  }
+  // Ana listeyi güncelle
+  localStorage.setItem('la-recipes', JSON.stringify(dynamicRecipes));
+  RECIPES.length = 0;
+  dynamicRecipes.forEach(r => RECIPES.push(r));
+  renderRecipesGrid();
+  renderFavGrid();
+  updateStats();
+  switchAdminSection('recipes');
+  setTimeout(refreshRecipesTable, 50);
+}
+
+/* ── Delete Confirm ── */
+function openDeleteConfirm(id) {
+  if (!auth.can('delete')) { showToast('Silme yetkiniz yok', '🚫'); return; }
+  deletingRecipeId = id;
+  const r = dynamicRecipes.find(x => x.id === id);
+
+  let cmo = document.getElementById('adminConfirmModal');
+  if (!cmo) {
+    cmo = document.createElement('div');
+    cmo.id = 'adminConfirmModal';
+    cmo.className = 'cmo';
+    document.body.appendChild(cmo);
+  }
+
+  cmo.innerHTML = `
+  <div class="cmo-box">
+    <div class="cmo-icon">🗑️</div>
+    <div class="cmo-title">Tarif Silinsin mi?</div>
+    <div class="cmo-desc">"${r?.name}" tarifini silmek istediğinize emin misiniz? Bu işlem geri alınamaz.</div>
+    <div class="cmo-btns">
+      <button class="btn-cancel" onclick="closeDeleteConfirm()">Vazgeç</button>
+      <button class="btn-del-confirm" onclick="confirmDelete()">Evet, Sil</button>
+    </div>
+  </div>`;
+
+  requestAnimationFrame(() => cmo.classList.add('open'));
+}
+
+function closeDeleteConfirm() {
+  const cmo = document.getElementById('adminConfirmModal');
+  if (cmo) { cmo.classList.remove('open'); setTimeout(() => cmo.remove(), 300); }
+  deletingRecipeId = null;
+}
+
+function confirmDelete() {
+  if (!deletingRecipeId || !auth.can('delete')) return;
+  dynamicRecipes = dynamicRecipes.filter(r => r.id !== deletingRecipeId);
+  localStorage.setItem('la-recipes', JSON.stringify(dynamicRecipes));
+  RECIPES.length = 0;
+  dynamicRecipes.forEach(r => RECIPES.push(r));
+  state.favorites = state.favorites.filter(id => id !== deletingRecipeId);
+  saveFavs();
+  renderRecipesGrid();
+  renderFavGrid();
+  updateStats();
+  closeDeleteConfirm();
+  showToast('Tarif silindi', '🗑️');
+  setTimeout(refreshRecipesTable, 50);
+}
+
+/* ── Users Table (sadece admin) ── */
+function buildUsersTableHTML() {
+  if (!auth.can('manage_users')) {
+    return `<div class="perm-denied"><div class="icon">🚫</div><h3>Erişim Reddedildi</h3><p>Bu bölüm sadece admin yetkisiyle erişilebilir.</p></div>`;
+  }
+  return `
+  <div class="admin-table-box">
+    <div class="atb-header">
+      <div class="atb-title">Kullanıcı Yönetimi</div>
+    </div>
+    <div class="atb-search">
+      <input type="text" id="adminUserSearch" placeholder="Kullanıcı ara...">
+    </div>
+    <div id="usersTableBody"></div>
+  </div>`;
+}
+
+function refreshUsersTable() {
+  const filtered = auth.users.filter(u =>
+    u.name.toLowerCase().includes(adminUserSearch) ||
+    u.email.toLowerCase().includes(adminUserSearch)
+  );
+
+  document.getElementById('usersTableBody').innerHTML = `
+  <table class="admin-table">
+    <thead><tr>
+      <th>Avatar</th><th>Ad</th><th>E-posta</th><th>Rol</th><th>Kayıt</th><th>İşlem</th>
+    </tr></thead>
+    <tbody>
+      ${filtered.map(u => `
+      <tr>
+        <td><div class="nav-avatar" style="background:${u.avatar};width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:700;color:white">${u.name.slice(0,2).toUpperCase()}</div></td>
+        <td><span class="at-name">${u.name}</span></td>
+        <td style="font-size:0.82rem;color:var(--text-muted)">${u.email}</td>
+        <td>
+          <select class="fmo-select" style="padding:4px 8px;font-size:0.78rem" onchange="changeUserRole('${u.id}',this.value)" ${u.id===auth.currentUser.id?'disabled':''}>
+            <option ${u.role==='admin'?'selected':''}>admin</option>
+            <option ${u.role==='editor'?'selected':''}>editor</option>
+            <option ${u.role==='user'?'selected':''}>user</option>
+          </select>
+        </td>
+        <td style="font-size:0.8rem;color:var(--text-muted)">${u.createdAt}</td>
+        <td class="at-actions">
+          <button class="at-btn del" title="Sil" onclick="deleteUser('${u.id}')" ${u.id===auth.currentUser.id?'disabled':''}>
+            <i class="fa-solid fa-trash"></i>
+          </button>
+        </td>
+      </tr>`).join('')}
+    </tbody>
+  </table>`;
+}
+
+function changeUserRole(userId, newRole) {
+  if (!auth.can('manage_users')) return;
+  const user = auth.users.find(u => u.id === userId);
+  if (user) {
+    user.role = newRole;
+    auth.saveUsers();
+    showToast(`${user.name} rolü güncellendi: ${newRole}`, '✅');
+  }
+}
+
+function deleteUser(userId) {
+  if (!auth.can('manage_users')) return;
+  if (userId === auth.currentUser.id) { showToast('Kendinizi silemezsiniz', '⚠️'); return; }
+  auth.users = auth.users.filter(u => u.id !== userId);
+  auth.saveUsers();
+  showToast('Kullanıcı silindi', '🗑️');
+  refreshUsersTable();
+}
+
+/* ── Recipes Table'ı section değişince yenile ── */
+const _origSwitch = switchAdminSection;
+// switchAdminSection zaten refresh ediyor, recipes için ayrıca:
+document.addEventListener('click', e => {
+  if (e.target.id === 'nav-recipes' || e.target.closest('#nav-recipes')) {
+    setTimeout(refreshRecipesTable, 60);
+  }
+  if (e.target.id === 'nav-users' || e.target.closest('#nav-users')) {
+    setTimeout(refreshUsersTable, 60);
+  }
+});
+
+/* ── Klavye: Escape admin paneli kapatır ── */
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && adminPanel) closeAdminPanel();
+});
+
+
+
+</script>
+</body>
+</html>
