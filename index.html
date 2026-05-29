@@ -4459,7 +4459,7 @@ function init() {
   renderRecipesGrid();
   renderFavGrid();
   initIntersectionObserver();
-  auth.init();
+setTimeout(() => auth.init(), 100);
   const loader = document.getElementById('pageLoader');
 if(loader){ loader.style.opacity='0'; setTimeout(()=>loader.remove(),400); 
 }
