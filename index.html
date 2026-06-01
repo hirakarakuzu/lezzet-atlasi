@@ -15,6 +15,103 @@
 
   gtag('config', 'G-BJCCRZF78H');
 </script>
+<!-- Firebase -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+  import { getFirestore, collection, getDocs, addDoc, updateDoc, deleteDoc, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyA1qsrLdxPtDdURVIzkoJBUkWM1kXYSNCg",
+    authDomain: "lezzet-atlasi-21ffb.firebaseapp.com",
+    projectId: "lezzet-atlasi-21ffb",
+    storageBucket: "lezzet-atlasi-21ffb.firebasestorage.app",
+    messagingSenderId: "768002040156",
+    appId: "1:768002040156:web:163fb47f0ec3b331a8e199"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+  window.db = db;
+  window.fsCollection = collection;
+  window.fsDocs = getDocs;
+  window.fsAddDoc = addDoc;
+  window.fsUpdateDoc = updateDoc;
+  window.fsDeleteDoc = deleteDoc;
+  window.fsDoc = doc;
+  window.fsSetDoc = setDoc;
+
+  // Kullanıcıları Firebase'den yükle
+  async function loadUsersFromFirebase() {
+    try {
+      const snapshot = await getDocs(collection(db, "users"));
+      if (!snapshot.empty) {
+        const users = [];
+        snapshot.forEach(d => users.push({ id: d.id, ...d.data() }));
+        localStorage.setItem('la-users', JSON.stringify(users));
+        console.log('Kullanicilar Firebase den yuklendi:', users.length);
+      }
+    } catch(e) {
+      console.log('Firebase yok, localStorage kullanilacak');
+    }
+  }
+
+  // Tarifleri Firebase'den yükle
+  async function loadRecipesFromFirebase() {
+    try {
+      const snapshot = await getDocs(collection(db, "recipes"));
+      if (!snapshot.empty) {
+        const recipes = [];
+        snapshot.forEach(d => recipes.push({ id: d.data().id, ...d.data() }));
+        localStorage.setItem('la-recipes', JSON.stringify(recipes));
+        console.log('Tarifler Firebase den yuklendi:', recipes.length);
+      }
+    } catch(e) {
+      console.log('Firebase yok, localStorage kullanilacak');
+    }
+  }
+
+  window.saveUserToFirebase = async function(user) {
+    try {
+      await setDoc(doc(db, "users", user.id), user);
+      console.log('Kullanici Firebase e kaydedildi');
+    } catch(e) {
+      console.log('Firebase kayit hatasi:', e);
+    }
+  };
+
+  window.saveRecipeToFirebase = async function(recipe) {
+    try {
+      await setDoc(doc(db, "recipes", String(recipe.id)), recipe);
+      console.log('Tarif Firebase e kaydedildi');
+    } catch(e) {
+      console.log('Firebase kayit hatasi:', e);
+    }
+  };
+
+  window.deleteRecipeFromFirebase = async function(id) {
+    try {
+      await deleteDoc(doc(db, "recipes", String(id)));
+      console.log('Tarif Firebase den silindi');
+    } catch(e) {
+      console.log('Firebase silme hatasi:', e);
+    }
+  };
+
+  window.deleteUserFromFirebase = async function(id) {
+    try {
+      await deleteDoc(doc(db, "users", id));
+      console.log('Kullanici Firebase den silindi');
+    } catch(e) {
+      console.log('Firebase silme hatasi:', e);
+    }
+  };
+
+  // Sayfa yüklenince Firebase'den verileri çek
+  window.addEventListener('load', async () => {
+    await loadUsersFromFirebase();
+    await loadRecipesFromFirebase();
+  });
+</script>
 <title>Lezzet Atlası — Premium Yemek Tarifleri</title>
 <meta property="og:title" content="Lezzet Atlası — Premium Türk Yemek Tarifleri">
 <meta property="og:description" content="Geleneksel Türk mutfağından modern tariflere, adım adım yemek tarifleri. Hira Nur Karakuzu tarafından hazırlanmıştır.">
@@ -4438,6 +4535,27 @@ document.getElementById('carouselPrev').addEventListener('click', () => { stopCa
 
 /* ── INIT ──────────────────────────────────────────────────── */
 function init() {
+  // Varsayılan tarifleri Firebase'e ilk kez yükle
+setTimeout(async () => {
+  if(window.db && window.fsSetDoc && window.fsDoc) {
+    const snapshot = await window.fsDocs(window.fsCollection(window.db, "recipes"));
+    if(snapshot.empty) {
+      console.log('Firebase bos, varsayilan tarifler yukleniyor...');
+      for(const recipe of RECIPES) {
+        await window.saveRecipeToFirebase(recipe);
+      }
+      console.log('Tarifler Firebase e yuklendi!');
+    }
+    // Kullanıcıları da yükle
+    const usersSnapshot = await window.fsDocs(window.fsCollection(window.db, "users"));
+    if(usersSnapshot.empty) {
+      for(const user of auth.users) {
+        await window.saveUserToFirebase(user);
+      }
+      console.log('Kullanicilar Firebase e yuklendi!');
+    }
+  }
+}, 2000);
   initTheme();
   updateStats();
   renderHeroVisual();
@@ -4526,8 +4644,11 @@ const auth = {
     this.showAuthModal();
   },
 
-  saveUsers() {
+ saveUsers() {
     localStorage.setItem('la-users', JSON.stringify(this.users));
+    this.users.forEach(user => {
+      if(window.saveUserToFirebase) window.saveUserToFirebase(user);
+    });
   },
 
   async hashPassword(password) {
@@ -5229,7 +5350,15 @@ function closeDeleteConfirm() {
 function confirmDelete() {
   if (!deletingRecipeId || !auth.can('delete')) return;
   dynamicRecipes = dynamicRecipes.filter(r => r.id !== deletingRecipeId);
+  if(window.deleteRecipeFromFirebase) window.deleteRecipeFromFirebase(deletingRecipeId);
   localStorage.setItem('la-recipes', JSON.stringify(dynamicRecipes));
+  if(editingRecipeId) {
+  const updated = dynamicRecipes.find(r => r.id === editingRecipeId);
+  if(updated && window.saveRecipeToFirebase) window.saveRecipeToFirebase(updated);
+} else {
+  const newest = dynamicRecipes[dynamicRecipes.length - 1];
+  if(newest && window.saveRecipeToFirebase) window.saveRecipeToFirebase(newest);
+}
   RECIPES.length = 0;
   dynamicRecipes.forEach(r => RECIPES.push(r));
   state.favorites = state.favorites.filter(id => id !== deletingRecipeId);
@@ -5308,6 +5437,7 @@ function deleteUser(userId) {
   if (!auth.can('manage_users')) return;
   if (userId === auth.currentUser.id) { showToast('Kendinizi silemezsiniz', '⚠️'); return; }
   auth.users = auth.users.filter(u => u.id !== userId);
+  if(window.deleteUserFromFirebase) window.deleteUserFromFirebase(userId);
   auth.saveUsers();
   showToast('Kullanıcı silindi', '🗑️');
   refreshUsersTable();
