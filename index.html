@@ -107,9 +107,26 @@
   };
 
   // Sayfa yüklenince Firebase'den verileri çek
-  window.addEventListener('load', async () => {
+ window.addEventListener('load', async () => {
     await loadUsersFromFirebase();
     await loadRecipesFromFirebase();
+    
+    // Firebase'den gelen tarifleri dynamicRecipes'e yükle
+    setTimeout(() => {
+      const savedRecipes = localStorage.getItem('la-recipes');
+      if(savedRecipes) {
+        const parsed = JSON.parse(savedRecipes);
+        if(parsed.length > 0) {
+          dynamicRecipes = parsed;
+          RECIPES.length = 0;
+          dynamicRecipes.forEach(r => RECIPES.push(r));
+          renderRecipesGrid();
+          renderFavGrid();
+          updateStats();
+          renderCarousel();
+        }
+      }
+    }, 1500);
   });
 </script>
 <title>Lezzet Atlası — Premium Yemek Tarifleri</title>
