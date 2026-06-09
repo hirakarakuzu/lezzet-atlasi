@@ -127,7 +127,7 @@
         }
       }
     }, 1500);
-  });
+  
 </script>
 <title>Lezzet Atlası — Premium Yemek Tarifleri</title>
 <meta property="og:title" content="Lezzet Atlası — Premium Türk Yemek Tarifleri">
@@ -5316,11 +5316,13 @@ function saveRecipeForm() {
   } else {
     if (!auth.can('add')) { showToast('Ekleme yetkiniz yok', '🚫'); return; }
     const newId = Math.max(...dynamicRecipes.map(r=>r.id)) + 1;
-    dynamicRecipes.push({ id: newId, name, emoji, category, desc, time, servings, difficulty, ingredients, steps, tags });
-    showToast('Yeni tarif eklendi!', '🎉');
+  const newRecipe = { id: newId, name, emoji, category, desc, time, servings, difficulty, ingredients, steps, tags };
+dynamicRecipes.push(newRecipe);
+showToast('Yeni tarif eklendi!', '🎉');
+if(window.saveRecipeToFirebase) window.saveRecipeToFirebase(newRecipe);
   }
   // Ana listeyi güncelle
-  localStorage.setItem('la-recipes', JSON.stringify(dynamicRecipes));
+  { localStorage.setItem('la-recipes', JSON.stringify(dynamicRecipes));
   RECIPES.length = 0;
   dynamicRecipes.forEach(r => RECIPES.push(r));
   renderRecipesGrid();
@@ -5363,8 +5365,12 @@ function closeDeleteConfirm() {
   if (cmo) { cmo.classList.remove('open'); setTimeout(() => cmo.remove(), 300); }
   deletingRecipeId = null;
 }
-
 function confirmDelete() {
+  if (!deletingRecipeId || !auth.can('delete')) return;
+  dynamicRecipes = dynamicRecipes.filter(r => r.id !== deletingRecipeId);
+  if(window.deleteRecipeFromFirebase) window.deleteRecipeFromFirebase(deletingRecipeId);
+  localStorage.setItem('la-recipes', JSON.stringify(dynamicRecipes));
+  RECIPES.length = 0;
   if (!deletingRecipeId || !auth.can('delete')) return;
   dynamicRecipes = dynamicRecipes.filter(r => r.id !== deletingRecipeId);
   if(window.deleteRecipeFromFirebase) window.deleteRecipeFromFirebase(deletingRecipeId);
