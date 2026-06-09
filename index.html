@@ -5325,7 +5325,7 @@ showToast('Yeni tarif eklendi!', '🎉');
 if(window.saveRecipeToFirebase) window.saveRecipeToFirebase(newRecipe);
   }
   // Ana listeyi güncelle
-  { localStorage.setItem('la-recipes', JSON.stringify(dynamicRecipes));
+   localStorage.setItem('la-recipes', JSON.stringify(dynamicRecipes));
   RECIPES.length = 0;
   dynamicRecipes.forEach(r => RECIPES.push(r));
   renderRecipesGrid();
